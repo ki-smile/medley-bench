@@ -1,6 +1,6 @@
 # MEDLEY-BENCH
 
-**Package: v0.5.0 (beta)** · **Dataset: v1.0**
+**Package: v0.5.2 (beta)** · **Dataset: v1.0**
 
 **Behavioral Metacognition Under Social Pressure**
 
