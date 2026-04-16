@@ -168,20 +168,80 @@
         </div>
     </section>
 
-    <!-- Quick Links -->
-    <section class="section-blue">
+    <!-- Install & Get Started -->
+    <section class="section-blue" id="install">
         <div class="container">
-            <h2 class="section-heading">Get Started</h2>
+            <h2 class="section-heading">Install & Run</h2>
+            <p style="text-align:center; max-width:700px; margin:0 auto var(--spacing-lg); opacity:0.9;">
+                MEDLEY-BENCH is available as a Python library on PyPI. The 130-instance dataset is bundled — no separate download needed.
+            </p>
+
+            <!-- Install command -->
+            <div style="max-width:600px; margin:0 auto var(--spacing-lg); background:rgba(0,0,0,0.3); border-radius:8px; padding:16px 20px; font-family:monospace; font-size:1.05rem; display:flex; align-items:center; gap:12px;">
+                <span style="opacity:0.5;">$</span>
+                <code style="flex:1;">pip install medley-bench</code>
+            </div>
+
+            <!-- Quick examples -->
+            <div style="max-width:700px; margin:0 auto var(--spacing-lg); text-align:left;">
+                <div style="background:rgba(0,0,0,0.2); border-radius:8px; padding:16px 20px; font-family:monospace; font-size:0.9rem; line-height:1.7;">
+                    <span style="opacity:0.5;"># Benchmark any model — cloud or local</span><br>
+                    medley-bench benchmark --models "anthropic/claude-haiku-4.5"<br>
+                    medley-bench benchmark --models "ollama/gemma3:12b"<br>
+                    <br>
+                    <span style="opacity:0.5;"># Add a live judge for full scoring</span><br>
+                    medley-bench benchmark --models "ollama/gemma3:12b" \<br>
+                    &nbsp;&nbsp;--judge-model gemini-2.5-flash<br>
+                    <br>
+                    <span style="opacity:0.5;"># View results</span><br>
+                    medley-bench leaderboard --results results/
+                </div>
+            </div>
+
+            <!-- Supported providers -->
+            <div style="max-width:700px; margin:0 auto var(--spacing-lg);">
+                <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+                    <thead>
+                        <tr style="border-bottom:1px solid rgba(255,255,255,0.2);">
+                            <th style="text-align:left; padding:8px;">Provider</th>
+                            <th style="text-align:left; padding:8px;">Model ID</th>
+                            <th style="text-align:left; padding:8px;">API Key</th>
+                        </tr>
+                    </thead>
+                    <tbody style="opacity:0.85;">
+                        <tr><td style="padding:6px 8px;">Anthropic</td><td style="padding:6px 8px; font-family:monospace;">claude-*</td><td style="padding:6px 8px; font-family:monospace;">ANTHROPIC_API_KEY</td></tr>
+                        <tr><td style="padding:6px 8px;">OpenAI</td><td style="padding:6px 8px; font-family:monospace;">gpt-*, o1-*, o3-*</td><td style="padding:6px 8px; font-family:monospace;">OPENAI_API_KEY</td></tr>
+                        <tr><td style="padding:6px 8px;">Google</td><td style="padding:6px 8px; font-family:monospace;">gemini-*</td><td style="padding:6px 8px; font-family:monospace;">GOOGLE_API_KEY</td></tr>
+                        <tr><td style="padding:6px 8px;">Ollama</td><td style="padding:6px 8px; font-family:monospace;">ollama/model</td><td style="padding:6px 8px;">None (local)</td></tr>
+                        <tr><td style="padding:6px 8px;">OpenRouter</td><td style="padding:6px 8px; font-family:monospace;">org/model</td><td style="padding:6px 8px; font-family:monospace;">OPENROUTER_API_KEY</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Action buttons -->
             <div class="hero-actions" style="justify-content: center;">
-                <a href="leaderboard.html" class="btn-primary">
+                <a href="https://pypi.org/project/medley-bench/" class="btn-primary" target="_blank">
+                    <span class="material-icons">download</span>
+                    PyPI Package
+                </a>
+                <a href="https://github.com/ki-smile/medley-bench/blob/main/examples/medley_bench_colab.ipynb" class="btn-secondary" target="_blank">
+                    <span class="material-icons">laptop</span>
+                    Open in Colab
+                </a>
+                <a href="leaderboard.html" class="btn-secondary">
                     <span class="material-icons">leaderboard</span>
-                    View Leaderboard
+                    Leaderboard
                 </a>
                 <a href="data.html" class="btn-secondary">
                     <span class="material-icons">menu_book</span>
                     Documentation
                 </a>
             </div>
+
+            <!-- Runtime note -->
+            <p style="text-align:center; max-width:600px; margin:var(--spacing-lg) auto 0; font-size:0.85rem; opacity:0.7;">
+                Full run = 520 API calls (390 target + 130 judge). ~1 hr on fast APIs, several hours on slower providers. Results save incrementally and runs are resumable.
+            </p>
         </div>
     </section>
 

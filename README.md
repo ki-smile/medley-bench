@@ -9,6 +9,7 @@
 [![PyPI](https://img.shields.io/pypi/v/medley-bench.svg)](https://pypi.org/project/medley-bench/)
 [![Dataset](https://img.shields.io/badge/Kaggle-Dataset-20beff.svg)](https://www.kaggle.com/datasets/farhadabtahi/medley-bench-data)
 [![Models](https://img.shields.io/badge/Models_Evaluated-35-green.svg)](https://github.com/ki-smile/medley-bench/tree/main/results/metacognition/v1.0/normal/)
+[![Website](https://img.shields.io/badge/Website-ki--smile.github.io-orange.svg)](https://ki-smile.github.io/medley-bench/)
 
 MEDLEY-BENCH measures **behavioural metacognition** in large language models -- the capacity to monitor, evaluate, and control one's own reasoning under escalating social-epistemic pressure. Unlike accuracy-focused benchmarks, MEDLEY-BENCH measures *how models behave when challenged*, not whether they know the answer.
 
