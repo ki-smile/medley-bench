@@ -1,0 +1,40 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; color: #333; background: #f5f7fa; }
+nav { background: #1C3D5A; color: white; padding: 0.8rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; letter-spacing: 1px; }
+.nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; }
+.nav-links a.active, .nav-links a:hover { color: white; border-bottom: 2px solid #4DA6D9; padding-bottom: 2px; }
+main { max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem; }
+h1 { color: #1C3D5A; margin-bottom: 1.5rem; }
+h2 { color: #2E6B9E; margin: 2rem 0 1rem; font-size: 1.2rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.card { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.card h3 { color: #666; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem; }
+.big-number { font-size: 2.5rem; font-weight: 700; color: #1C3D5A; }
+.detail { font-size: 0.85rem; color: #666; margin-top: 0.5rem; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; background: #e8f0fe; color: #1a73e8; margin-right: 4px; }
+.badge.ka { background: #fce4ec; color: #c62828; }
+.badge.trap { background: #fff3e0; color: #e65100; }
+.badge.dr { background: #e8f5e9; color: #2e7d32; }
+.badge.mi { background: #f3e5f5; color: #7b1fa2; }
+.badge.ed { background: #fce4ec; color: #c62828; }
+.badge.cf { background: #e0f7fa; color: #00838f; }
+table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
+th { background: #f0f4f8; color: #555; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; padding: 0.75rem 1rem; text-align: left; }
+td { padding: 0.6rem 1rem; border-top: 1px solid #eee; font-size: 0.9rem; }
+tr:hover { background: #f8fafc; }
+a { color: #1a73e8; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.truncate { max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.vignette-box { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); white-space: pre-wrap; font-size: 0.9rem; line-height: 1.6; }
+.response-card { background: white; padding: 1rem; border-radius: 8px; margin-bottom: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.response-card h4 { color: #1C3D5A; margin-bottom: 0.5rem; }
+.response-card pre { background: #f8f9fa; padding: 0.75rem; border-radius: 4px; font-size: 0.8rem; overflow-x: auto; max-height: 200px; }
+.meta { margin-bottom: 1.5rem; }
+.meta span { margin-right: 1rem; }
+.filters { margin-bottom: 1.5rem; }
+.btn { display: inline-block; padding: 6px 16px; border-radius: 4px; background: #e8f0fe; color: #1a73e8; font-size: 0.85rem; margin-right: 4px; }
+.btn.active { background: #1a73e8; color: white; }
+.progress-bar { background: #eee; border-radius: 4px; height: 8px; width: 100%; }
+.progress-fill { background: #4DA6D9; border-radius: 4px; height: 100%; min-width: 2px; }
+.progress-list div { margin-bottom: 0.3rem; font-size: 0.9rem; }

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% set active = "cases" %}
+{% block title_extra %} — {{ case.case_id }}{% endblock %}
+
+{% block content %}
+<h1>{{ case.case_id }}</h1>
+<div class="meta">
+    <span class="badge domain-{{ case.domain }}">{{ case.domain }}</span>
+    <span>Difficulty: {{ case.difficulty_tier or '—' }}</span>
+    {% if case.is_known_answer %}<span class="badge ka">Known Answer</span>{% endif %}
+    {% if case.is_trap %}<span class="badge trap">Trap</span>{% endif %}
+    {% if case.is_dose_response %}<span class="badge dr">Dose-Response</span>{% endif %}
+</div>
+
+<h2>Vignette</h2>
+<div class="vignette-box">{{ case.vignette or 'No vignette generated yet.' }}</div>
+
+<h2>Claims ({{ claims|length }})</h2>
+<table>
+    <thead><tr><th>ID</th><th>Text</th><th>Majority</th><th>JSD</th></tr></thead>
+    <tbody>
+    {% for c in claims %}
+        <tr>
+            <td><strong>{{ c.claim_id }}</strong></td>
+            <td>{{ c.claim_text }}</td>
+            <td>{{ c.majority_strength or '—' }}</td>
+            <td>{{ '%.3f'|format(c.jsd_score) if c.jsd_score else '—' }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<h2>Analyst Responses ({{ analysts|length }})</h2>
+{% for a in analysts %}
+<div class="response-card">
+    <h4>{{ a.model_id }} {% if a.jackknife_left_out %}<span class="badge">(held out)</span>{% endif %}</h4>
+    <pre>{{ a.response | tojson(indent=2) }}</pre>
+</div>
+{% endfor %}
+
+<h2>Designer Responses ({{ designers|length }})</h2>
+{% for d in designers %}
+<div class="response-card">
+    <h4>{{ d.model_id }}</h4>
+    <pre>{{ d.response[:500] }}{% if d.response|length > 500 %}...{% endif %}</pre>
+</div>
+{% endfor %}
+{% endblock %}

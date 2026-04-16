@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDLEY-BENCH Admin{% block title_extra %}{% endblock %}</title>
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-brand">MEDLEY-BENCH</div>
+        <div class="nav-links">
+            <a href="/" class="{% if active == 'dashboard' %}active{% endif %}">Dashboard</a>
+            <a href="/cases" class="{% if active == 'cases' %}active{% endif %}">Cases</a>
+            <a href="/models" class="{% if active == 'models' %}active{% endif %}">Models</a>
+            <a href="/api/status" target="_blank">API</a>
+        </div>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

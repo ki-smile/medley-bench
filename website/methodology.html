@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodology - MEDLEY-BENCH</title>
+
+    <!-- Material Design 3 -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+</head>
+<body>
+    <!-- Theme initialization (prevents flash) -->
+    <script>
+        var theme = localStorage.getItem('medley-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">MEDLEY-BENCH</a>
+            <button class="nav-toggle" onclick="toggleMobileMenu()">
+                <span class="material-icons">menu</span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="methodology.html" class="active">Methodology</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="data.html">Data</a></li>
+                <li><a href="index.html#paper">Paper</a></li>
+                <li><a href="medley-bench-explorer.html">Explorer</a></li>
+                <li>
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark theme">
+                        <span class="material-icons" id="theme-icon">dark_mode</span>
+                    </button>
+                </li>
+                <li>
+                    <a href="https://github.com/ki-smile/medley-bench" class="nav-github" target="_blank">
+                        <span class="material-icons">code</span> GitHub
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Methodology</h1>
+            <p class="page-subtitle">Hybrid scoring: 75% deterministic + 25% LLM judge</p>
+        </div>
+    </header>
+
+    <!-- Sticky Sub-nav -->
+    <div style="position: sticky; top: 72px; z-index: 90; background: var(--navbar-bg); border-bottom: 1px solid var(--border-color); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="container" style="display: flex; gap: var(--spacing-md); padding: 12px var(--spacing-lg); overflow-x: auto; font-size: 0.85rem; font-family: 'DM Mono', monospace;">
+            <a href="#foundation" style="color: var(--text-main); opacity: 0.7; white-space: nowrap;">Theoretical Foundation</a>
+            <a href="#protocol" style="color: var(--text-main); opacity: 0.7; white-space: nowrap;">Protocol</a>
+            <a href="#tiers" style="color: var(--text-main); opacity: 0.7; white-space: nowrap;">Tiers</a>
+            <a href="#anti-gaming" style="color: var(--text-main); opacity: 0.7; white-space: nowrap;">Anti-Gaming</a>
+            <a href="#pipeline" style="color: var(--text-main); opacity: 0.7; white-space: nowrap;">Pipeline</a>
+        </div>
+    </div>
+
+    <!-- Methodology at a Glance -->
+    <section class="section-blue" style="padding-bottom: 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg); text-align: center;">
+                <div class="stat-card" style="border-bottom: 4px solid var(--ki-plum);">
+                    <span class="material-icons" style="color: var(--ki-plum); font-size: 2.5rem; margin-bottom: 12px;">architecture</span>
+                    <h4 style="margin-bottom: 4px;">1. The Protocol</h4>
+                    <p style="font-size: 0.85rem; color: var(--ki-grey);">3-step isolated isolation pipeline</p>
+                </div>
+                <div class="stat-card" style="border-bottom: 4px solid var(--ki-plum);">
+                    <span class="material-icons" style="color: var(--ki-plum); font-size: 2.5rem; margin-bottom: 12px;">calculate</span>
+                    <h4 style="margin-bottom: 4px;">2. The Scoring</h4>
+                    <p style="font-size: 0.85rem; color: var(--ki-grey);">75% rule-based + 25% LLM-Judge</p>
+                </div>
+                <div class="stat-card" style="border-bottom: 4px solid var(--ki-plum);">
+                    <span class="material-icons" style="color: var(--ki-plum); font-size: 2.5rem; margin-bottom: 12px;">psychology</span>
+                    <h4 style="margin-bottom: 4px;">3. The Taxonomy</h4>
+                    <p style="font-size: 0.85rem; color: var(--ki-grey);">Mapped to 4 DeepMind sub-abilities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Theoretical Foundation -->
+    <section class="section-white" id="theoretical-foundation">
+        <div class="container">
+            <h2 class="section-heading">Theoretical Foundation</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="material-icons card-icon">groups</span>
+                    <h3>The Medley Principle</h3>
+                    <p>Ensembles of diverse, imperfect analysts provide the social pressure needed to reveal metacognitive quality. (Abtahi et al., 2023)</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons card-icon">biotech</span>
+                    <h3>Probe-Condition Framing</h3>
+                    <p>Ensemble disagreement is the experimental probe. We measure cardiac function by applying a stress test, not by measuring the treadmill.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons card-icon">history_edu</span>
+                    <h3>Capacity vs Habit</h3>
+                    <p>We measure the <em>capacity</em> for metacognition when called upon &mdash; a prerequisite for spontaneous exercise in deployment.</p>
+                </div>
+            </div>
+
+            <!-- Paper link card -->
+            <a href="https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2026.1701665/full" target="_blank" style="text-decoration: none;">
+                <div class="feature-card" style="max-width: 700px; margin: var(--spacing-xl) auto 0 auto; border-left: 4px solid var(--ki-plum); display: flex; align-items: center; gap: var(--spacing-lg); cursor: pointer;">
+                    <span class="material-icons" style="font-size: 48px; color: var(--ki-plum); flex-shrink: 0;">article</span>
+                    <div>
+                        <h3 style="margin-bottom: var(--spacing-xs); font-size: 1.1rem;">Read the Medley Framework Paper</h3>
+                        <p style="margin-bottom: 0; color: var(--ki-grey); font-size: 0.85rem;">Abtahi et al. (2023). Frontiers in Artificial Intelligence.</p>
+                    </div>
+                    <span class="material-icons" style="color: var(--ki-grey); flex-shrink: 0; margin-left: auto;">open_in_new</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Three-Step Protocol Detail -->
+    <section class="section-orange" id="protocol">
+        <div class="container">
+            <h2 class="section-heading">The Three-Step Protocol</h2>
+            <p class="section-subheading">Every instance runs three model calls in isolated contexts to separate different cognitive processes.</p>
+
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-xl); margin-bottom: var(--spacing-xxl);">
+                <!-- Step 1 -->
+                <div class="method-card" style="display: flex; gap: var(--spacing-xl); align-items: flex-start; border-left: 6px solid #4A9FE8;">
+                    <div style="background: #4A9FE8; color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem; flex-shrink: 0;">1</div>
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--spacing-sm);">
+                            <span class="material-icons" style="color: #4A9FE8;">person</span>
+                            <h3 style="margin-bottom: 0;">Step A: Solo Analysis</h3>
+                        </div>
+                        <p>The model receives only the problem vignette. It must produce an independent assessment with per-claim confidence levels. This establishes the <strong>independent baseline</strong> of reasoning before any social influence.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="method-card" style="display: flex; gap: var(--spacing-xl); align-items: flex-start; border-left: 6px solid #F0A830;">
+                    <div style="background: #F0A830; color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem; flex-shrink: 0;">2</div>
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--spacing-sm);">
+                            <span class="material-icons" style="color: #F0A830;">psychology</span>
+                            <h3 style="margin-bottom: 0;">Step B-Private: Self-Revision</h3>
+                        </div>
+                        <p>The model sees its own Step A response plus a <strong>self-review checklist</strong>. It may revise any claim. Changes here reflect genuine <strong>self-correction capacity</strong>. No external input is provided.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="method-card" style="display: flex; gap: var(--spacing-xl); align-items: flex-start; border-left: 6px solid #E55555;">
+                    <div style="background: #E55555; color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem; flex-shrink: 0;">3</div>
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--spacing-sm);">
+                            <span class="material-icons" style="color: #E55555;">groups</span>
+                            <h3 style="margin-bottom: 0;">Step B-Social: Social Revision</h3>
+                        </div>
+                        <p>The model sees 8 analyst opinions plus a <strong>jackknife consensus</strong>. It must explain every confidence change, citing specific analysts and arguments. This measures <strong>social updating quality</strong> under pressure.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delta formula cards -->
+            <div class="cards-grid-2" style="margin-bottom: var(--spacing-xl);">
+                <div class="method-card" style="text-align: center; background: var(--bg-surface-variant); border: 1px dashed var(--ki-plum);">
+                    <h3 style="font-size: var(--md-sys-typescale-title-large); color: var(--ki-plum);">&Delta;&#8321; = A &rarr; B-Private</h3>
+                    <p style="margin-bottom: 0;"><strong>Self-revision:</strong> Does the model improve through reflection alone?</p>
+                </div>
+                <div class="method-card" style="text-align: center; background: var(--bg-surface-variant); border: 1px dashed var(--ki-plum);">
+                    <h3 style="font-size: var(--md-sys-typescale-title-large); color: var(--ki-plum);">&Delta;&#8322; = B-Private &rarr; B-Social</h3>
+                    <p style="margin-bottom: 0;"><strong>Social influence:</strong> Does it update to evidence quality, or headcount?</p>
+                </div>
+            </div>
+
+            <p style="text-align: center; max-width: 900px; margin: 0 auto; color: var(--ki-grey); font-size: var(--md-sys-typescale-body-large);">
+                The three steps run in isolated chat contexts &mdash; the model cannot access previous steps' context except through explicit reproduction in the prompt. This ensures that confidence changes in Step B-Social reflect genuine response to social input, not context carryover.
+            </p>
+        </div>
+    </section>
+
+    <!-- Two Scores -->
+    <section class="section-blue">
+        <div class="container">
+            <h2 class="section-heading">Two Scores</h2>
+            <div class="cards-grid-2" style="margin-bottom: var(--spacing-lg);">
+                <div class="feature-card">
+                    <span class="material-icons card-icon">functions</span>
+                    <h3>MMS &mdash; Medley Metacognition Score</h3>
+                    <p>T1 + T2 + T3 aggregate (equal weights). Rewards articulation quality.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons card-icon">psychology</span>
+                    <h3>MAS &mdash; Medley Ability Score</h3>
+                    <p>Mean of Monitoring, Control, Evaluation, Self-regulation. Rewards behavioural competence.</p>
+                </div>
+            </div>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+                MMS and MAS correlate at &rho; = 0.94 but diverge informatively: 8 of 35 models shift &ge;5 ranking positions.
+            </p>
+        </div>
+    </section>
+
+    <!-- Scoring Rubric -->
+    <section class="section-white" id="tiers">
+        <div class="container">
+            <h2 class="section-heading">Master Scoring Rubric</h2>
+            <p class="section-subheading">Scoring is split across three tiers, aggregating into the Medley Metacognition Score (MMS).</p>
+
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Category / Tier</th>
+                            <th>Measure</th>
+                            <th>Weight</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- T1 -->
+                        <tr style="background: rgba(74,159,232,0.05); border-left: 4px solid #4A9FE8;"><td rowspan="5" style="vertical-align: middle;"><strong>T1: Reflective Updating</strong><br><small style="color:var(--ki-grey);">Proportional belief revision</small></td><td>Proportionality</td><td>25%</td><td>Rule-based</td></tr>
+                        <tr style="background: rgba(74,159,232,0.05); border-left: 4px solid #4A9FE8;"><td>Confidence Volatility</td><td>25%</td><td>Rule-based</td></tr>
+                        <tr style="background: rgba(74,159,232,0.05); border-left: 4px solid #4A9FE8;"><td>Selectivity</td><td>20%</td><td>Rule-based</td></tr>
+                        <tr style="background: rgba(74,159,232,0.05); border-left: 4px solid #4A9FE8;"><td>Uncertainty Localisation</td><td>20%</td><td>Rule-based</td></tr>
+                        <tr style="background: rgba(74,159,232,0.05); border-left: 4px solid #4A9FE8;"><td>Brier Score Change</td><td>10%</td><td>Rule-based</td></tr>
+                        
+                        <!-- T2 -->
+                        <tr style="background: rgba(240,168,48,0.05); border-left: 4px solid #F0A830;"><td rowspan="6" style="vertical-align: middle;"><strong>T2: Social Robustness</strong><br><small style="color:var(--ki-grey);">Resistance to pressure</small></td><td>Private-vs-Social Delta</td><td>30%</td><td>Rule-based</td></tr>
+                        <tr style="background: rgba(240,168,48,0.05); border-left: 4px solid #F0A830;"><td>Epistemic Cowardice</td><td>25%</td><td>Rule-based</td></tr>
+                        <tr style="background: rgba(240,168,48,0.05); border-left: 4px solid #F0A830;"><td>Resistance Appropriateness</td><td>20%</td><td>Rule-based</td></tr>
+                        <tr style="background: rgba(240,168,48,0.05); border-left: 4px solid #F0A830;"><td>Majority Pressure</td><td>10%</td><td>Rule-based</td></tr>
+                        <tr style="background: rgba(240,168,48,0.05); border-left: 4px solid #F0A830;"><td>Capitulation Quality</td><td>10%</td><td>Judge</td></tr>
+                        <tr style="background: rgba(240,168,48,0.05); border-left: 4px solid #F0A830;"><td>Normative/Informational</td><td>5%</td><td>Judge</td></tr>
+
+                        <!-- T3 -->
+                        <tr style="background: rgba(229,85,85,0.05); border-left: 4px solid #E55555;"><td rowspan="13" style="vertical-align: middle;"><strong>T3: Epistemic Articulation</strong><br><small style="color:var(--ki-grey);">Evidence-grounded reasoning</small></td><td>Content Engagement</td><td>15%</td><td>Rule-based</td></tr>
+                        <tr style="background: rgba(229,85,85,0.05); border-left: 4px solid #E55555;"><td>Steelmanning Quality</td><td>12%</td><td>Judge</td></tr>
+                        <tr style="background: rgba(229,85,85,0.05); border-left: 4px solid #E55555;"><td>Argument Specificity</td><td>10%</td><td>Rule-based</td></tr>
+                        <tr style="background: rgba(229,85,85,0.05); border-left: 4px solid #E55555;"><td>Synthesis Necessity</td><td>10%</td><td>Rule-based</td></tr>
+                        <tr style="background: rgba(229,85,85,0.05); border-left: 4px solid #E55555;"><td>Attribution Depth</td><td>8%</td><td>Judge</td></tr>
+                        <tr style="background: rgba(229,85,85,0.05); border-left: 4px solid #E55555;"><td>Intellectual Courage</td><td>8%</td><td>Judge</td></tr>
+                        <tr style="background: rgba(229,85,85,0.05); border-left: 4px solid #E55555;"><td>Error Acknowledgement</td><td>7%</td><td>Judge</td></tr>
+                        <tr style="background: rgba(229,85,85,0.05); border-left: 4px solid #E55555;"><td>Blind Spot Recognition</td><td>6%</td><td>Judge</td></tr>
+                        <tr style="background: rgba(229,85,85,0.05); border-left: 4px solid #E55555;"><td>Confidence Coherence</td><td>6%</td><td>Judge</td></tr>
+                        <tr style="background: rgba(229,85,85,0.05); border-left: 4px solid #E55555;"><td>Transparency</td><td>5%</td><td>Judge</td></tr>
+                        <tr style="background: rgba(229,85,85,0.05); border-left: 4px solid #E55555;"><td>Logical Grounding</td><td>5%</td><td>Rule-based</td></tr>
+                        <tr style="background: rgba(229,85,85,0.05); border-left: 4px solid #E55555;"><td>Epistemic Humility</td><td>4%</td><td>Judge</td></tr>
+                        <tr style="background: rgba(229,85,85,0.05); border-left: 4px solid #E55555;"><td>Coherence</td><td>4%</td><td>Rule-based</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Judge Design -->
+    <section class="section-orange">
+        <div class="container">
+            <h2 class="section-heading">Judge Design</h2>
+            
+            <div class="method-card" style="display: flex; flex-wrap: wrap; gap: var(--spacing-xl); align-items: center; margin-bottom: var(--spacing-xl);">
+                <div style="flex: 1; min-width: 280px; display: flex; align-items: center; gap: var(--spacing-md);">
+                    <span class="material-icons" style="font-size: 40px; color: var(--ki-orange);">gavel</span>
+                    <div>
+                        <h4 style="margin-bottom: 2px;">Scoring Structure</h4>
+                        <p style="font-size: 0.9rem; margin-bottom: 0;">10 dimensions, 30 sub-criteria, 0&ndash;3 scale.</p>
+                    </div>
+                </div>
+                <div style="flex: 1; min-width: 280px; display: flex; align-items: center; gap: var(--spacing-md);">
+                    <span class="material-icons" style="font-size: 40px; color: var(--ki-orange);">autorenew</span>
+                    <div>
+                        <h4 style="margin-bottom: 2px;">3-Judge Rotation</h4>
+                        <p style="font-size: 0.9rem; margin-bottom: 0;">Claude Sonnet, GPT-4.1, Gemini 2.5 Pro.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin-bottom: var(--spacing-lg); font-size: 1.25rem;">Anti-Rhetoric Rubric</h3>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto var(--spacing-lg); color: var(--ki-grey);">Explicitly penalises surface-level "AI humility" that lacks substantive reasoning.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md);">
+                <div class="stat-card" style="padding: var(--spacing-md); border-top: 3px solid var(--ki-orange);">
+                    <span class="material-icons" style="color: var(--ki-orange); font-size: 24px; margin-bottom: 8px;">format_quote</span>
+                    <h4 style="font-size: 0.95rem; margin-bottom: 4px;">Generic Humility</h4>
+                    <p style="font-size: 0.8rem; line-height: 1.4; color: var(--ki-grey); margin-bottom: 0;">Boilerplate hedging without reasoning.</p>
+                </div>
+                <div class="stat-card" style="padding: var(--spacing-md); border-top: 3px solid var(--ki-orange);">
+                    <span class="material-icons" style="color: var(--ki-orange); font-size: 24px; margin-bottom: 8px;">warning</span>
+                    <h4 style="font-size: 0.95rem; margin-bottom: 4px;">Decorative Caveats</h4>
+                    <p style="font-size: 0.8rem; line-height: 1.4; color: var(--ki-grey); margin-bottom: 0;">Caveats that add no epistemic content.</p>
+                </div>
+                <div class="stat-card" style="padding: var(--spacing-md); border-top: 3px solid var(--ki-orange);">
+                    <span class="material-icons" style="color: var(--ki-orange); font-size: 24px; margin-bottom: 8px;">link_off</span>
+                    <h4 style="font-size: 0.95rem; margin-bottom: 4px;">Vague Attribution</h4>
+                    <p style="font-size: 0.8rem; line-height: 1.4; color: var(--ki-grey); margin-bottom: 0;">Citing without engaging arguments.</p>
+                </div>
+                <div class="stat-card" style="padding: var(--spacing-md); border-top: 3px solid var(--ki-orange);">
+                    <span class="material-icons" style="color: var(--ki-orange); font-size: 24px; margin-bottom: 8px;">groups</span>
+                    <h4 style="font-size: 0.95rem; margin-bottom: 4px;">Headcount Bias</h4>
+                    <p style="font-size: 0.8rem; line-height: 1.4; color: var(--ki-grey); margin-bottom: 0;">Deferring to majority over evidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ability Mapping -->
+    <section class="section-blue" id="tiers">
+        <div class="container">
+            <h2 class="section-heading">Mapping to DeepMind Cognitive Taxonomy</h2>
+            <p class="section-subheading">Our 10 judge dimensions map directly to the four sub-abilities identified by DeepMind for measuring progress toward AGI.</p>
+            
+            <div class="features-grid">
+                <!-- Monitoring -->
+                <div class="feature-card" style="border-top: 4px solid #4A9FE8;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--spacing-md);">
+                        <span class="material-icons" style="color: #4A9FE8; font-size: 32px;">visibility</span>
+                        <h3 style="margin-bottom: 0; color: #4A9FE8;">Monitoring</h3>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--ki-grey); margin-bottom: var(--spacing-md);">Tracking reasoning quality and detecting potential errors in real-time.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span style="background: rgba(74,159,232,0.1); color: #4A9FE8; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-family: 'DM Mono', monospace;">Attribution Depth</span>
+                        <span style="background: rgba(74,159,232,0.1); color: #4A9FE8; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-family: 'DM Mono', monospace;">Steelmanning Quality</span>
+                    </div>
+                </div>
+
+                <!-- Control -->
+                <div class="feature-card" style="border-top: 4px solid #F0A830;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--spacing-md);">
+                        <span class="material-icons" style="color: #F0A830; font-size: 32px;">tune</span>
+                        <h3 style="margin-bottom: 0; color: #F0A830;">Control</h3>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--ki-grey); margin-bottom: var(--spacing-md);">Adjusting reasoning strategies and maintaining epistemic integrity under pressure.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span style="background: rgba(240,168,48,0.1); color: #F0A830; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-family: 'DM Mono', monospace;">Logical Grounding</span>
+                        <span style="background: rgba(240,168,48,0.1); color: #F0A830; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-family: 'DM Mono', monospace;">Capitulation Quality</span>
+                        <span style="background: rgba(240,168,48,0.1); color: #F0A830; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-family: 'DM Mono', monospace;">Normative/Informational</span>
+                    </div>
+                </div>
+
+                <!-- Evaluation -->
+                <div class="feature-card" style="border-top: 4px solid #E55555;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--spacing-md);">
+                        <span class="material-icons" style="color: #E55555; font-size: 32px;">fact_check</span>
+                        <h3 style="margin-bottom: 0; color: #E55555;">Evaluation</h3>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--ki-grey); margin-bottom: var(--spacing-md);">Assessing the validity of own conclusions and calibrating confidence.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span style="background: rgba(229,85,85,0.1); color: #E55555; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-family: 'DM Mono', monospace;">Transparency</span>
+                        <span style="background: rgba(229,85,85,0.1); color: #E55555; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-family: 'DM Mono', monospace;">Intellectual Courage</span>
+                        <span style="background: rgba(229,85,85,0.1); color: #E55555; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-family: 'DM Mono', monospace;">Confidence Coherence</span>
+                    </div>
+                </div>
+
+                <!-- Self-regulation -->
+                <div class="feature-card" style="border-top: 4px solid #72AD2A;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: var(--spacing-md);">
+                        <span class="material-icons" style="color: #72AD2A; font-size: 32px;">self_improvement</span>
+                        <h3 style="margin-bottom: 0; color: #72AD2A;">Self-regulation</h3>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--ki-grey); margin-bottom: var(--spacing-md);">Correcting identified errors and managing the overall reasoning process.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <span style="background: rgba(114,173,42,0.1); color: #72AD2A; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-family: 'DM Mono', monospace;">Error Acknowledgement</span>
+                        <span style="background: rgba(114,173,42,0.1); color: #72AD2A; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-family: 'DM Mono', monospace;">Blind Spot Recognition</span>
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top: var(--spacing-xl); text-align: center; color: var(--ki-grey); font-size: var(--md-sys-typescale-body-medium);">
+                Ipsative scoring removes the PC1 general factor, revealing each model's relative ability profile independent of overall performance level.
+            </p>
+        </div>
+    </section>
+
+    <!-- Anti-Gaming -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-heading">Anti-Gaming Controls</h2>
+            <p class="section-subtitle">Six mechanisms prevent models from inflating scores through surface-level strategies</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="material-icons card-icon">visibility_off</span>
+                    <h3>Consensus Masking</h3>
+                    <p>Models never see the ground-truth consensus, only individual analyst opinions.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons card-icon">person_off</span>
+                    <h3>Anonymised Analysts</h3>
+                    <p>Analyst identities are stripped so models cannot game based on model reputation.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons card-icon">science</span>
+                    <h3>Known-Answer Traps</h3>
+                    <p>30 instances with verified correct answers detect sycophantic capitulation to wrong consensus.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons card-icon">fact_check</span>
+                    <h3>Per-Claim Verified-Wrong Scoring</h3>
+                    <p>Scoring operates at the individual claim level, not just overall position.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons card-icon">sync</span>
+                    <h3>3-Judge Circularity Rotation</h3>
+                    <p>No model family judges itself. Three independent judge models rotate across evaluations.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons card-icon">rule</span>
+                    <h3>Anti-Rhetoric Rubric</h3>
+                    <p>Penalises generic humility, decorative caveats, attribution without specificity, and headcount reasoning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instance Generation Pipeline -->
+    <section class="section-orange">
+        <div class="container">
+            <h2 class="section-heading">Instance Generation Pipeline</h2>
+            <p class="section-subtitle">Every instance in MEDLEY-BENCH is generated through a fully automated pipeline with multi-stage quality control. No human annotation is required.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg);">
+                <!-- Step 1 -->
+                <div class="feature-card" style="position: relative; padding-top: calc(var(--spacing-xl) + 8px);">
+                    <div style="position: absolute; top: var(--spacing-md); left: var(--spacing-xl); font-size: 32px; font-weight: 700; color: var(--ki-orange); opacity: 0.5;">1</div>
+                    <span class="material-icons card-icon">lightbulb</span>
+                    <h3>Seed Design</h3>
+                    <p>25 frontier models generate problem seeds across 5 domains, filtered for genuine ambiguity.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="feature-card" style="position: relative; padding-top: calc(var(--spacing-xl) + 8px);">
+                    <div style="position: absolute; top: var(--spacing-md); left: var(--spacing-xl); font-size: 32px; font-weight: 700; color: var(--ki-orange); opacity: 0.5;">2</div>
+                    <span class="material-icons card-icon">diversity_3</span>
+                    <h3>Analyst Collection</h3>
+                    <p>28 mid-range models (8B&ndash;72B) produce independent responses. 8 are adaptively selected per instance to maximise ensemble diversity (+19.9% vs random selection).</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="feature-card" style="position: relative; padding-top: calc(var(--spacing-xl) + 8px);">
+                    <div style="position: absolute; top: var(--spacing-md); left: var(--spacing-xl); font-size: 32px; font-weight: 700; color: var(--ki-orange); opacity: 0.5;">3</div>
+                    <span class="material-icons card-icon">handshake</span>
+                    <h3>Consensus Building</h3>
+                    <p>Jackknife consensus with leave-one-out robustness testing. Per-claim confidence and disagreement scores computed.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="feature-card" style="position: relative; padding-top: calc(var(--spacing-xl) + 8px);">
+                    <div style="position: absolute; top: var(--spacing-md); left: var(--spacing-xl); font-size: 32px; font-weight: 700; color: var(--ki-orange); opacity: 0.5;">4</div>
+                    <span class="material-icons card-icon">verified</span>
+                    <h3>Quality Verification</h3>
+                    <p>3 premium judges verify 650 claims (130 instances &times; 5 claims). 79% agreement rate. Per-claim verified-wrong labels assigned.</p>
+                </div>
+                <!-- Step 5 -->
+                <div class="feature-card" style="position: relative; padding-top: calc(var(--spacing-xl) + 8px);">
+                    <div style="position: absolute; top: var(--spacing-md); left: var(--spacing-xl); font-size: 32px; font-weight: 700; color: var(--ki-orange); opacity: 0.5;">5</div>
+                    <span class="material-icons card-icon">package_2</span>
+                    <h3>Export</h3>
+                    <p>Instances packaged with vignette, analyst responses, consensus, and ground truth. 15 quality gates (G1&ndash;G15) validated.</p>
+                </div>
+            </div>
+
+            <p style="text-align: center; max-width: 900px; margin: var(--spacing-xl) auto 0 auto; color: var(--ki-grey); font-size: var(--md-sys-typescale-body-medium);">
+                The pipeline produces ~50 new instances at ~$15 per batch. Generation time depends on the API providers and models used. The dataset can be extended to new domains without re-annotation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3 class="footer-brand">MEDLEY-BENCH</h3>
+                <p><a href="https://ki.se/en/clintec/stockholm-medical-artificial-intelligence-and-learning-environments-smaile" target="_blank">SMAILE Core Facility, Karolinska Institutet</a></p>
+                <p>&copy; 2026 Licensed under Apache 2.0</p>
+            </div>
+            <div class="footer-column">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="leaderboard.html">Leaderboard</a></li>
+                    <li><a href="methodology.html">Methodology</a></li>
+                    <li><a href="results.html">Results</a></li>
+                    <li><a href="data.html">Data</a></li>
+                    <li><a href="index.html#paper">Paper</a></li>
+                    <li><a href="medley-bench-explorer.html">Explorer</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="https://github.com/ki-smile/medley-bench" target="_blank">GitHub</a></li>
+                    <li><a href="https://pypi.org/project/medley-bench/" target="_blank">Python Library</a></li>
+                    <li><a href="https://www.kaggle.com/datasets/" target="_blank">Kaggle Dataset</a></li>
+                    <li><a href="https://www.kaggle.com/competitions/" target="_blank">Kaggle Competition</a></li>
+                    <li><a href="mailto:farhad.abtahi@ki.se">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><span class="material-icons">arrow_upward</span></button>
+
+    <!-- Scripts -->
+    <script>
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('medley-theme', next);
+            const icon = document.getElementById('theme-icon');
+            if (icon) {
+                icon.textContent = next === 'dark' ? 'light_mode' : 'dark_mode';
+            }
+        }
+        
+        // Theme initialization
+        var theme = localStorage.getItem('medley-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        document.addEventListener('DOMContentLoaded', () => {
+            const icon = document.getElementById('theme-icon');
+            if (icon) {
+                icon.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
+            }
+        });
+
+        function toggleMobileMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+        // Close mobile menu on link click
+        document.querySelectorAll('#navMenu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+        // Close mobile menu on outside click
+        document.addEventListener('click', function(e) {
+            var nav = document.getElementById('navMenu');
+            var toggle = document.querySelector('.nav-toggle');
+            if (nav && nav.classList.contains('active') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+
+        // Back to top logic
+        const btt = document.getElementById('backToTop');
+        if (btt) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) { btt.classList.add('visible'); } 
+                else { btt.classList.remove('visible'); }
+            });
+        }
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    </script>
+</body>
+</html>
+tml>
+

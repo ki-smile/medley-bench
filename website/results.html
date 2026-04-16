@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - MEDLEY-BENCH</title>
+
+    <!-- Material Design 3 -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+</head>
+<body>
+    <!-- Theme initialization (prevents flash) -->
+    <script>
+        var theme = localStorage.getItem('medley-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">MEDLEY-BENCH</a>
+            <button class="nav-toggle" onclick="toggleMobileMenu()">
+                <span class="material-icons">menu</span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="results.html" class="active">Results</a></li>
+                <li><a href="data.html">Data</a></li>
+                <li><a href="index.html#paper">Paper</a></li>
+                <li><a href="medley-bench-explorer.html">Explorer</a></li>
+                <li>
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark theme">
+                        <span class="material-icons" id="theme-icon">dark_mode</span>
+                    </button>
+                </li>
+                <li>
+                    <a href="https://github.com/ki-smile/medley-bench" class="nav-github" target="_blank">
+                        <span class="material-icons">code</span> GitHub
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Results</h1>
+            <p class="page-subtitle">Key findings from 35 models across 12 families</p>
+        </div>
+    </section>
+
+    <!-- Sticky Sub-nav -->
+    <div style="position: sticky; top: 72px; z-index: 90; background: var(--navbar-bg); border-bottom: 1px solid var(--border-color); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="container" style="display: flex; gap: var(--spacing-md); padding: 12px var(--spacing-lg); overflow-x: auto; font-size: 0.85rem; font-family: 'DM Mono', monospace;">
+            <a href="#scale" style="color: var(--text-main); opacity: 0.7; white-space: nowrap;">Scale</a>
+            <a href="#cognitive-map" style="color: var(--text-main); opacity: 0.7; white-space: nowrap;">Cognitive Map</a>
+            <a href="#cross-validation" style="color: var(--text-main); opacity: 0.7; white-space: nowrap;">Cross-Validation</a>
+            <a href="#ipsative-profiles" style="color: var(--text-main); opacity: 0.7; white-space: nowrap;">Ipsative Profiles</a>
+            <a href="#fingerprinting" style="color: var(--text-main); opacity: 0.7; white-space: nowrap;">Fingerprinting</a>
+        </div>
+    </div>
+
+    <!-- Scale vs Metacognition -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-heading">Scale vs Metacognition</h2>
+            <div class="figure-container">
+                <img src="img/fig1_scale_vs_metacognition.png" alt="Model size vs MMS across Gemma and GPT families" style="max-width: 100%; border-radius: 12px; box-shadow: var(--md-sys-elevation-2);">
+                <p class="figure-caption">Figure 1. Model size vs MMS across Gemma and GPT families. Scale shows diminishing and non-monotonic returns.</p>
+            </div>
+            <div class="method-card">
+                <p>
+                    The Gemma family shows non-monotonic scaling: 4B (30) &rarr; 9B (50) &rarr; 12B (60) &rarr; 27B (61) &rarr; Gen4-31B (57).
+                    After 12B, additional parameters yield negligible metacognitive gains and the largest model actually regresses.
+                    The GPT family follows a similar pattern &mdash; raw scale buys evaluation ability but not control.
+                    These diminishing returns suggest that metacognition, unlike task accuracy, is not reliably improved by scaling alone.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cognitive Map -->
+    <section class="section-orange">
+        <div class="container">
+            <h2 class="section-heading">Cognitive Map</h2>
+            <div class="figure-container">
+                <img src="img/fig2_cognitive_map.png" alt="Two-dimensional cognitive map from progressive adversarial testing" style="max-width: 100%; border-radius: 12px; box-shadow: var(--md-sys-elevation-2);">
+                <p class="figure-caption">Figure 2. Two-dimensional cognitive map from progressive adversarial testing.</p>
+            </div>
+            <div class="method-card">
+                <p>
+                    Progressive adversarial testing reveals two distinct behavioural profiles invisible to standard benchmarks:
+                    <strong>argument-evaluators</strong> that engage with the content of analyst reasoning, and
+                    <strong>statistics-followers</strong> that defer primarily to majority counts.
+                    These profiles cluster cleanly in two-dimensional space, with models from the same family often occupying different regions &mdash;
+                    indicating that the distinction reflects training choices rather than architecture.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cross-Validation -->
+    <section class="section-blue" id="cross-validation">
+        <div class="container">
+            <h2 class="section-heading">Cross-Validation</h2>
+            <div class="figure-container">
+                <img src="img/fig3_crossvalidation.png" alt="Normal-mode Normative/Informational dimension predicts adversarial behaviour" style="max-width: 100%; border-radius: 12px; box-shadow: var(--md-sys-elevation-2);">
+                <p class="figure-caption">Figure 3. Normal-mode Normative/Informational dimension predicts adversarial behaviour (&rho; = &minus;0.82, p = 0.002).</p>
+            </div>
+            <div class="method-card">
+                <p>
+                    A single judge dimension from the Kaggle-deployed normal-mode scoring &mdash; Normative vs Informational influence &mdash;
+                    predicts how models behave under adversarial pressure in progressive mode (&rho; = &minus;0.82, p = 0.002).
+                    Models that score high on normative (headcount-based) reasoning in normal mode capitulate most under adversarial consensus.
+                    This cross-validation confirms that the lightweight 3-call benchmark captures real metacognitive differences
+                    that manifest under stress.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ipsative Profiles -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-heading">Ipsative Profiles</h2>
+            <div class="figure-container">
+                <img src="img/fig4_ipsative_heatmap.png" alt="Ipsative ability profiles for top 20 models" style="max-width: 100%; border-radius: 12px; box-shadow: var(--md-sys-elevation-2);">
+                <p class="figure-caption">Figure 4. Ipsative ability profiles for top 20 models.</p>
+            </div>
+            <div class="method-card">
+                <p>
+                    After removing the PC1 general factor through ipsative scoring, a universal pattern emerges:
+                    <strong>Evaluation is every model's weakest relative ability</strong> across all 35 models tested.
+                    Three distinct cognitive types appear in the remaining variance:
+                </p>
+                <div class="cards-grid-3" style="margin-top: var(--spacing-lg);">
+                    <div class="feature-card">
+                        <span class="material-icons card-icon">visibility</span>
+                        <h3>Monitoring-Dominant</h3>
+                        <p>Strong at tracking evidence and attributing analyst reasoning, weaker at acting on it.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="material-icons card-icon">tune</span>
+                        <h3>Control-Dominant</h3>
+                        <p>Strong at resisting pressure and maintaining positions, weaker at recognising when change is warranted.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="material-icons card-icon">self_improvement</span>
+                        <h3>Self-Regulation-Dominant</h3>
+                        <p>Strong at acknowledging errors and blind spots, weaker at systematic evaluation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GPT Case Study -->
+    <section class="section-orange" id="fingerprinting">
+        <div class="container">
+            <h2 class="section-heading">Case Study: The GPT-4.1 vs 5.4 Shift</h2>
+            <p class="section-subheading">Why did users prefer the older model? Ipsative profiling reveals a hidden metacognitive regression.</p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-xl); margin-top: var(--spacing-lg);">
+                <!-- GPT-4.1 Card -->
+                <div class="method-card" style="flex: 1; min-width: 320px; border-top: 6px solid #4A9FE8; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; font-size: 80px; color: #4A9FE8; opacity: 0.05; font-weight: 900;">4.1</div>
+                    <h3 style="color: #4A9FE8; margin-bottom: var(--spacing-md); display: flex; align-items: center; gap: 8px;">
+                        <span class="material-icons">psychology</span>
+                        GPT-4.1 (The "Fan Favourite")
+                    </h3>
+                    <div style="background: rgba(74,159,232,0.1); padding: var(--spacing-md); border-radius: 12px; margin-bottom: var(--spacing-md);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span>Monitoring (ipsative)</span>
+                            <strong style="color: #4A9FE8;">+6.8</strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span>Articulation (T3)</span>
+                            <strong>66.8</strong>
+                        </div>
+                        <div style="width: 100%; height: 6px; background: rgba(0,0,0,0.1); border-radius: 3px; margin-top: 4px;">
+                            <div style="width: 85%; height: 100%; background: #4A9FE8; border-radius: 3px;"></div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.95rem; line-height: 1.6;">
+                        <strong>Behaviour:</strong> High uncertainty awareness. Tracks its own reasoning gaps and hedges appropriately.
+                    </p>
+                    <p style="font-size: 0.85rem; color: var(--ki-grey); border-left: 2px solid #4A9FE8; padding-left: 12px;">
+                        "Users preferred 4.1 because it knew when it might be wrong."
+                    </p>
+                </div>
+
+                <!-- Arrow / VS -->
+                <div style="display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--ki-orange); opacity: 0.5;">
+                    <span class="material-icons" style="font-size: 48px;">trending_flat</span>
+                </div>
+
+                <!-- GPT-5.4 Card -->
+                <div class="method-card" style="flex: 1; min-width: 320px; border-top: 6px solid #F0A830; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -10px; right: -10px; font-size: 80px; color: #F0A830; opacity: 0.05; font-weight: 900;">5.4</div>
+                    <h3 style="color: #F0A830; margin-bottom: var(--spacing-md); display: flex; align-items: center; gap: 8px;">
+                        <span class="material-icons">tune</span>
+                        GPT-5.4 (The "Polished Regression")
+                    </h3>
+                    <div style="background: rgba(240,168,48,0.1); padding: var(--spacing-md); border-radius: 12px; margin-bottom: var(--spacing-md);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span>Monitoring (ipsative)</span>
+                            <strong style="color: #E55555;">-0.1</strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span>Articulation (T3)</span>
+                            <strong style="color: #4CAF50;">70.6 (+3.8)</strong>
+                        </div>
+                        <div style="width: 100%; height: 6px; background: rgba(0,0,0,0.1); border-radius: 3px; margin-top: 4px;">
+                            <div style="width: 45%; height: 100%; background: #E55555; border-radius: 3px;"></div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.95rem; line-height: 1.6;">
+                        <strong>Behaviour:</strong> Polished but overconfident. Sounds more fluent (T3 up) but lost its self-monitoring capacity (Monitoring down).
+                    </p>
+                    <p style="font-size: 0.85rem; color: var(--ki-grey); border-left: 2px solid #F0A830; padding-left: 12px;">
+                        "Sounds better, feels worse: a model that is confidently wrong."
+                    </p>
+                </div>
+            </div>
+
+            <div class="method-card" style="margin-top: var(--spacing-xl); background: var(--bg-surface-variant); text-align: center;">
+                <p style="margin-bottom: 0;">
+                    <strong>The Lesson:</strong> Users are sensitive to metacognitive quality. Articulation (T3) can mask a drop in Monitoring, but it cannot replace it. Ipsative profiling captures this shift where aggregate benchmarks failed.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metacognitive Fingerprinting -->
+    <section class="section-blue">
+        <div class="container">
+            <h2 class="section-heading">Metacognitive Fingerprinting</h2>
+            <p class="section-subheading">
+                Ipsative profiles act as behavioural signatures that distinguish model families &mdash; and may reveal training provenance.
+            </p>
+
+            <div class="table-wrapper">
+            <table class="data-table" style="margin-top: var(--spacing-lg);">
+                <thead>
+                    <tr>
+                        <th>Family</th>
+                        <th>Dominant Ability</th>
+                        <th>Mon</th>
+                        <th>Ctrl</th>
+                        <th>Eval</th>
+                        <th>SReg</th>
+                        <th>Signature</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Claude (Haiku, Sonnet)</td><td><span class="badge" style="background: #2196F3; color: white;">Mon-dominant</span></td><td><strong>+6.6</strong></td><td>+1.4</td><td>-2.8</td><td>-5.2</td><td>Unique</td></tr>
+                    <tr><td>GPT-4.1</td><td><span class="badge" style="background: #2196F3; color: white;">Mon-dominant</span></td><td><strong>+6.8</strong></td><td>-1.1</td><td>-7.9</td><td>+2.3</td><td>Unique</td></tr>
+                    <tr><td>GPT-5.4 family</td><td><span class="badge" style="background: #FF9800; color: white;">Ctrl-dominant</span></td><td>-0.1</td><td><strong>+6.1</strong></td><td>-8.7</td><td>+2.7</td><td>Unique</td></tr>
+                    <tr><td>Gemma (all models)</td><td><span class="badge" style="background: #4CAF50; color: white;">SReg-dominant</span></td><td>-0.2</td><td>+1.2</td><td>-6.0</td><td><strong>+5.0</strong></td><td>Unique</td></tr>
+                    <tr style="border-top: 2px solid var(--border-color);"><td>Qwen 3 (32B, 8B)</td><td><span class="badge" style="background: #2196F3; color: white;">Mon-dominant</span></td><td><strong>+7.1</strong></td><td>+3.9</td><td>-8.8</td><td>-2.3</td><td>Matches GPT-4.1</td></tr>
+                    <tr><td>Qwen 3.5 (397B, 27B)</td><td><span class="badge" style="background: #FF9800; color: white;">Ctrl-dominant</span></td><td>+3.8</td><td><strong>+4.8</strong></td><td>-6.4</td><td>-2.2</td><td>Matches GPT-5.4</td></tr>
+                    <tr><td>DeepSeek (V3.2, V3-0324)</td><td><span class="badge" style="background: #FF9800; color: white;">Ctrl-dominant</span></td><td>+3.5</td><td><strong>+5.2</strong></td><td>-7.9</td><td>-0.7</td><td>Matches GPT-5.4</td></tr>
+                </tbody>
+            </table>
+            </div>
+
+            <div class="cards-grid-2" style="margin-top: var(--spacing-lg);">
+                <div class="feature-card">
+                    <span class="material-icons card-icon">fingerprint</span>
+                    <h3>The Distillation Hypothesis</h3>
+                    <p>
+                        If a model is distilled from a specific teacher, it should inherit the teacher's metacognitive
+                        fingerprint. Qwen 3 matches GPT-4.1's monitoring-dominant profile; Qwen 3.5 shifted to match
+                        GPT-5.4's control-dominant profile &mdash; mirroring the exact generational shift. DeepSeek
+                        consistently matches GPT-5.4. Gemma, trained independently, has a unique self-regulation-dominant
+                        signature that no other family shares.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons card-icon">balance</span>
+                    <h3>Correlation, Not Proof</h3>
+                    <p>
+                        Profile similarity is not evidence of distillation &mdash; convergent training objectives could produce
+                        similar signatures. However, the observation that some families' profiles track another family's
+                        generational shifts (Qwen 3&rarr;3.5 mirroring GPT-4.1&rarr;5.4) while others remain unique (Gemma)
+                        suggests metacognitive fingerprinting may complement existing provenance analysis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ensemble Selection -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-heading">Ipsative Profiles for Ensemble Diversity</h2>
+            <p class="section-subheading">
+                The <a href="https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2026.1701665/full" target="_blank">Medley framework</a>
+                establishes that ensemble quality depends on diversity and complementarity. Ipsative profiles operationalise this for metacognition.
+            </p>
+
+            <div class="cards-grid-3" style="margin-top: var(--spacing-lg);">
+                <div class="feature-card" style="border-top: 4px solid #2196F3;">
+                    <span class="material-icons card-icon" style="color: #2196F3;">psychology</span>
+                    <h3>Monitoring-Dominant</h3>
+                    <p><strong>Claude Haiku, GPT-4.1</strong></p>
+                    <p>Tracks uncertainty, knows when it might be wrong. Catches errors that other models miss.</p>
+                </div>
+                <div class="feature-card" style="border-top: 4px solid #FF9800;">
+                    <span class="material-icons card-icon" style="color: #FF9800;">tune</span>
+                    <h3>Control-Dominant</h3>
+                    <p><strong>GPT-5.4, DeepSeek V3.2</strong></p>
+                    <p>Adjusts strategy under pressure, resists unjustified capitulation. Holds ground when right.</p>
+                </div>
+                <div class="feature-card" style="border-top: 4px solid #4CAF50;">
+                    <span class="material-icons card-icon" style="color: #4CAF50;">auto_fix_high</span>
+                    <h3>Self-Regulation-Dominant</h3>
+                    <p><strong>Gemma 3 27B, Gemma 4 31B</strong></p>
+                    <p>Acknowledges errors and blind spots. Identifies what it originally missed.</p>
+                </div>
+            </div>
+
+            <div class="method-card" style="margin-top: var(--spacing-lg);">
+                <h3><span class="material-icons" style="vertical-align: middle; margin-right: 4px;">groups</span> Practical Implication</h3>
+                <p>
+                    An ensemble combining one model from each profile cluster &mdash; e.g., Claude Haiku (monitoring) +
+                    GPT-5.4 (control) + Gemma 3 27B (self-regulation) &mdash; covers all four metacognitive sub-abilities.
+                    Three control-dominant models, however individually capable, would share the same monitoring blind spot.
+                </p>
+                <p style="margin-top: var(--spacing-sm);">
+                    <strong>Selection criterion:</strong> maximise metacognitive diversity by selecting models from different
+                    ipsative profile clusters, rather than selecting on aggregate score alone. This directly implements the
+                    Medley principle that diversity outweighs individual excellence.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Domain Analysis -->
+    <section class="section-orange">
+        <div class="container">
+            <h2 class="section-heading">Domain Analysis</h2>
+            <div class="method-card">
+                <h3>Metacognition Is Domain-General</h3>
+                <p>
+                    Cross-domain correlations range from &rho; = 0.72 to &rho; = 0.92, indicating that metacognitive ability
+                    transfers across reasoning types. Models that reason well about medical diagnoses also reason well about
+                    code review and statistical problems.
+                </p>
+            </div>
+            <div class="cards-grid-2" style="margin-top: var(--spacing-lg);">
+                <div class="feature-card">
+                    <span class="material-icons card-icon">content_copy</span>
+                    <h3>Code Review: Redundant</h3>
+                    <p>
+                        Removing code review from the domain set changes the overall ranking correlation by only &rho; = 0.995.
+                        It measures the same metacognitive construct as other domains with near-perfect overlap.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons card-icon">analytics</span>
+                    <h3>Statistical Reasoning: Uniquely Informative</h3>
+                    <p>
+                        Removing statistical reasoning drops the ranking correlation to &rho; = 0.977 &mdash; the largest single-domain
+                        contribution. Formal reasoning provides unique signal about metacognitive capacity not captured elsewhere.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3 class="footer-brand">MEDLEY-BENCH</h3>
+                <p><a href="https://ki.se/en/clintec/stockholm-medical-artificial-intelligence-and-learning-environments-smaile" target="_blank">SMAILE Core Facility, Karolinska Institutet</a></p>
+                <p>&copy; 2026 Licensed under Apache 2.0</p>
+            </div>
+            <div class="footer-column">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="leaderboard.html">Leaderboard</a></li>
+                    <li><a href="methodology.html">Methodology</a></li>
+                    <li><a href="results.html">Results</a></li>
+                    <li><a href="data.html">Data</a></li>
+                    <li><a href="index.html#paper">Paper</a></li>
+                    <li><a href="medley-bench-explorer.html">Explorer</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="https://github.com/ki-smile/medley-bench" target="_blank">GitHub</a></li>
+                    <li><a href="https://pypi.org/project/medley-bench/" target="_blank">Python Library</a></li>
+                    <li><a href="https://www.kaggle.com/datasets/" target="_blank">Kaggle Dataset</a></li>
+                    <li><a href="https://www.kaggle.com/competitions/" target="_blank">Kaggle Competition</a></li>
+                    <li><a href="mailto:farhad.abtahi@ki.se">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><span class="material-icons">arrow_upward</span></button>
+
+    <!-- Scripts -->
+    <script>
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('medley-theme', next);
+            const icon = document.getElementById('theme-icon');
+            if (icon) {
+                icon.textContent = next === 'dark' ? 'light_mode' : 'dark_mode';
+            }
+        }
+        
+        // Theme initialization
+        var theme = localStorage.getItem('medley-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        document.addEventListener('DOMContentLoaded', () => {
+            const icon = document.getElementById('theme-icon');
+            if (icon) {
+                icon.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
+            }
+        });
+
+        function toggleMobileMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+        // Close mobile menu on link click
+        document.querySelectorAll('#navMenu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+        // Close mobile menu on outside click
+        document.addEventListener('click', function(e) {
+            var nav = document.getElementById('navMenu');
+            var toggle = document.querySelector('.nav-toggle');
+            if (nav && nav.classList.contains('active') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+
+        // Back to top logic
+        const btt = document.getElementById('backToTop');
+        if (btt) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) { btt.classList.add('visible'); } 
+                else { btt.classList.remove('visible'); }
+            });
+        }
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    </script>
+</body>
+</html>
+

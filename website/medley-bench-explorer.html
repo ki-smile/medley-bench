@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorer - MEDLEY-BENCH</title>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+    <style>
+        /* Explorer-specific styles using site variables */
+        .explorer-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+        .viz-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--md-sys-elevation-1);
+        }
+        .viz-section-head {
+            margin-bottom: var(--spacing-lg);
+        }
+        .viz-section-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            max-width: 800px;
+        }
+        .q-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: var(--spacing-xl);
+        }
+        @media (max-width: 900px) {
+            .q-layout { grid-template-columns: 1fr; }
+        }
+        .detail-card {
+            background: var(--bg-surface-variant);
+            border-radius: 12px;
+            padding: var(--spacing-md);
+            position: sticky;
+            top: 100px;
+        }
+        .detail-placeholder {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--ki-grey);
+            font-style: italic;
+            border: 1px dashed var(--border-color);
+            border-radius: 8px;
+        }
+        .mbar { width: 60px; height: 4px; background: rgba(0,0,0,0.1); border-radius: 2px; margin-left: 10px; }
+        .hm-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .hm-table th { text-align: left; padding: 12px 8px; border-bottom: 2px solid var(--border-color); cursor: pointer; }
+        .hm-table td { padding: 8px; border-bottom: 1px solid var(--border-color); }
+        .hm-table tr:hover { background: var(--bg-surface-variant); }
+        .srt::after { content: " \2195"; opacity: 0.5; font-size: 10px; }
+        
+        .radar-layout { display: grid; grid-template-columns: 320px 1fr; gap: var(--spacing-xl); }
+        @media (max-width: 800px) { .radar-layout { grid-template-columns: 1fr; } }
+        .radar-legend { display: flex; flex-direction: column; gap: 10px; }
+        .radar-legend-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px; border-radius: 8px; background: var(--bg-surface-variant); }
+        .radar-chip { width: 12px; height: 12px; border-radius: 3px; margin-top: 3px; flex-shrink: 0; }
+        
+        .fam-btns { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: var(--spacing-md); }
+        .fam-btn { padding: 4px 12px; border-radius: 20px; font-size: 12px; border: 1px solid var(--border-color); background: var(--bg-surface); cursor: pointer; transition: 0.2s; }
+        .fam-btn.on { background: var(--ki-plum); color: white !important; border-color: var(--ki-plum); }
+        
+        .explorer-nav {
+            position: sticky;
+            top: 72px;
+            z-index: 90;
+            background: var(--navbar-bg);
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            padding: 10px;
+        }
+        .explorer-nav a {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            color: var(--text-main);
+            opacity: 0.6;
+            padding: 6px 12px;
+            border-radius: 6px;
+        }
+        .explorer-nav a:hover {
+            background: var(--ki-plum);
+            color: white;
+        }
+        /* Viz card responsiveness */
+        @media (max-width: 768px) {
+            .viz-card, .pc-card, .radar-card {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .viz-card svg, .pc-card svg, .radar-card svg {
+                min-width: 500px; /* Force minimum width to keep detail readable */
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme initialization (prevents flash) -->
+    <script>
+        var theme = localStorage.getItem('medley-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">MEDLEY-BENCH</a>
+            <button class="nav-toggle" onclick="toggleMobileMenu()">
+                <span class="material-icons">menu</span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="data.html">Data</a></li>
+                <li><a href="index.html#paper">Paper</a></li>
+                <li><a href="medley-bench-explorer.html" class="active">Explorer</a></li>
+                <li>
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark theme">
+                        <span class="material-icons" id="theme-icon">dark_mode</span>
+                    </button>
+                </li>
+                <li>
+                    <a href="https://github.com/ki-smile/medley-bench" class="nav-github" target="_blank">
+                        <span class="material-icons">code</span> GitHub
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Metacognitive Profile Explorer</h1>
+            <p class="page-subtitle">Interactive multidimensional analysis of 35 frontier models.</p>
+        </div>
+    </header>
+
+    <!-- Sub-nav -->
+    <div class="explorer-nav">
+        <a href="#quadrant">Quadrants</a>
+        <a href="#parallel">Parallel</a>
+        <a href="#radar">Radar</a>
+        <a href="#heatmap">Heatmap</a>
+        <a href="#findings">Findings</a>
+    </div>
+
+    <!-- Quadrant Section -->
+    <section class="section-white" id="quadrant">
+        <div class="container">
+            <div class="viz-section-head">
+                <h2 class="section-heading" style="text-align:left;">Monitoring & Control</h2>
+                <p class="viz-section-desc">The two-dimensional space of independent analysis (Monitoring) and strategic belief revision (Control). Size indicates overall MMS.</p>
+            </div>
+            
+            <div class="q-layout">
+                <div class="viz-card">
+                    <svg id="qsc" viewBox="0 0 580 430" style="width:100%; height:auto;"></svg>
+                    <div id="qleg" style="display:flex; flex-wrap:wrap; gap:12px; margin-top:15px; font-size:11px;"></div>
+                </div>
+                <div class="detail-card" id="qdet">
+                    <p class="detail-placeholder">hover a model<br><span>to inspect its profile</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallel Coords -->
+    <section class="section-orange" id="parallel">
+        <div class="container">
+            <div class="viz-section-head">
+                <h2 class="section-heading" style="text-align:left;">Ability Fingerprints</h2>
+                <p class="viz-section-desc">Raw ipsative profiles across the four core sub-abilities. Hover a line to isolate a specific model.</p>
+            </div>
+            <div class="viz-card pc-card" style="padding: 30px 10px;">
+                <svg id="pcsvg" viewBox="0 0 780 300" style="width:100%; height:auto;"></svg>
+                <div id="pcleg" style="display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; font-size:11px; justify-content:center;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Radar Section -->
+    <section class="section-white" id="radar">
+        <div class="container">
+            <div class="viz-section-head">
+                <h2 class="section-heading" style="text-align:left;">Family Archetypes</h2>
+                <p class="viz-section-desc">Aggregate profiles by model family. Select families to compare their cognitive signatures.</p>
+            </div>
+            <div class="radar-layout">
+                <div class="radar-legend" id="rleg"></div>
+                <div class="viz-card radar-card" style="display:flex; flex-direction:column; align-items:center;">
+                    <div class="fam-btns" id="rbtns"></div>
+                    <svg id="rsvg" viewBox="0 0 300 300" style="width:100%; max-width:450px; height:auto;"></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ipsative Score Heatmap -->
+    <section class="section-blue" id="heatmap">
+        <div class="container">
+            <div class="viz-section-head">
+                <h2 class="section-heading" style="text-align:left;">Ipsative Score Heatmap</h2>
+                <div style="display: flex; align-items: center; gap: var(--spacing-md); flex-wrap: wrap;">
+                    <div class="filter-group" style="display: flex; align-items: center; gap: 8px;">
+                        <label for="famFilter" style="font-size: 0.85rem; color: var(--ki-grey); font-family: 'DM Mono', monospace;">Filter:</label>
+                        <select id="famFilter" style="background: var(--bg-surface-variant); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 8px; padding: 4px 12px; font-size: 0.85rem; cursor: pointer; outline: none;">
+                            <option value="all">All Families</option>
+                        </select>
+                    </div>
+                    <p class="viz-section-desc" style="margin-bottom:0;">Click any header to sort. Blue = positive ipsative; red = negative.</p>
+                </div>
+            </div>
+            <div class="hm-card">
+                <table class="hm-table" id="hmtbl"></table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Findings -->
+    <section class="section-white" id="findings">
+        <div class="container">
+            <h2 class="section-heading">Research Findings</h2>
+            <div class="features-grid">
+                <div class="finding-card">
+                    <div class="finding-num">F-01</div>
+                    <div class="finding-accent" style="background:var(--color-mon);"></div>
+                    <div class="finding-title">Evaluation scales with size. Control does not.</div>
+                    <p class="finding-body">Evaluation improves <strong>+5&ndash;12 pts/family</strong> with scale. Control shows no trend &mdash; a dissociation replicated across all 12 families.</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-num">F-02</div>
+                    <div class="finding-accent" style="background:var(--color-ctrl);"></div>
+                    <div class="finding-title">Two behavioural archetypes emerge.</div>
+                    <p class="finding-body"><strong>Argument-evaluators</strong> revise on logic (Anthropic). <strong>Statistics-followers</strong> revise with majority (xAI, GPT-5.x).</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-num">F-03</div>
+                    <div class="finding-accent" style="background:var(--color-sreg);"></div>
+                    <div class="finding-title">Judge dimension predicts robustness.</div>
+                    <p class="finding-body">Normative/informational judge axis correlates <strong>&rho; = &minus;0.82, p = 0.002</strong> with adversarial robustness &mdash; strongest predictor found.</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-num">F-04</div>
+                    <div class="finding-accent" style="background:var(--color-eval);"></div>
+                    <div class="finding-title">Evaluation is universally weakest.</div>
+                    <p class="finding-body">Across all <strong>35 models</strong>, Evaluation is the most negative ipsative ability &mdash; no exception found. Self-evaluation is the systematic bottleneck.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3 class="footer-brand">MEDLEY-BENCH</h3>
+                <p><a href="https://ki.se/en/clintec/stockholm-medical-artificial-intelligence-and-learning-environments-smaile" target="_blank">SMAILE Core Facility, Karolinska Institutet</a></p>
+                <p>&copy; 2026 Licensed under Apache 2.0</p>
+            </div>
+            <div class="footer-column">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="leaderboard.html">Leaderboard</a></li>
+                    <li><a href="methodology.html">Methodology</a></li>
+                    <li><a href="results.html">Results</a></li>
+                    <li><a href="data.html">Data</a></li>
+                    <li><a href="index.html#paper">Paper</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="https://github.com/ki-smile/medley-bench" target="_blank">GitHub</a></li>
+                    <li><a href="https://pypi.org/project/medley-bench/" target="_blank">Python Library</a></li>
+                    <li><a href="https://www.kaggle.com/datasets/" target="_blank">Kaggle Dataset</a></li>
+                    <li><a href="https://www.kaggle.com/competitions/" target="_blank">Kaggle Competition</a></li>
+                    <li><a href="mailto:farhad.abtahi@ki.se">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><span class="material-icons">arrow_upward</span></button>
+
+    <!-- Scripts -->
+    <script>
+    function toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('medley-theme', next);
+        const icon = document.getElementById('theme-icon');
+        if (icon) {
+            icon.textContent = next === 'dark' ? 'light_mode' : 'dark_mode';
+        }
+    }
+    
+    // Theme initialization
+    var theme = localStorage.getItem('medley-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    document.addEventListener('DOMContentLoaded', () => {
+        const icon = document.getElementById('theme-icon');
+        if (icon) {
+            icon.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
+        }
+    });
+
+    function toggleMobileMenu() {
+        document.getElementById('navMenu').classList.toggle('active');
+    }
+    document.querySelectorAll('#navMenu a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            document.getElementById('navMenu').classList.remove('active');
+        });
+    });
+    document.addEventListener('click', function(e) {
+        var nav = document.getElementById('navMenu');
+        var toggle = document.querySelector('.nav-toggle');
+        if (nav && nav.classList.contains('active') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+            nav.classList.remove('active');
+        }
+    });
+
+    // Back to top logic
+    const btt = document.getElementById('backToTop');
+    if (btt) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) { btt.classList.add('visible'); } 
+            else { btt.classList.remove('visible'); }
+        });
+    }
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+    /* ── DATA ──────────────────────────────────────────────────── */
+    const MD=[
+      {n:"Claude Haiku 4.5",s:"Haiku 4.5",f:"Anthropic",mms:62.2,v:[6.6,1.7,-2.1,-5.9]},
+      {n:"Gemma-3 27B",s:"Gemma 27B",f:"Google",mms:61.1,v:[0.3,1.6,-5.5,5.5]},
+      {n:"Qwen 3.5 397B",s:"Qwen 397B",f:"Qwen",mms:61.0,v:[3.9,5.1,-5.8,-2.8]},
+      {n:"Gemini 3 Flash",s:"Gem3 Flash",f:"Google",mms:60.7,v:[3.2,2.3,-6.5,3.0]},
+      {n:"Claude Sonnet 4.5",s:"Sonnet 4.5",f:"Anthropic",mms:60.4,v:[6.9,1.3,-3.2,-4.1]},
+      {n:"Gemma-3 12B",s:"Gemma 12B",f:"Google",mms:60.1,v:[0.8,1.2,-5.1,5.0]},
+      {n:"Kimi K2.5",s:"Kimi K2.5",f:"Moonshot",mms:59.8,v:[4.5,4.1,-5.6,-2.2]},
+      {n:"GPT-4.1",s:"GPT-4.1",f:"OpenAI",mms:59.6,v:[7.7,-0.2,-7.0,3.2]},
+      {n:"DeepSeek V3.2",s:"DS V3.2",f:"DeepSeek",mms:59.5,v:[2.8,5.6,-6.2,-2.0]},
+      {n:"Grok-3 Mini",s:"Grok-3 Mini",f:"xAI",mms:59.4,v:[0.4,7.0,-7.7,0.6]},
+      {n:"Grok 4.1 Fast",s:"Grok 4.1F",f:"xAI",mms:59.4,v:[-1.1,5.2,-5.3,1.2]},
+      {n:"Gemini Flash-Lite",s:"Flash-Lite",f:"Google",mms:58.9,v:[2.3,4.9,-7.9,2.1]},
+      {n:"GPT-5.4",s:"GPT-5.4",f:"OpenAI",mms:58.7,v:[0.2,6.3,-8.5,3.0]},
+      {n:"GPT-4.1 Mini",s:"GPT-4.1 Mini",f:"OpenAI",mms:58.7,v:[9.5,0.1,-5.8,-0.9]},
+      {n:"Gemini 3.1 Pro",s:"Gem3.1 Pro",f:"Google",mms:58.5,v:[2.9,2.4,-7.1,4.1]},
+      {n:"GPT-5.4 Mini",s:"GPT-5.4 Mini",f:"OpenAI",mms:58.3,v:[3.0,6.3,-7.9,-0.7]},
+      {n:"Qwen 3.5 27B",s:"Qwen3.5 27B",f:"Qwen",mms:58.1,v:[4.0,4.7,-6.6,-1.1]},
+      {n:"DeepSeek V3-0324",s:"DS V3-0324",f:"DeepSeek",mms:57.7,v:[4.7,5.2,-9.0,1.1]},
+      {n:"MiMo V2 Pro",s:"MiMo V2",f:"Xiaomi",mms:57.3,v:[5.5,5.6,-6.8,-3.7]},
+      {n:"Qwen 3 32B",s:"Qwen3 32B",f:"Qwen",mms:57.2,v:[7.7,3.6,-6.9,-2.8]},
+    ];
+    const FC={"Anthropic":"#E06235","Google":"#4A9FE8","OpenAI":"#22B57A","DeepSeek":"#8F88E8","Qwen":"#F0A830","xAI":"#909090","Moonshot":"#E06095","Xiaomi":"#E55555"};
+    const ABC=["var(--color-mon)","var(--color-ctrl)","var(--color-eval)","var(--color-sreg)"];
+    const ABS=["Mon","Ctrl","Eval","SReg"];
+    const ABL=["Monitoring","Control","Evaluation","Self-reg"];
+    const NS="http://www.w3.org/2000/svg";
+
+    /* Helper: detect current theme colors */
+    function isDark() { return document.documentElement.getAttribute('data-theme') !== 'light'; }
+    function gridColor(op) { 
+        return isDark() ? `rgba(160, 136, 152, ${op})` : `rgba(102, 85, 102, ${op})`; 
+    }
+    function textColor(op) { 
+        return isDark() ? `rgba(245, 237, 243, ${op})` : `rgba(26, 10, 22, ${op})`; 
+    }
+
+    function se(t,a){const e=document.createElementNS(NS,t);if(a)for(const[k,v]of Object.entries(a))e.setAttribute(k,v);return e;}
+    function mk(t,css,txt){const e=document.createElement(t);if(css)e.style.cssText=css;if(txt!==undefined)e.textContent=txt;return e;}
+    function tdE(css,child){const c=document.createElement("td");if(css)c.style.cssText=css;if(child instanceof HTMLElement)c.appendChild(child);else if(typeof child==="string")c.textContent=child;return c;}
+
+    /* ── SCATTER ─────────────────────────────────────────────────── */
+    (function(){
+      const W=580,H=430,PL=58,PR=36,PT=34,PB=50;
+      const CW=W-PL-PR,CH=H-PT-PB;
+      const mxV=MD.map(m=>m.v[0]),cyV=MD.map(m=>m.v[1]);
+      const x0=Math.min(...mxV)-1.5,x1=Math.max(...mxV)+1.5;
+      const y0=Math.min(...cyV)-1.5,y1=Math.max(...cyV)+1.5;
+      const sx=v=>PL+(v-x0)/(x1-x0)*CW;
+      const sy=v=>PT+(1-(v-y0)/(y1-y0))*CH;
+      const ox=sx(0),oy=sy(0);
+      let hov=null,pin=null;
+      const sc=document.getElementById("qsc");
+      const bG=se("g"),aG=se("g"),dG=se("g");
+      sc.append(bG,aG,dG);
+      // quadrant fills
+      [[ox,PT,W-PR,oy,"var(--color-mon)"],[PL,PT,ox,oy,"#888"],[PL,oy,ox,H-PB,"var(--color-sreg)"],[ox,oy,W-PR,H-PB,"var(--color-ctrl)"]].forEach(([rx,ry,rx2,ry2,c])=>{
+        const r=se("rect",{x:rx,y:ry,width:rx2-rx,height:ry2-ry});r.setAttribute("style",`fill:${c};opacity:.04;`);bG.appendChild(r);
+      });
+      // grid lines
+      for(let v=-10;v<=10;v+=2){if(v===0)continue;
+        const x=sx(v),y=sy(v);
+        if(x>PL&&x<W-PR){const l=se("line",{x1:x,y1:PT,x2:x,y2:H-PB});l.setAttribute("style",`stroke:${gridColor(.08)};stroke-width:.5;stroke-dasharray:2,5;`);aG.appendChild(l);}
+        if(y>PT&&y<H-PB){const l=se("line",{x1:PL,y1:y,x2:W-PR,y2:y});l.setAttribute("style",`stroke:${gridColor(.08)};stroke-width:.5;stroke-dasharray:2,5;`);aG.appendChild(l);}
+      }
+      // zero axes
+      [se("line",{x1:PL,y1:oy,x2:W-PR,y2:oy}),se("line",{x1:ox,y1:PT,x2:ox,y2:H-PB})].forEach(l=>{l.setAttribute("style",`stroke:${gridColor(.25)};stroke-width:.8;`);aG.appendChild(l);});
+      // tick labels
+      [-8,-4,4,8].forEach(v=>{
+        const x=sx(v);if(x>PL+4&&x<W-PR-4){const t=se("text",{x,y:H-PB+14,"text-anchor":"middle"});t.setAttribute("style",`fill:${textColor(.5)};font-size:9px;font-family:'DM Mono',monospace;`);t.textContent=v>0?`+${v}`:v;aG.appendChild(t);}
+        const y=sy(v);if(y>PT+4&&y<H-PB-4){const t=se("text",{x:PL-6,y,"text-anchor":"end","dominant-baseline":"middle"});t.setAttribute("style",`fill:${textColor(.5)};font-size:9px;font-family:'DM Mono',monospace;`);t.textContent=v>0?`+${v}`:v;aG.appendChild(t);}
+      });
+      const axLabs=[["Monitoring \u2192",W-PR,oy+20,"end",null],["Control \u2192",ox-10,PT+4,"middle","rotate(-90 "+(ox-10)+" "+(PT+4)+")"]];
+      axLabs.forEach(([txt,x,y,ta,tr])=>{const t=se("text",{x,y,"text-anchor":ta});if(tr)t.setAttribute("transform",tr);t.setAttribute("style",`fill:${textColor(.42)};font-size:10px;font-family:'DM Mono',monospace;`);t.textContent=txt;aG.appendChild(t);});
+      // quadrant labels
+      [["high Mon \u00b7 low Ctrl",(ox+W-PR)/2,PT+16,"var(--color-mon)"],["low both",(PL+ox)/2,PT+16,"#888"],["low Mon \u00b7 high Ctrl",(PL+ox)/2,oy+18,"var(--color-sreg)"],["high both",(ox+W-PR)/2,oy+18,"var(--color-ctrl)"]].forEach(([txt,x,y,c])=>{const t=se("text",{x,y,"text-anchor":"middle"});t.setAttribute("style",`fill:${c};font-size:8px;font-family:'DM Mono',monospace;opacity:.45;`);t.textContent=txt;aG.appendChild(t);});
+      // family connectors
+      const fIdx={};MD.forEach((m,i)=>{if(!fIdx[m.f])fIdx[m.f]=[];fIdx[m.f].push(i);});
+      Object.values(fIdx).forEach(arr=>{if(arr.length<2)return;
+        arr.forEach((a,i)=>arr.forEach((b,j)=>{if(j<=i)return;
+          const l=se("line",{x1:sx(MD[a].v[0]),y1:sy(MD[a].v[1]),x2:sx(MD[b].v[0]),y2:sy(MD[b].v[1])});
+          l.setAttribute("style",`stroke:${FC[MD[a].f]};stroke-width:.7;stroke-dasharray:2,7;opacity:.18;`);dG.appendChild(l);
+        }));
+      });
+      // dots
+      const cirs=[],glows=[],txtls=[];
+      MD.forEach((m,i)=>{
+        const x=sx(m.v[0]),y=sy(m.v[1]),r=3.5+(m.mms-57)*.75;
+        const g=se("g");g.setAttribute("style","cursor:pointer;");
+        const gl=se("circle",{cx:x,cy:y,r:r+5});gl.setAttribute("style",`fill:${FC[m.f]};opacity:0;`);
+        const c=se("circle",{cx:x,cy:y,r});c.setAttribute("style",`fill:${FC[m.f]};opacity:.75;`);
+        const t=se("text",{x:x+r+3,y,"dominant-baseline":"middle"});t.setAttribute("style",`fill:${textColor(.42)};font-size:8.5px;font-family:'DM Mono',monospace;`);t.textContent=m.s;
+        g.append(gl,c,t);
+        g.addEventListener("mouseenter",()=>{hov=i;upd();det(i);});
+        g.addEventListener("click",()=>{pin=pin===i?null:i;upd();det(pin!==null?pin:i);});
+        dG.appendChild(g);cirs.push(c);glows.push(gl);txtls.push(t);
+      });
+      sc.addEventListener("mouseleave",()=>{if(pin===null){hov=null;upd();clr();}});
+      function upd(){MD.forEach((m,i)=>{const a=hov===i||pin===i;
+        cirs[i].setAttribute("style",`fill:${FC[m.f]};opacity:${a?1:.72};stroke:rgba(255,255,255,.22);stroke-width:${a?1.2:0};`);
+        glows[i].setAttribute("style",`fill:${FC[m.f]};opacity:${a?.2:0};`);
+        txtls[i].setAttribute("style",`fill:${textColor(a?.85:.38)};font-size:8.5px;font-family:'DM Mono',monospace;`);
+      });}
+      function clr(){document.getElementById("qdet").innerHTML='<p class="detail-placeholder">hover a model<br><span>to inspect its profile</span></p>';}
+      function det(i){
+        const m=MD[i],d=document.getElementById("qdet");d.innerHTML="";
+        const fc=FC[m.f];
+        d.appendChild(mk("div","font-size:15px;font-weight:600;color:var(--ki-dark-plum);margin-bottom:2px;",m.n));
+        d.appendChild(mk("div","font-size:12px;color:var(--ki-grey);margin-bottom:14px;font-family:'DM Mono',monospace;",`${m.f} \u00b7 MMS ${m.mms}`));
+        ABS.forEach((lb,j)=>{
+          const val=m.v[j],c=ABC[j],w=Math.abs(val)/12*44;
+          const row=mk("div","margin-bottom:10px;");
+          const hdr=mk("div","display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;font-family:'DM Mono',monospace;");
+          hdr.appendChild(mk("span",`color:${c};font-weight:500;`,lb));
+          hdr.appendChild(mk("span",`color:${val>=0?c:"var(--color-eval)"};`,val>0?`+${val}`:String(val)));
+          const bg=mk("div","height:4px;background:var(--md-sys-color-outline-variant);border-radius:2px;position:relative;");
+          bg.appendChild(mk("div",`height:100%;border-radius:2px;background:${c};position:absolute;${val>=0?"left:50%":"left:"+(50-w)+"%"};width:${w}%;opacity:${val>0?.88:.35};`));
+          bg.appendChild(mk("div","position:absolute;left:50%;top:-2px;width:1px;height:8px;background:var(--md-sys-color-outline-variant);"));
+          row.append(hdr,bg);d.appendChild(row);
+        });
+        const dom=m.v[0]>5&&m.v[1]<2?"Monitoring-dominant":m.v[1]>5&&m.v[0]<2?"Control-dominant":m.v[0]>4&&m.v[1]>4?"Both elevated":"Mixed profile";
+        d.appendChild(mk("div",`margin-top:14px;font-size:11px;padding:5px 10px;border-radius:20px;border:1px solid ${fc}40;background:${fc}10;color:${fc};font-family:'DM Mono',monospace;display:inline-block;`,dom));
+        d.appendChild(mk("div","font-size:11px;color:var(--ki-grey);margin-top:10px;border-top:1px solid var(--md-sys-color-outline-variant);padding-top:8px;",pin===i?"click to unpin":"click to pin \u00b7 hover another to compare"));
+      }
+      const leg=document.getElementById("qleg");
+      Object.entries(FC).forEach(([f,c])=>{const s=mk("span","");s.className="legend-item";s.appendChild(mk("span",`width:8px;height:8px;border-radius:50%;background:${c};flex-shrink:0;display:inline-block;`));s.appendChild(mk("span","",f));leg.appendChild(s);});
+    })();
+
+    /* ── RADAR ──────────────────────────────────────────────────── */
+    (function(){
+      const famMs={};MD.forEach(m=>{if(!famMs[m.f])famMs[m.f]=[];famMs[m.f].push(m.v);});
+      const famAvg={};
+      Object.entries(famMs).forEach(([f,vs])=>{famAvg[f]=vs[0].map((_,i)=>+(vs.reduce((s,v)=>s+v[i],0)/vs.length).toFixed(2));});
+      let active=new Set(Object.keys(FC));
+      const svg=document.getElementById("rsvg");
+      const cx=150,cy=150,r=100,range=12;
+      const ang=[0,1,2,3].map(i=>i/4*2*Math.PI-Math.PI/2);
+      const toXY=(val,i)=>{const f=Math.max(0,(val+range)/(2*range));return[cx+r*f*Math.cos(ang[i]),cy+r*f*Math.sin(ang[i])];};
+      // rings
+      [-8,-4,0,4,8].forEach(v=>{
+        const rr=r*(v+range)/(2*range);if(rr<0)return;
+        const ci=se("circle",{cx,cy,r:rr});
+        ci.setAttribute("style",`fill:none;stroke:${gridColor(v===0?.22:.09)};stroke-width:${v===0?.7:.4};${v!==0?"stroke-dasharray:2,5;":""}`);
+        svg.appendChild(ci);
+        if(v!==0){const t=se("text",{x:cx+3,y:cy-rr-2});t.setAttribute("style",`fill:${textColor(.32)};font-size:8px;font-family:'DM Mono',monospace;`);t.textContent=v>0?`+${v}`:v;svg.appendChild(t);}
+      });
+      ang.forEach((a,i)=>{
+        const l=se("line",{x1:cx,y1:cy,x2:cx+r*Math.cos(a),y2:cy+r*Math.sin(a)});l.setAttribute("style",`stroke:${gridColor(.12)};stroke-width:.5;`);svg.appendChild(l);
+        const lx=cx+(r+18)*Math.cos(a),ly=cy+(r+18)*Math.sin(a);
+        const t=se("text",{x:lx,y:ly,"text-anchor":"middle","dominant-baseline":"middle"});
+        t.setAttribute("style",`fill:${ABC[i]};font-size:10px;font-family:'DM Mono',monospace;font-weight:500;`);t.textContent=ABS[i];svg.appendChild(t);
+      });
+      const pG=se("g");svg.appendChild(pG);
+      function drawP(){
+        pG.innerHTML="";
+        Object.entries(famAvg).forEach(([f,avg])=>{
+          if(!active.has(f))return;
+          const pts=avg.map((v,i)=>toXY(v,i));
+          const poly=se("polygon",{points:pts.map(p=>p.join(",")).join(" ")});
+          poly.setAttribute("style",`fill:${FC[f]}20;stroke:${FC[f]};stroke-width:1.5;opacity:.9;`);
+          pG.appendChild(poly);
+          pts.forEach(([px,py])=>{const c=se("circle",{cx:px,cy:py,r:2.5});c.setAttribute("style",`fill:${FC[f]};`);pG.appendChild(c);});
+        });
+      }
+      drawP();
+      // buttons
+      const bc=document.getElementById("rbtns");
+      Object.entries(FC).forEach(([f,c])=>{
+        const b=document.createElement("button");b.className="fam-btn on";b.textContent=f;
+        b.style.cssText=`color:${c};border-color:${c}50;`;
+        b.addEventListener("click",()=>{
+          if(active.has(f)){if(active.size>1){active.delete(f);b.classList.remove("on");}}
+          else{active.add(f);b.classList.add("on");}
+          drawP();drawLeg();
+        });
+        bc.appendChild(b);
+      });
+      function drawLeg(){
+        const leg=document.getElementById("rleg");leg.innerHTML="";
+        Object.entries(famAvg).forEach(([f,avg])=>{
+          if(!active.has(f))return;
+          const row=mk("div","");row.className="radar-legend-item";
+          const chip=mk("div",`background:${FC[f]};`);chip.className="radar-chip";
+          const info=mk("div","flex:1;");
+          info.appendChild(mk("div",`font-size:13px;font-weight:600;color:${FC[f]};margin-bottom:5px;`,f));
+          const vrow=mk("div","display:flex;flex-wrap:wrap;gap:8px;");
+          avg.forEach((v,i)=>{const s=v>0?`+${v}`:String(v);const chip2=mk("span",`font-size:11px;color:${ABC[i]};font-family:'DM Mono',monospace;`,`${ABS[i]} ${s}`);vrow.appendChild(chip2);});
+          info.appendChild(vrow);row.append(chip,info);leg.appendChild(row);
+        });
+      }
+      drawLeg();
+    })();
+
+    /* ── PARALLEL COORDS ────────────────────────────────────────── */
+    (function(){
+      const W=780,H=300,PL=68,PR=68,PT=48,PB=40;
+      const IW=W-PL-PR,IH=H-PT-PB;
+      const axX=[0,1,2,3].map(i=>PL+i/3*IW);
+      const sy=v=>PT+(1-(v+12)/24)*IH;
+      let hov=null;
+      const svg=document.getElementById("pcsvg");
+      const lG=se("g"),aG=se("g"),hG=se("g");
+      svg.append(lG,aG,hG);
+      // axes
+      axX.forEach((ax,i)=>{
+        const l=se("line",{x1:ax,y1:PT,x2:ax,y2:H-PB});l.setAttribute("style",`stroke:${gridColor(.22)};stroke-width:.8;`);aG.appendChild(l);
+        [-8,-4,0,4,8].forEach(v=>{
+          const y=sy(v);
+          const m=se("line",{x1:ax-3,y1:y,x2:ax+3,y2:y});m.setAttribute("style",`stroke:${gridColor(.22)};stroke-width:.5;`);aG.appendChild(m);
+          const t=se("text",{x:ax-7,y,"text-anchor":"end","dominant-baseline":"middle"});t.setAttribute("style",`fill:${textColor(.36)};font-size:8px;font-family:'DM Mono',monospace;`);t.textContent=v>0?`+${v}`:v;aG.appendChild(t);
+        });
+        const tl=se("text",{x:ax,y:PT-12,"text-anchor":"middle"});tl.setAttribute("style",`fill:${ABC[i]};font-size:11px;font-family:'DM Mono',monospace;font-weight:500;`);tl.textContent=ABS[i];aG.appendChild(tl);
+      });
+      // model lines
+      const lines=[];
+      MD.forEach((m,i)=>{
+        const pl=se("polyline",{points:m.v.map((v,j)=>`${axX[j]},${sy(v)}`).join(" ")});
+        pl.setAttribute("style",`fill:none;stroke:${FC[m.f]};stroke-width:1.2;opacity:.28;stroke-linejoin:round;stroke-linecap:round;`);
+        pl.addEventListener("mouseenter",()=>{hov=i;upd();});
+        pl.addEventListener("mouseleave",()=>{hov=null;upd();});
+        pl.style.cursor="default";
+        lG.appendChild(pl);lines.push(pl);
+        // start label
+        const tl=se("text",{x:axX[0]-8,y:sy(m.v[0]),"text-anchor":"end","dominant-baseline":"middle"});
+        tl.setAttribute("style",`fill:${textColor(.32)};font-size:8px;font-family:'DM Mono',monospace;`);tl.textContent=m.s;aG.appendChild(tl);
+      });
+      function upd(){
+        lines.forEach((l,i)=>{
+          const a=hov===i;
+          l.setAttribute("style",`fill:none;stroke:${FC[MD[i].f]};stroke-width:${a?2.5:1.2};opacity:${hov===null?.28:a?.95:.08};stroke-linejoin:round;stroke-linecap:round;`);
+          if(a) lG.appendChild(l); // Bring to front within the same group
+        });
+        hG.innerHTML="";
+        if(hov!==null){
+          const m=MD[hov];
+          m.v.forEach((v,j)=>{const c=se("circle",{cx:axX[j],cy:sy(v),r:4});c.setAttribute("style",`fill:${FC[m.f]};pointer-events:none;`);hG.appendChild(c);});
+          const tl=se("text",{x:axX[0]-10,y:sy(m.v[0])-10,"text-anchor":"end"});tl.setAttribute("style",`fill:${FC[m.f]};font-size:9px;font-family:'DM Mono',monospace;font-weight:500;pointer-events:none;`);tl.textContent=m.n;hG.appendChild(tl);
+        }
+      }
+      const leg=document.getElementById("pcleg");
+      Object.entries(FC).forEach(([f,c])=>{const s=mk("span","");s.className="legend-item";s.appendChild(mk("span",`width:8px;height:8px;border-radius:50%;background:${c};flex-shrink:0;display:inline-block;`));s.appendChild(mk("span","",f));leg.appendChild(s);});
+    })();
+
+    /* ── HEATMAP ────────────────────────────────────────────────── */
+    (function(){
+      let sc=3,sd=-1, filter='all'; // Default sort by MMS (sc=3), descending (sd=-1)
+      const tbl=document.getElementById("hmtbl");
+      const fsel=document.getElementById("famFilter");
+      
+      // Populate filter dropdown
+      Object.keys(FC).sort().forEach(f=>{
+        const opt=document.createElement("option");opt.value=f;opt.textContent=f;fsel.appendChild(opt);
+      });
+      fsel.addEventListener('change', (e)=>{ filter=e.target.value; render(); });
+
+      function vc(v){const a=Math.min(.82,Math.abs(v)/12*.82);return v>=0?`rgba(74,159,232,${a})`:`rgba(229,85,85,${a})`;}
+      function vtc(v){return Math.abs(v) > 3 ? "#ffffff" : (isDark() ? "#f5edf3" : "#1a0a16");}
+      function render(){
+        tbl.innerHTML="";
+        const hr=document.createElement("tr");
+        ["#","Model","Family","MMS","Mon","Ctrl","Eval","SReg"].forEach((h,i)=>{
+          const th=document.createElement("th");
+          const arr=sc===i?(sd>0?" \u25B2":" \u25BC"):"";
+          th.textContent=h+arr;
+          th.classList.toggle("srt",sc===i);
+          th.addEventListener("click",()=>{
+            if(sc===i)sd*=-1;
+            else{sc=i;sd= (i >= 3) ? -1 : 1;} // Sort scores/MMS descending initially, names ascending
+            render();
+          });
+          hr.appendChild(th);
+        });
+        tbl.appendChild(hr);
+
+        let data = MD.filter(m => filter === 'all' || m.f === filter);
+        data.sort((a,b)=>{
+          let av, bv;
+          if(sc===1) { av=a.n; bv=b.n; }
+          else if(sc===2) { av=a.f; bv=b.f; }
+          else if(sc===3) { av=a.mms; bv=b.mms; }
+          else if(sc>=4) { av=a.v[sc-4]; bv=b.v[sc-4]; }
+          else { av=MD.findIndex(x=>x.n===a.n); bv=MD.findIndex(x=>x.n===b.n); }
+          
+          if(av < bv) return -sd;
+          if(av > bv) return sd;
+          return 0;
+        });
+
+        data.forEach((m,i)=>{
+          const rank=MD.findIndex(x=>x.n===m.n)+1;
+          const tr=document.createElement("tr");
+          tr.appendChild(tdE("color:var(--ki-grey);font-family:'DM Mono',monospace;",`#${rank}`));
+          const nd=mk("div","display:flex;align-items:center;gap:8px;");nd.appendChild(mk("span",`width:8px;height:8px;border-radius:50%;background:${FC[m.f]};flex-shrink:0;display:inline-block;`));nd.appendChild(mk("span","font-weight:500;",m.n));tr.appendChild(tdE("",nd));
+          tr.appendChild(tdE(`color:${FC[m.f]};font-family:'DM Mono',monospace;`,m.f));
+          const md=mk("div","display:flex;align-items:center;font-family:'DM Mono',monospace;");md.appendChild(mk("span","",m.mms.toFixed(1)));const mb=mk("div","");mb.className="mbar";mb.appendChild(mk("div",`height:100%;border-radius:2px;background:var(--ki-plum);width:${Math.max(0,(m.mms-55)/(65-55)*100)}%;`));md.appendChild(mb);tr.appendChild(tdE("",md));
+          m.v.forEach(v=>{
+            const s=v>0?`+${v.toFixed(1)}`:v.toFixed(1);
+            const sp=mk("span",`display:inline-block;padding:3px 8px;border-radius:6px;font-size:12px;background:${vc(v)};color:${vtc(v)};min-width:52px;text-align:right;font-family:'DM Mono',monospace;`,s);
+            tr.appendChild(tdE("",sp));
+          });
+          tbl.appendChild(tr);
+        });
+      }
+      render();
+    })();
+
+    // intersection observer for fade-in
+    const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.style.opacity='1';});},{threshold:.08});
+    document.querySelectorAll('.viz-card,.pc-card,.hm-card,.radar-card,.detail-card,.finding-card').forEach(s=>{s.style.opacity='0';s.style.transition='opacity .5s ease';obs.observe(s);});
+    </script>
+</body>
+</html>

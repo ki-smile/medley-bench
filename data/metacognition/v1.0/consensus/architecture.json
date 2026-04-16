@@ -1,0 +1,1677 @@
+{
+  "KA_AR_001": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.5,
+      "C2": 0.5,
+      "C3": 0.5,
+      "C4": 0.5,
+      "C5": 0.5
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "moderate",
+        "majority_position": "oppose",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 4,
+          "uncertain": 1
+        }
+      },
+      "C2": {
+        "median_confidence": "moderate",
+        "majority_position": "oppose",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 4,
+          "uncertain": 2
+        }
+      },
+      "C3": {
+        "median_confidence": "moderate",
+        "majority_position": "oppose",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 3,
+          "uncertain": 3
+        }
+      },
+      "C4": {
+        "median_confidence": "moderate",
+        "majority_position": "oppose",
+        "majority_strength": 3,
+        "total_analysts": 6,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 3,
+          "uncertain": 1
+        }
+      },
+      "C5": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 2,
+        "total_analysts": 5,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 2,
+          "uncertain": 1
+        }
+      }
+    }
+  },
+  "KA_AR_002": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.75,
+      "C2": 0.75,
+      "C3": 0.75,
+      "C4": 0.5,
+      "C5": 0.5
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 3,
+          "uncertain": 1
+        }
+      },
+      "C2": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      },
+      "C3": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      },
+      "C4": {
+        "median_confidence": "moderate",
+        "majority_position": "uncertain",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 2,
+          "uncertain": 4
+        }
+      },
+      "C5": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 2,
+        "total_analysts": 6,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      }
+    }
+  },
+  "KA_AR_003": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.5,
+      "C2": 0.5,
+      "C3": 0.5,
+      "C4": 0.5,
+      "C5": 0.5
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 3,
+          "uncertain": 2
+        }
+      },
+      "C2": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 3,
+          "uncertain": 2
+        }
+      },
+      "C3": {
+        "median_confidence": "moderate",
+        "majority_position": "oppose",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 3,
+          "uncertain": 3
+        }
+      },
+      "C4": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 2,
+        "total_analysts": 5,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 2,
+          "uncertain": 1
+        }
+      },
+      "C5": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 2,
+        "total_analysts": 5,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 2,
+          "uncertain": 1
+        }
+      }
+    }
+  },
+  "KA_AR_004": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.5,
+      "C2": 0.5,
+      "C3": 0.5,
+      "C4": 0.5,
+      "C5": 0.5
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C2": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C3": {
+        "median_confidence": "moderate",
+        "majority_position": "oppose",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 3,
+          "uncertain": 3
+        }
+      },
+      "C4": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 1,
+        "total_analysts": 3,
+        "position_distribution": {
+          "support": 1,
+          "oppose": 1,
+          "uncertain": 1
+        }
+      },
+      "C5": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 1,
+        "total_analysts": 3,
+        "position_distribution": {
+          "support": 1,
+          "oppose": 1,
+          "uncertain": 1
+        }
+      }
+    }
+  },
+  "KA_AR_005": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.9,
+      "C2": 0.75,
+      "C3": 0.75,
+      "C4": 0.5,
+      "C5": 0.5
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "very_high",
+        "majority_position": "support",
+        "majority_strength": 6,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 6,
+          "oppose": 1,
+          "uncertain": 1
+        }
+      },
+      "C2": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 3,
+          "uncertain": 1
+        }
+      },
+      "C3": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      },
+      "C4": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 2,
+        "total_analysts": 5,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 2,
+          "uncertain": 1
+        }
+      },
+      "C5": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 1,
+        "total_analysts": 3,
+        "position_distribution": {
+          "support": 1,
+          "oppose": 1,
+          "uncertain": 1
+        }
+      }
+    }
+  },
+  "ARCH_001": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.75,
+      "C2": 0.75,
+      "C3": 0.5,
+      "C4": 0.5,
+      "C5": 0.5
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 3,
+          "uncertain": 1
+        }
+      },
+      "C2": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 5,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 5,
+          "oppose": 2,
+          "uncertain": 1
+        }
+      },
+      "C3": {
+        "median_confidence": "moderate",
+        "majority_position": "oppose",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 4,
+          "uncertain": 2
+        }
+      },
+      "C4": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 2,
+        "total_analysts": 6,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      },
+      "C5": {
+        "median_confidence": "moderate",
+        "majority_position": "uncertain",
+        "majority_strength": 2,
+        "total_analysts": 4,
+        "position_distribution": {
+          "support": 1,
+          "oppose": 1,
+          "uncertain": 2
+        }
+      }
+    }
+  },
+  "ARCH_002": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.75,
+      "C2": 0.75,
+      "C3": 0.75,
+      "C4": 0.75,
+      "C5": 0.75
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 5,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 5,
+          "oppose": 1,
+          "uncertain": 2
+        }
+      },
+      "C2": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 3,
+          "uncertain": 1
+        }
+      },
+      "C3": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 5,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 5,
+          "oppose": 0,
+          "uncertain": 3
+        }
+      },
+      "C4": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      },
+      "C5": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 1,
+          "uncertain": 3
+        }
+      }
+    }
+  },
+  "ARCH_003": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.75,
+      "C2": 0.5,
+      "C3": 0.5,
+      "C4": 0.5,
+      "C5": 0.5
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      },
+      "C2": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C3": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C4": {
+        "median_confidence": "moderate",
+        "majority_position": "oppose",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 3,
+          "uncertain": 3
+        }
+      },
+      "C5": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 2,
+        "total_analysts": 6,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      }
+    }
+  },
+  "ARCH_004": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.9,
+      "C2": 0.75,
+      "C3": 0.75,
+      "C4": 0.5,
+      "C5": 0.5
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "very_high",
+        "majority_position": "support",
+        "majority_strength": 5,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 5,
+          "oppose": 2,
+          "uncertain": 1
+        }
+      },
+      "C2": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 1,
+          "uncertain": 3
+        }
+      },
+      "C3": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 5,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 5,
+          "oppose": 1,
+          "uncertain": 2
+        }
+      },
+      "C4": {
+        "median_confidence": "moderate",
+        "majority_position": "uncertain",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 1,
+          "uncertain": 4
+        }
+      },
+      "C5": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 7,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 1,
+          "uncertain": 3
+        }
+      }
+    }
+  },
+  "ARCH_005": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.75,
+      "C2": 0.75,
+      "C3": 0.75,
+      "C4": 0.5,
+      "C5": 0.75
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      },
+      "C2": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      },
+      "C3": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 5,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 5,
+          "oppose": 0,
+          "uncertain": 3
+        }
+      },
+      "C4": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 7,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 1,
+          "uncertain": 3
+        }
+      },
+      "C5": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 7,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 0,
+          "uncertain": 3
+        }
+      }
+    }
+  },
+  "ARCH_006": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.75,
+      "C2": 0.5,
+      "C3": 0.75,
+      "C4": 0.75,
+      "C5": 0.5
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 1,
+          "uncertain": 3
+        }
+      },
+      "C2": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C3": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 1,
+          "uncertain": 3
+        }
+      },
+      "C4": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 5,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 5,
+          "oppose": 0,
+          "uncertain": 3
+        }
+      },
+      "C5": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 2,
+        "total_analysts": 6,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      }
+    }
+  },
+  "ARCH_007": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.75,
+      "C2": 0.75,
+      "C3": 0.5,
+      "C4": 0.75,
+      "C5": 0.75
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 5,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 5,
+          "oppose": 0,
+          "uncertain": 3
+        }
+      },
+      "C2": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      },
+      "C3": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C4": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      },
+      "C5": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 5,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 5,
+          "oppose": 1,
+          "uncertain": 2
+        }
+      }
+    }
+  },
+  "ARCH_008": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.5,
+      "C2": 0.75,
+      "C3": 0.5,
+      "C4": 0.5,
+      "C5": 0.5
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C2": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 0,
+          "uncertain": 4
+        }
+      },
+      "C3": {
+        "median_confidence": "moderate",
+        "majority_position": "uncertain",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 1,
+          "uncertain": 4
+        }
+      },
+      "C4": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 3,
+          "uncertain": 2
+        }
+      },
+      "C5": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 2,
+        "total_analysts": 6,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      }
+    }
+  },
+  "ARCH_009": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.5,
+      "C2": 0.75,
+      "C3": 0.75,
+      "C4": 0.75,
+      "C5": 0.5
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C2": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      },
+      "C3": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 1,
+          "uncertain": 3
+        }
+      },
+      "C4": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 5,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 5,
+          "oppose": 0,
+          "uncertain": 3
+        }
+      },
+      "C5": {
+        "median_confidence": "moderate",
+        "majority_position": "uncertain",
+        "majority_strength": 3,
+        "total_analysts": 7,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      }
+    }
+  },
+  "ARCH_010": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.75,
+      "C2": 0.5,
+      "C3": 0.5,
+      "C4": 0.75,
+      "C5": 0.75
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 5,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 5,
+          "oppose": 0,
+          "uncertain": 3
+        }
+      },
+      "C2": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C3": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C4": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      },
+      "C5": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 7,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 1,
+          "uncertain": 2
+        }
+      }
+    }
+  },
+  "ARCH_011": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.5,
+      "C2": 0.5,
+      "C3": 0.75,
+      "C4": 0.5,
+      "C5": 0.5
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C2": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C3": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      },
+      "C4": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 7,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 1,
+          "uncertain": 3
+        }
+      },
+      "C5": {
+        "median_confidence": "moderate",
+        "majority_position": "uncertain",
+        "majority_strength": 3,
+        "total_analysts": 7,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      }
+    }
+  },
+  "ARCH_012": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.5,
+      "C2": 0.75,
+      "C3": 0.75,
+      "C4": 0.75,
+      "C5": 0.5
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "moderate",
+        "majority_position": "uncertain",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 1,
+          "uncertain": 4
+        }
+      },
+      "C2": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 1,
+          "uncertain": 3
+        }
+      },
+      "C3": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      },
+      "C4": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      },
+      "C5": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 2,
+        "total_analysts": 6,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      }
+    }
+  },
+  "ARCH_013": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.5,
+      "C2": 0.5,
+      "C3": 0.5,
+      "C4": 0.75,
+      "C5": 0.5
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C2": {
+        "median_confidence": "moderate",
+        "majority_position": "uncertain",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 2,
+          "uncertain": 4
+        }
+      },
+      "C3": {
+        "median_confidence": "moderate",
+        "majority_position": "uncertain",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 2,
+          "uncertain": 4
+        }
+      },
+      "C4": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 5,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 5,
+          "oppose": 1,
+          "uncertain": 2
+        }
+      },
+      "C5": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 7,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      }
+    }
+  },
+  "ARCH_014": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.5,
+      "C2": 0.75,
+      "C3": 0.5,
+      "C4": 0.75,
+      "C5": 0.5
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C2": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      },
+      "C3": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C4": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 1,
+          "uncertain": 3
+        }
+      },
+      "C5": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 7,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 3,
+          "uncertain": 1
+        }
+      }
+    }
+  },
+  "ARCH_015": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.5,
+      "C2": 0.75,
+      "C3": 0.75,
+      "C4": 0.5,
+      "C5": 0.5
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C2": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      },
+      "C3": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 1,
+          "uncertain": 3
+        }
+      },
+      "C4": {
+        "median_confidence": "moderate",
+        "majority_position": "uncertain",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 2,
+          "oppose": 2,
+          "uncertain": 4
+        }
+      },
+      "C5": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 7,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      }
+    }
+  },
+  "ARCH_016": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.5,
+      "C2": 0.5,
+      "C3": 0.75,
+      "C4": 0.5,
+      "C5": 0.5
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C2": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C3": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 5,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 5,
+          "oppose": 0,
+          "uncertain": 3
+        }
+      },
+      "C4": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C5": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 3,
+          "uncertain": 2
+        }
+      }
+    }
+  },
+  "ARCH_017": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.75,
+      "C2": 0.75,
+      "C3": 0.5,
+      "C4": 0.75,
+      "C5": 0.75
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 0,
+          "uncertain": 4
+        }
+      },
+      "C2": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 0,
+          "uncertain": 4
+        }
+      },
+      "C3": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C4": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 2,
+          "uncertain": 2
+        }
+      },
+      "C5": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 6,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 0,
+          "uncertain": 3
+        }
+      }
+    }
+  },
+  "ARCH_018": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.75,
+      "C2": 0.75,
+      "C3": 0.5,
+      "C4": 0.5,
+      "C5": 0.75
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 6,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 6,
+          "oppose": 0,
+          "uncertain": 2
+        }
+      },
+      "C2": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 5,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 5,
+          "oppose": 0,
+          "uncertain": 3
+        }
+      },
+      "C3": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C4": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C5": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 0,
+          "uncertain": 4
+        }
+      }
+    }
+  },
+  "ARCH_019": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.5,
+      "C2": 0.5,
+      "C3": 0.75,
+      "C4": 0.75,
+      "C5": 0.5
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C2": {
+        "median_confidence": "moderate",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 3
+        }
+      },
+      "C3": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 5,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 5,
+          "oppose": 0,
+          "uncertain": 3
+        }
+      },
+      "C4": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 5,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 5,
+          "oppose": 0,
+          "uncertain": 3
+        }
+      },
+      "C5": {
+        "median_confidence": "moderate",
+        "majority_position": "uncertain",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 1,
+          "uncertain": 4
+        }
+      }
+    }
+  },
+  "ARCH_020": {
+    "method": "adaptive_jackknife_median",
+    "claim_confidences": {
+      "C1": 0.75,
+      "C2": 0.75,
+      "C3": 0.5,
+      "C4": 0.75,
+      "C5": 0.75
+    },
+    "claim_details": {
+      "C1": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 5,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 5,
+          "oppose": 1,
+          "uncertain": 2
+        }
+      },
+      "C2": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 1,
+          "uncertain": 3
+        }
+      },
+      "C3": {
+        "median_confidence": "moderate",
+        "majority_position": "uncertain",
+        "majority_strength": 4,
+        "total_analysts": 8,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 1,
+          "uncertain": 4
+        }
+      },
+      "C4": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 4,
+        "total_analysts": 7,
+        "position_distribution": {
+          "support": 4,
+          "oppose": 1,
+          "uncertain": 2
+        }
+      },
+      "C5": {
+        "median_confidence": "high",
+        "majority_position": "support",
+        "majority_strength": 3,
+        "total_analysts": 6,
+        "position_distribution": {
+          "support": 3,
+          "oppose": 2,
+          "uncertain": 1
+        }
+      }
+    }
+  }
+}

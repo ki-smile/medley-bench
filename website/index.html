@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDLEY-BENCH - Behavioral Metacognition Benchmark</title>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+</head>
+<body>
+    <!-- Theme initialization (prevents flash) -->
+    <script>
+        var theme = localStorage.getItem('medley-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">MEDLEY-BENCH</a>
+            <button class="nav-toggle" onclick="toggleMobileMenu()">
+                <span class="material-icons">menu</span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="data.html">Data</a></li>
+                <li><a href="index.html#paper">Paper</a></li>
+                <li><a href="medley-bench-explorer.html">Explorer</a></li>
+                <li>
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark theme">
+                        <span class="material-icons" id="theme-icon">dark_mode</span>
+                    </button>
+                </li>
+                <li>
+                    <a href="https://github.com/ki-smile/medley-bench" class="nav-github" target="_blank">
+                        <span class="material-icons">code</span> GitHub
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Behavioral Metacognition Under Social Pressure</h1>
+            <p class="hero-subtitle">
+                MEDLEY-BENCH measures how AI models revise beliefs, resist unjustified pressure,
+                and ground reasoning in evidence.
+            </p>
+            <div class="hero-actions">
+                <a href="leaderboard.html" class="btn-primary">
+                    <span class="material-icons">leaderboard</span>
+                    Leaderboard
+                </a>
+                <a href="paper.html" class="btn-secondary">
+                    <span class="material-icons">description</span>
+                    Paper
+                </a>
+            </div>
+            
+            <div class="stat-grid" style="margin-top: var(--spacing-xxl);">
+                <div class="stat-card">
+                    <span class="stat-value">35</span>
+                    <span class="stat-label">Models Evaluated</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">130</span>
+                    <span class="stat-label">Instances</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">5</span>
+                    <span class="stat-label">Domains</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">12.6pt</span>
+                    <span class="stat-label">MMS Range</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elevator Pitch -->
+    <section class="section-blue">
+        <div class="container">
+            <div class="method-card" style="max-width: 900px; margin: 0 auto; padding: var(--spacing-xxl); border-left: 6px solid var(--ki-plum); background: var(--bg-surface);">
+                <h2 style="margin-bottom: var(--spacing-lg); color: var(--ki-plum); font-family: 'Playfair Display', serif;">Does it know when it's wrong?</h2>
+                <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-main); margin-bottom: var(--spacing-md);">
+                    Most AI benchmarks ask whether a model got the answer right. <strong>MEDLEY-BENCH asks something harder: does it know when it might be wrong?</strong>
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-muted); margin-bottom: var(--spacing-lg);">
+                    By testing 35 models under real social pressure, we uncovered a universal <em>knowing-doing gap</em> &mdash; AI can recognise good reasoning in others but consistently fails to apply that standard to itself. We also reveal that models fall into distinct cognitive profiles: <strong>monitoring-dominant</strong> models that track their own uncertainty well, <strong>control-dominant</strong> models that adjust strategy under pressure, <strong>self-regulation-dominant</strong> models that manage their reasoning process, and <strong>statistics-followers</strong> that simply defer to consensus regardless of argument quality.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.7; color: var(--text-muted);">
+                    Scale doesn't fix these differences. Newer models don't escape them. MEDLEY-BENCH gives researchers, developers, and regulators a principled way to evaluate AI metacognition before it matters in the real world.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media: Podcast & Video -->
+    <section class="section-white">
+        <div class="container">
+            <div class="media-grid">
+                <!-- Podcast -->
+                <div class="media-card">
+                    <div class="media-header">
+                        <span class="material-icons media-icon">podcasts</span>
+                        <div>
+                            <h3>Podcast: The Metacognition Gap in AI</h3>
+                            <p class="media-meta">
+                                <span class="material-icons" style="font-size:14px;vertical-align:middle;">timer</span> ~18 min
+                            </p>
+                        </div>
+                    </div>
+                    <p>Listen to a deep dive into the research methodology and the "Knowing-Doing Gap" discovered across 35 frontier models.</p>
+                    <div style="margin-top: var(--spacing-md);">
+                        <audio controls style="width: 100%;">
+                            <source src="media/Medley-Bench.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Video -->
+                <div class="media-card">
+                    <div class="media-header">
+                        <span class="material-icons media-icon">videocam</span>
+                        <div>
+                            <h3>The Metacognition Paradox</h3>
+                            <p class="media-meta">
+                                <span class="material-icons" style="font-size:14px;vertical-align:middle;">visibility</span> 1080p HD
+                            </p>
+                        </div>
+                    </div>
+                    <p>A visual exploration of how models cluster into cognitive signatures and why evaluation is the universal bottleneck.</p>
+                    <div style="margin-top: var(--spacing-md); border-radius: 8px; overflow: hidden; background: #000;">
+                        <video controls style="width: 100%; display: block;">
+                            <source src="media/The_Metacognition_Paradox.mp4" type="video/mp4">
+                            Your browser does not support the video element.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="section-blue">
+        <div class="container">
+            <h2 class="section-heading">Get Started</h2>
+            <div class="hero-actions" style="justify-content: center;">
+                <a href="leaderboard.html" class="btn-primary">
+                    <span class="material-icons">leaderboard</span>
+                    View Leaderboard
+                </a>
+                <a href="data.html" class="btn-secondary">
+                    <span class="material-icons">menu_book</span>
+                    Documentation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paper & Citation -->
+    <section class="section-white" id="paper">
+        <div class="container">
+            <h2 class="section-heading">Paper & Citation</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-xl); align-items: start;">
+                <!-- Citation -->
+                <div class="method-card">
+                    <h3 style="margin-bottom: var(--spacing-md);">Citation</h3>
+                    <p><strong>Farhad Abtahi</strong>, <strong>Abdolamir Karbalaie</strong>, <strong>Eduardo Illueca-Fernandez</strong>, <strong>Fernando Seoane</strong></p>
+                    <p>SMAILE Core Facility, Karolinska Institutet, Stockholm, Sweden</p>
+                    <p style="margin-top: var(--spacing-md);"><em>Metacognitive Stress Testing of Large Language Models</em> (2026)</p>
+                    
+                    <div class="hero-actions" style="margin-top: var(--spacing-lg); flex-wrap: wrap;">
+                        <a href="#" class="btn-primary" style="padding: 10px 20px;">
+                            <span class="material-icons">picture_as_pdf</span>
+                            Preprint PDF
+                        </a>
+                        <a href="#" class="btn-secondary" style="padding: 10px 20px;">
+                            <span class="material-icons">open_in_new</span>
+                            arXiv
+                        </a>
+                    </div>
+                </div>
+
+                <!-- BibTeX -->
+                <div class="method-card" style="position: relative; background: var(--bg-surface-variant);">
+                    <h3 style="margin-bottom: var(--spacing-md);">BibTeX</h3>
+                    <pre id="bibtex-block" style="background: rgba(0,0,0,0.05); border-radius: 8px; padding: var(--spacing-md); overflow-x: auto; font-family: 'DM Mono', monospace; font-size: 0.85rem; line-height: 1.5; color: var(--text-main);">@article{abtahi2026medleybench,
+  title={Metacognitive Stress Testing of Large Language Models},
+  author={Abtahi, Farhad and Karbalaie, Abdolamir and
+          Illueca-Fernandez, Eduardo and Seoane, Fernando},
+  year={2026},
+  note={Preprint}
+}</pre>
+                    <button class="btn-secondary" onclick="copyBibtex()" id="copy-btn"
+                            style="position: absolute; top: var(--spacing-md); right: var(--spacing-md); padding: 4px 10px; font-size: 0.75rem;">
+                        <span class="material-icons" style="font-size: 14px; vertical-align: middle;">content_copy</span>
+                        Copy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Python Library -->
+    <section class="section-dark">
+        <div class="container" style="text-align: center;">
+            <!-- Terminal Header -->
+            <div style="max-width: 600px; margin: 0 auto; background: #333; border-radius: 8px 8px 0 0; padding: 8px 16px; display: flex; gap: 6px; align-items: center;">
+                <div style="width: 10px; height: 10px; border-radius: 50%; background: #ff5f56;"></div>
+                <div style="width: 10px; height: 10px; border-radius: 50%; background: #ffbd2e;"></div>
+                <div style="width: 10px; height: 10px; border-radius: 50%; background: #27c93f;"></div>
+                <span style="color: #aaa; font-family: monospace; font-size: 12px; margin-left: 8px;">bash &mdash; medley-bench install</span>
+            </div>
+            <div class="method-card" style="max-width: 600px; margin: 0 auto var(--spacing-lg); text-align: left; border-radius: 0 0 8px 8px; border-top: none; background: #1e1e1e;">
+                <pre style="margin: 0; font-family: 'DM Mono', monospace; font-size: 0.9rem; line-height: 1.8; color: #fff; background: transparent;">$ pip install medley-bench[all-providers]
+$ medley-bench benchmark --track metacognition \
+    --models "openai/gpt-4.1"</pre>
+            </div>
+            
+            <h2 class="section-heading" style="color: white; margin-top: var(--spacing-xl);">Ready to evaluate?</h2>
+            <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto var(--spacing-lg);">
+                Use as a Python library or CLI tool. 5 provider backends, 95 tests, async API.
+                Optional provider dependencies &mdash; install only what you need.
+            </p>
+            <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
+                <a href="https://pypi.org/project/medley-bench/" class="btn-primary" target="_blank">
+                    <span class="material-icons">menu_book</span> PyPI Package
+                </a>
+                <a href="https://github.com/ki-smile/medley-bench" class="btn-secondary" style="border-color: rgba(255,255,255,0.4); color: white;" target="_blank">
+                    <span class="material-icons">code</span> GitHub Repo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3 class="footer-brand">MEDLEY-BENCH</h3>
+                <p><a href="https://ki.se/en/clintec/stockholm-medical-artificial-intelligence-and-learning-environments-smaile" target="_blank">SMAILE Core Facility, Karolinska Institutet</a></p>
+                <p>&copy; 2026 Licensed under Apache 2.0</p>
+            </div>
+            <div class="footer-column">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="leaderboard.html">Leaderboard</a></li>
+                    <li><a href="methodology.html">Methodology</a></li>
+                    <li><a href="results.html">Results</a></li>
+                    <li><a href="data.html">Data</a></li>
+                    <li><a href="index.html#paper">Paper</a></li>
+                    <li><a href="medley-bench-explorer.html">Explorer</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="https://github.com/ki-smile/medley-bench" target="_blank">GitHub</a></li>
+                    <li><a href="https://pypi.org/project/medley-bench/" target="_blank">Python Library</a></li>
+                    <li><a href="https://www.kaggle.com/datasets/" target="_blank">Kaggle Dataset</a></li>
+                    <li><a href="https://www.kaggle.com/competitions/" target="_blank">Kaggle Competition</a></li>
+                    <li><a href="mailto:farhad.abtahi@ki.se">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><span class="material-icons">arrow_upward</span></button>
+
+    <!-- Scripts -->
+    <script>
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('medley-theme', next);
+            const icon = document.getElementById('theme-icon');
+            if (icon) {
+                icon.textContent = next === 'dark' ? 'light_mode' : 'dark_mode';
+            }
+        }
+        
+        // Theme initialization
+        var theme = localStorage.getItem('medley-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        document.addEventListener('DOMContentLoaded', () => {
+            const icon = document.getElementById('theme-icon');
+            if (icon) {
+                icon.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
+            }
+        });
+
+        function toggleMobileMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+        // Close mobile menu on link click
+        document.querySelectorAll('#navMenu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+        // Close mobile menu on outside click
+        document.addEventListener('click', function(e) {
+            var nav = document.getElementById('navMenu');
+            var toggle = document.querySelector('.nav-toggle');
+            if (nav && nav.classList.contains('active') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+
+        // Back to top logic
+        const btt = document.getElementById('backToTop');
+        if (btt) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) { btt.classList.add('visible'); } 
+                else { btt.classList.remove('visible'); }
+            });
+        }
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+        function copyBibtex() {
+            const text = document.getElementById('bibtex-block').textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                const btn = document.getElementById('copy-btn');
+                btn.innerHTML = '<span class="material-icons" style="font-size: 16px; vertical-align: middle;">check</span> Copied';
+                setTimeout(function() {
+                    btn.innerHTML = '<span class="material-icons" style="font-size: 16px; vertical-align: middle;">content_copy</span> Copy';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

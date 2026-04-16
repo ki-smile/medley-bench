@@ -1,0 +1,244 @@
+# medley-bench
+
+> Behavioral metacognition benchmark for LLMs (v1.0.0). Measures belief revision, social robustness, and epistemic reasoning under pressure.
+
+## Installation
+
+pip install medley-bench
+pip install medley-bench[all-providers]   # with all LLM providers
+pip install medley-bench[full]            # everything
+
+## Quick Start
+
+```python
+from medley_bench import get_provider, get_track_info, load_track
+
+# Create a provider (7 backends supported)
+provider = get_provider("openai/gpt-4.1")       # via OpenRouter
+provider = get_provider("claude-haiku-4.5")      # Anthropic direct
+provider = get_provider("ollama/gemma3:12b")     # local Ollama
+provider = get_provider("hf/meta-llama/Llama-3.1-8B-Instruct")  # HuggingFace
+
+# Check track info
+info = get_track_info("metacognition")
+# Returns: {track_version, dataset_version, scoring_version, instances: 130, domains: 5}
+
+# Run a completion
+import asyncio
+response = asyncio.run(provider.complete("What is metacognition?"))
+```
+
+## API Reference
+
+### medley_bench (top-level)
+
+```
+medley_bench.get_provider(model_id: str, **kwargs) -> LLMProvider
+    Create an LLM provider from a model ID string.
+    Routing: "ollama/X" -> Ollama, "hf/X" -> HuggingFace, "vertex/X" -> Vertex,
+    "org/model" -> OpenRouter, "claude-*" -> Anthropic, "gpt-*" -> OpenAI, "gemini-*" -> Google.
+    API keys read from env vars or ~/.medley-bench.env
+
+medley_bench.get_track_info(track_name: str = "metacognition") -> dict
+    Returns track metadata: track_version, dataset_version, scoring_version, instances, domains.
+
+medley_bench.load_track(track_name: str = "metacognition") -> module
+    Dynamically import and return a track module.
+
+medley_bench.build_result_metadata(track_name: str, model_id: str) -> dict
+    Build metadata dict to stamp on result files (version tracking).
+```
+
+### medley_bench.core.providers
+
+```
+class LLMProvider(Protocol):
+    model_name: str
+    async complete(prompt: str, **kwargs) -> str
+
+class AnthropicProvider(model_id, max_tokens=10000, temperature=0.0)
+class OpenAIProvider(model_id, max_tokens=10000, temperature=0.0)
+class OpenRouterProvider(model_id, max_tokens=10000, temperature=0.0)
+class GoogleProvider(model_id, max_tokens=10000, temperature=0.0)
+class HuggingFaceProvider(model_id, max_tokens=10000, temperature=0.0, endpoint_url="")
+class VertexProvider(model_id, max_tokens=10000, temperature=0.0, project="", location="")
+class OllamaProvider(model_id, max_tokens=10000, temperature=0.0, base_url="", api_key="")
+
+All providers have: .usage.total_tokens, .usage.calls, .usage.input_tokens, .usage.output_tokens
+```
+
+### medley_bench.core.parsing
+
+```
+parse_json_response(raw_text: str) -> dict | None
+    Parse model response (handles markdown fences, trailing commas, concatenated JSON).
+
+get_claim_conf(parsed: dict, claim_id: str, claim_text: str = "") -> float | None
+    Extract confidence for a specific claim. Returns numeric 0.0-1.0.
+
+conf_to_numeric(conf_str: str) -> float
+    Convert confidence label to number: very_high=0.95, high=0.80, moderate=0.55, low=0.35, very_low=0.15
+```
+
+### medley_bench.core.metrics
+
+```
+brier_score(predictions: list[float], outcomes: list[bool]) -> float
+expected_calibration_error(predictions, outcomes, n_bins=10) -> float
+spearmanr_safe(x, y) -> tuple[float, float]
+    Spearman correlation, returns (0.0, 1.0) on constant input.
+fleiss_kappa(matrix) -> float
+```
+
+### medley_bench.tracks.metacognition
+
+```
+__version__ = "1.0"
+TRACK_NAME = "metacognition"
+DATASET_VERSION = "1.0"
+SCORING_VERSION = "1.0"
+DOMAINS = ["medical", "troubleshooting", "code_review", "architecture", "statistical_reasoning"]
+```
+
+### medley_bench.tracks.metacognition.prompts
+
+```
+step_a.build_prompt(vignette: str) -> str
+step_b_private.build_prompt(step_a_response: str, vignette: str) -> str
+step_b_social.build_prompt(step_a_response: str, vignette: str, analyst_outputs: str, jackknifed_consensus: str) -> str
+```
+
+### medley_bench.tracks.metacognition.scoring.measures
+
+```
+update_proportionality(step_a: dict, step_b_social: dict, instance: dict) -> float
+update_selectivity(step_a: dict, step_b_social: dict, instance: dict) -> float
+uncertainty_localization(step_b_social: dict, instance: dict) -> float
+brier_score_change(step_a: dict, step_b_social: dict, consensus: dict, instance: dict) -> float
+compute_all_computed_measures(step_a, step_b_private, step_b_social, instance, consensus, analyst_outputs) -> dict
+NEGATIVELY_ORIENTED: frozenset  # measures where higher = worse
+```
+
+### medley_bench.tracks.metacognition.scoring.aggregation
+
+```
+compute_tier_scores(computed: dict, judged: dict) -> dict
+    Returns: {"reflective_updating": {"score": float}, "social_robustness": {...}, "epistemic_articulation": {...}}
+
+compute_total_score(tier_scores: dict) -> float
+    Geometric mean with balance bonus. Returns 0.0-1.0.
+```
+
+### medley_bench.tracks.metacognition.scoring.leaderboard
+
+```
+build_leaderboard_entry(model: str, instance_results: list[dict]) -> dict
+build_full_leaderboard(all_results: dict[str, list[dict]]) -> list[dict]
+```
+
+## Three-Step Protocol
+
+Every benchmark instance runs 3 model calls in isolated contexts:
+1. Step A (Solo): model sees problem vignette only
+2. Step B-Private: model sees own Step A + self-review nudge
+3. Step B-Social: model sees 8 analyst opinions + consensus
+
+Delta(A -> B-Private) = self-revision capacity
+Delta(B-Private -> B-Social) = social influence response
+
+## Scoring
+
+Two scores:
+- MMS (Medley Metacognition Score): T1 + T2 + T3, equal weights (33/33/33)
+  - T1 Reflective Updating (100% rule-based): proportionality, selectivity, volatility, uncertainty, Brier
+  - T2 Social Robustness (85% rule-based): pvsd, epistemic cowardice, resistance, pressure, capitulation, normative/informational
+  - T3 Epistemic Articulation (judge-based): 10 dimensions, 30 sub-criteria
+- MAS (Medley Ability Score): mean of Monitoring, Control, Evaluation, Self-regulation
+
+## Ability Mapping (10 judge dimensions -> 4 abilities)
+
+Monitoring: confidence_coherence + blind_spot_recognition
+Control: attribution_depth + capitulation_quality + intellectual_courage
+Evaluation: error_acknowledgment + steelmanning_quality + logical_grounding
+Self-regulation: normative_vs_informational + transparency
+
+## Environment Variables
+
+OPENROUTER_API_KEY   # OpenRouter (one key, 200+ models)
+ANTHROPIC_API_KEY    # Anthropic Claude
+OPENAI_API_KEY       # OpenAI GPT
+GOOGLE_API_KEY       # Google AI Studio
+HF_API_KEY           # HuggingFace Inference API
+VERTEX_PROJECT       # Google Vertex AI project ID
+VERTEX_LOCATION      # Google Vertex AI location (default: us-central1)
+OLLAMA_BASE_URL      # Ollama server (default: http://localhost:11434)
+
+Or create ~/.medley-bench.env with KEY=VALUE lines.
+
+## CLI Commands
+
+medley-bench benchmark --track metacognition --models "model1,model2" --data data/
+medley-bench leaderboard --results results/
+medley-bench init                    # initialize database
+medley-bench load-seeds              # load 130 seed cases
+medley-bench expand --model "..."    # expand seeds to vignettes
+medley-bench collect --model "..."   # collect analyst responses
+medley-bench build-consensus         # build jackknife consensus
+medley-bench validate                # check quality gates
+medley-bench export                  # export benchmark dataset
+
+## Common Patterns
+
+### Benchmark a model and get scores
+```python
+import asyncio, json
+from medley_bench import get_provider
+from medley_bench.core.parsing import parse_json_response
+from medley_bench.tracks.metacognition.prompts.step_a import build_prompt as build_a
+from medley_bench.tracks.metacognition.scoring.measures import update_proportionality
+from medley_bench.tracks.metacognition.scoring.aggregation import compute_tier_scores, compute_total_score
+
+provider = get_provider("openai/gpt-4.1")
+raw_a = asyncio.run(provider.complete(build_a(vignette="...")))
+step_a = parse_json_response(raw_a)
+# ... run B-Private, B-Social, compute measures, aggregate
+```
+
+### Build leaderboard from result files
+```python
+from medley_bench.tracks.metacognition.scoring.leaderboard import build_full_leaderboard
+import json, os
+
+all_results = {}
+for f in os.listdir("results/"):
+    if f.endswith(".json"):
+        all_results[f[:-5]] = json.load(open(f"results/{f}"))
+
+leaderboard = build_full_leaderboard(all_results)
+for entry in leaderboard:
+    print(f"{entry['model']}: MMS={entry['total_score']*100:.1f}")
+```
+
+### Compute ipsative profiles
+```python
+import numpy as np
+ABILITY_MAP = {
+    "monitoring": ["confidence_coherence", "blind_spot_recognition"],
+    "control": ["attribution_depth", "capitulation_quality", "intellectual_courage"],
+    "evaluation": ["error_acknowledgment", "steelmanning_quality", "logical_grounding"],
+    "self_regulation": ["normative_vs_informational", "transparency"],
+}
+for r in results:
+    j = r.get("judged", {})
+    dim_mean = np.mean(list(j.values()))
+    for ability, dims in ABILITY_MAP.items():
+        ips = np.mean([j.get(d, 0.333) - dim_mean for d in dims])
+```
+
+## Links
+
+- GitHub: https://github.com/ki-smile/medley-bench
+- Website: https://ki-smile.github.io/medley-bench
+- PyPI: https://pypi.org/project/medley-bench/
+- Paper: MEDLEY-BENCH: Scale Buys Evaluation but Not Control in AI Metacognition
+- Kaggle Dataset: https://www.kaggle.com/datasets/farhadabtahi/medley-bench-data

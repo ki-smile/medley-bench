@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset - MEDLEY-BENCH</title>
+
+    <!-- Material Design 3 -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+</head>
+<body>
+    <!-- Theme initialization (prevents flash) -->
+    <script>
+        var theme = localStorage.getItem('medley-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">MEDLEY-BENCH</a>
+            <button class="nav-toggle" onclick="toggleMobileMenu()">
+                <span class="material-icons">menu</span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="data.html" class="active">Data</a></li>
+                <li><a href="index.html#paper">Paper</a></li>
+                <li><a href="medley-bench-explorer.html">Explorer</a></li>
+                <li>
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark theme">
+                        <span class="material-icons" id="theme-icon">dark_mode</span>
+                    </button>
+                </li>
+                <li>
+                    <a href="https://github.com/ki-smile/medley-bench" class="nav-github" target="_blank">
+                        <span class="material-icons">code</span> GitHub
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Dataset</h1>
+            <p class="hero-subtitle">130 instances across 5 domains, fully synthetic, no human annotation</p>
+        </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-heading">Overview</h2>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <span class="stat-value">130</span>
+                    <span class="stat-label">Instances</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">5</span>
+                    <span class="stat-label">Domains</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">650</span>
+                    <span class="stat-label">Claims (130&times;5)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">28</span>
+                    <span class="stat-label">Analyst Models</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">30</span>
+                    <span class="stat-label">Known-Answer Traps</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">~$15</span>
+                    <span class="stat-label">Per 50 New Instances</span>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: var(--spacing-lg); max-width: 600px; margin-left: auto; margin-right: auto;">
+                Entirely synthetic data with multi-stage quality control. No copyrighted material, no human subjects.
+            </p>
+        </div>
+    </section>
+
+    <!-- Domains -->
+    <section class="section-orange">
+        <div class="container">
+            <h2 class="section-heading">Domains</h2>
+            <div class="card-row" style="flex-wrap: wrap;">
+                <div class="feature-card">
+                    <span class="material-icons card-icon">local_hospital</span>
+                    <h3>Medical Diagnosis (27)</h3>
+                    <p>Evidential reasoning with contradictory clinical evidence</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons card-icon">build</span>
+                    <h3>System Troubleshooting (26)</h3>
+                    <p>Causal reasoning through diagnostic layers</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons card-icon">code</span>
+                    <h3>Code Review (27)</h3>
+                    <p>Contextual reasoning where severity depends on threat model</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons card-icon">architecture</span>
+                    <h3>Architecture Design (25)</h3>
+                    <p>Tradeoff reasoning with no single right answer</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons card-icon">functions</span>
+                    <h3>Statistical Reasoning (25)</h3>
+                    <p>Formal reasoning where same data supports different frameworks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instance Structure -->
+    <section class="section-blue">
+        <div class="container">
+            <h2 class="section-heading">Instance Structure</h2>
+            <p class="section-subheading">Each instance contains the following fields.</p>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>vignette</code></td>
+                            <td>Problem scenario (~500 words)</td>
+                        </tr>
+                        <tr>
+                            <td><code>key_claims</code></td>
+                            <td>5 claims (C1&ndash;C5) with disagreement scores</td>
+                        </tr>
+                        <tr>
+                            <td><code>ensemble_outputs</code></td>
+                            <td>8 analyst responses from 28-model pool</td>
+                        </tr>
+                        <tr>
+                            <td><code>consensus</code></td>
+                            <td>Jackknife consensus with per-claim confidence</td>
+                        </tr>
+                        <tr>
+                            <td><code>_verified_wrong_claims</code></td>
+                            <td>Per-claim ground truth from 3-judge verification</td>
+                        </tr>
+                        <tr>
+                            <td><code>is_known_answer</code></td>
+                            <td>30 KA instances for sycophancy detection</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download -->
+    <section class="section-white">
+        <div class="container">
+            <h2 class="section-heading">Download</h2>
+            <div class="hero-actions">
+                <a href="https://www.kaggle.com/datasets/farhadabtahi/medley-bench-data" class="btn-primary" target="_blank">
+                    <span class="material-icons">dataset</span>
+                    Kaggle Dataset
+                </a>
+                <a href="https://github.com/ki-smile/medley-bench" class="btn-secondary" target="_blank">
+                    <span class="material-icons">code</span>
+                    GitHub Repository
+                </a>
+            </div>
+            <p style="text-align: center; margin-top: var(--spacing-lg); max-width: 600px; margin-left: auto; margin-right: auto; opacity: 0.85;">
+                The dataset is included in the GitHub repository under <code>data/</code>. It is also available as a standalone Kaggle dataset.
+            </p>
+        </div>
+    </section>
+
+    <!-- Extensibility -->
+    <section class="section-orange">
+        <div class="container">
+            <h2 class="section-heading">Extensibility</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto var(--spacing-lg);">
+                The fully automated pipeline produces ~50 new instances at ~$15 per batch (generation time depends on API provider throughput), with zero human annotation, enabling continuous validation.
+            </p>
+            <pre style="background: rgba(0,0,0,0.2); border-radius: 12px; padding: var(--spacing-lg); overflow-x: auto; font-family: monospace; font-size: 0.9rem; line-height: 1.8; max-width: 600px; margin: 0 auto;">medley-bench init
+medley-bench load-seeds
+medley-bench expand
+medley-bench collect
+medley-bench build-consensus
+medley-bench validate
+medley-bench export</pre>
+        </div>
+    </section>
+
+    <!-- Python Library -->
+    <section class="section-blue">
+        <div class="container">
+            <h2 class="section-heading">Python Library</h2>
+            <p class="section-subheading">
+                Install from PyPI and use MEDLEY-BENCH as a library in your own projects.
+            </p>
+
+            <div class="method-card" style="max-width: 700px; margin: 0 auto var(--spacing-lg);">
+                <pre style="margin: 0; font-family: 'DM Mono', monospace; font-size: 0.95rem; line-height: 1.8;"><span style="color: var(--ki-grey);"># Core (scoring, analysis)</span>
+pip install medley-bench
+
+<span style="color: var(--ki-grey);"># With a provider</span>
+pip install medley-bench[openai]
+pip install medley-bench[anthropic]
+pip install medley-bench[all-providers]
+
+<span style="color: var(--ki-grey);"># Everything</span>
+pip install medley-bench[full]</pre>
+            </div>
+
+            <div class="cards-grid-3">
+                <div class="feature-card">
+                    <span class="material-icons card-icon">key</span>
+                    <h3>Easy API Key Setup</h3>
+                    <p>Set environment variables, use a <code>.env</code> file, or <code>~/.medley-bench.env</code>. Ollama works with no key at all. Clear error messages if a key is missing.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons card-icon">code</span>
+                    <h3>Python API</h3>
+                    <p>Run individual instances, compute scores, analyse results, and build ipsative profiles programmatically. Full async provider support.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons card-icon">terminal</span>
+                    <h3>CLI Interface</h3>
+                    <p>Run benchmarks, view leaderboards, generate instances, and export results from the command line with <code>medley-bench</code>.</p>
+                </div>
+            </div>
+
+            <div class="method-card" style="margin-top: var(--spacing-lg);">
+                <h3><span class="material-icons" style="vertical-align: middle; margin-right: 4px;">play_arrow</span> Quick Example</h3>
+                <pre style="margin: var(--spacing-md) 0 0; font-family: 'DM Mono', monospace; font-size: 0.85rem; line-height: 1.7; overflow-x: auto;"><span style="color: var(--ki-grey);"># Score a single instance</span>
+<span style="color: var(--ki-plum);">from</span> src.core.providers <span style="color: var(--ki-plum);">import</span> get_provider
+<span style="color: var(--ki-plum);">from</span> src.tracks.metacognition.prompts.step_a <span style="color: var(--ki-plum);">import</span> build_prompt
+<span style="color: var(--ki-plum);">import</span> asyncio
+
+provider = get_provider(<span style="color: var(--ki-orange);">"openai/gpt-4.1"</span>)
+raw_a = asyncio.run(provider.complete(build_prompt(vignette=<span style="color: var(--ki-orange);">"..."</span>)))
+
+<span style="color: var(--ki-grey);"># Compute measures</span>
+<span style="color: var(--ki-plum);">from</span> src.tracks.metacognition.scoring.measures <span style="color: var(--ki-plum);">import</span> *
+prop = update_proportionality(step_a, step_bs, instance)
+
+<span style="color: var(--ki-grey);"># Full docs: docs/LIBRARY.md</span></pre>
+            </div>
+
+            <div class="cards-grid-2" style="margin-top: var(--spacing-lg);">
+                <div class="feature-card">
+                    <span class="material-icons card-icon">hub</span>
+                    <h3>5 Provider Backends</h3>
+                    <p>
+                        <strong>OpenRouter</strong> (one key, 200+ models) &middot;
+                        <strong>Anthropic</strong> (Claude) &middot;
+                        <strong>OpenAI</strong> (GPT, o-series) &middot;
+                        <strong>Google</strong> (Gemini) &middot;
+                        <strong>Ollama</strong> (local, free)
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <span class="material-icons card-icon">verified</span>
+                    <h3>95 Tests, 0 API Keys Needed</h3>
+                    <p>
+                        Unit tests for all scoring measures, integration tests for the pipeline,
+                        and scoring validation tests for weight constraints and score bounds.
+                        CI on Python 3.10&ndash;3.12.
+                    </p>
+                </div>
+            </div>
+
+            <p class="section-link" style="margin-top: var(--spacing-xl);">
+                <a href="https://pypi.org/project/medley-bench/" target="_blank">
+                    Full library documentation &rarr;
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3 class="footer-brand">MEDLEY-BENCH</h3>
+                <p><a href="https://ki.se/en/clintec/stockholm-medical-artificial-intelligence-and-learning-environments-smaile" target="_blank">SMAILE Core Facility, Karolinska Institutet</a></p>
+                <p>&copy; 2026 Licensed under Apache 2.0</p>
+            </div>
+            <div class="footer-column">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="leaderboard.html">Leaderboard</a></li>
+                    <li><a href="methodology.html">Methodology</a></li>
+                    <li><a href="results.html">Results</a></li>
+                    <li><a href="data.html">Data</a></li>
+                    <li><a href="index.html#paper">Paper</a></li>
+                    <li><a href="medley-bench-explorer.html">Explorer</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="https://github.com/ki-smile/medley-bench" target="_blank">GitHub</a></li>
+                    <li><a href="https://pypi.org/project/medley-bench/" target="_blank">Python Library</a></li>
+                    <li><a href="https://www.kaggle.com/datasets/" target="_blank">Kaggle Dataset</a></li>
+                    <li><a href="https://www.kaggle.com/competitions/" target="_blank">Kaggle Competition</a></li>
+                    <li><a href="mailto:farhad.abtahi@ki.se">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><span class="material-icons">arrow_upward</span></button>
+
+    <!-- Scripts -->
+    <script>
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('medley-theme', next);
+            const icon = document.getElementById('theme-icon');
+            if (icon) {
+                icon.textContent = next === 'dark' ? 'light_mode' : 'dark_mode';
+            }
+        }
+        
+        // Theme initialization
+        var theme = localStorage.getItem('medley-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        document.addEventListener('DOMContentLoaded', () => {
+            const icon = document.getElementById('theme-icon');
+            if (icon) {
+                icon.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
+            }
+        });
+
+        function toggleMobileMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+        // Close mobile menu on link click
+        document.querySelectorAll('#navMenu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+        // Close mobile menu on outside click
+        document.addEventListener('click', function(e) {
+            var nav = document.getElementById('navMenu');
+            var toggle = document.querySelector('.nav-toggle');
+            if (nav && nav.classList.contains('active') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+
+        // Back to top logic
+        const btt = document.getElementById('backToTop');
+        if (btt) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) { btt.classList.add('visible'); } 
+                else { btt.classList.remove('visible'); }
+            });
+        }
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    </script>
+</body>
+</html>

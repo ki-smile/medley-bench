@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% set active = "dashboard" %}
+
+{% block content %}
+<h1>Dashboard</h1>
+
+<div class="grid">
+    <div class="card">
+        <h3>Cases</h3>
+        <div class="big-number">{{ total }}</div>
+        <div class="detail">
+            {% for d, n in by_domain.items() %}
+                <span class="badge">{{ d }}: {{ n }}</span>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Known-Answer</h3>
+        <div class="big-number">{{ ka }}</div>
+        <div class="detail">Target: 20</div>
+    </div>
+
+    <div class="card">
+        <h3>Pipeline Progress</h3>
+        <div class="progress-list">
+            <div>Analyst coverage: <strong>{{ analysts_done }}/{{ total }}</strong></div>
+            <div>Claims extracted: <strong>{{ claims_done }}/{{ total }}</strong></div>
+            <div>Consensus built: <strong>{{ consensus_done }}/{{ total }}</strong></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Probes</h3>
+        <div class="detail">
+            {% for name, count in probes.items() %}
+                <div>{{ name }}: <strong>{{ count }}</strong></div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<h2>Designer Models ({{ d_models|length }})</h2>
+<table>
+    <thead><tr><th>Model</th><th>Responses</th><th>Coverage</th></tr></thead>
+    <tbody>
+    {% for m in d_models %}
+        <tr>
+            <td>{{ m.model_id }}</td>
+            <td>{{ m.n }}</td>
+            <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: {{ (m.n / total * 100)|int }}%"></div>
+                </div>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<h2>Analyst Models ({{ a_models|length }})</h2>
+<table>
+    <thead><tr><th>Model</th><th>Responses</th><th>Coverage</th></tr></thead>
+    <tbody>
+    {% for m in a_models %}
+        <tr>
+            <td>{{ m.model_id }}</td>
+            <td>{{ m.n }}</td>
+            <td>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: {{ (m.n / total * 100)|int }}%"></div>
+                </div>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<h2>Quality Gates</h2>
+<div hx-get="/api/validate" hx-trigger="load" hx-swap="innerHTML" id="gates">
+    Loading...
+</div>
+{% endblock %}

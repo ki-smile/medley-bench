@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% set active = "models" %}
+
+{% block content %}
+<h1>Model Response Matrix</h1>
+<p>Total cases: {{ status.total_cases }}</p>
+
+<h2>Response Counts by Model</h2>
+<table>
+    <thead>
+        <tr><th>Model</th><th>Designer Responses</th><th>Analyst Responses</th><th>Total</th></tr>
+    </thead>
+    <tbody>
+    {% for model_id, counts in status.summary|dictsort %}
+        <tr>
+            <td>{{ model_id }}</td>
+            <td>{{ counts.designer }}</td>
+            <td>{{ counts.analyst }}</td>
+            <td>{{ counts.designer + counts.analyst }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

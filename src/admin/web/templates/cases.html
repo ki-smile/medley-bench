@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% set active = "cases" %}
+
+{% block content %}
+<h1>Cases ({{ cases|length }})</h1>
+
+<div class="filters">
+    <a href="/cases" class="btn {% if not domain_filter %}active{% endif %}">All</a>
+    <a href="/cases?domain=medical" class="btn {% if domain_filter == 'medical' %}active{% endif %}">Medical</a>
+    <a href="/cases?domain=process_mining" class="btn {% if domain_filter == 'process_mining' %}active{% endif %}">Process Mining</a>
+    <a href="/cases?domain=code_review" class="btn {% if domain_filter == 'code_review' %}active{% endif %}">Code Review</a>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Case ID</th>
+            <th>Domain</th>
+            <th>Difficulty</th>
+            <th>Flags</th>
+            <th>Vignette</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for c in cases %}
+        <tr>
+            <td><a href="/cases/{{ c.case_id }}">{{ c.case_id }}</a></td>
+            <td><span class="badge domain-{{ c.domain }}">{{ c.domain }}</span></td>
+            <td>{{ c.difficulty_tier or '—' }}</td>
+            <td>
+                {% if c.is_known_answer %}<span class="badge ka">KA</span>{% endif %}
+                {% if c.is_trap %}<span class="badge trap">Trap</span>{% endif %}
+                {% if c.is_dose_response %}<span class="badge dr">DR</span>{% endif %}
+                {% if c.is_minimal_instruction %}<span class="badge mi">MI</span>{% endif %}
+                {% if c.is_error_detection %}<span class="badge ed">ED</span>{% endif %}
+                {% if c.is_counterfactual %}<span class="badge cf">CF</span>{% endif %}
+            </td>
+            <td class="truncate">{{ (c.vignette or '—')[:80] }}{% if c.vignette and c.vignette|length > 80 %}...{% endif %}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

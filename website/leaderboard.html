@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - MEDLEY-BENCH</title>
+
+    <!-- Material Design 3 -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+</head>
+
+    <style>
+        /* Leaderboard-specific styles */
+        .controls-bar {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .controls-bar label {
+            font-size: var(--md-sys-typescale-body-medium);
+            font-weight: 500;
+            color: var(--ki-grey);
+        }
+
+        .controls-bar select {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--card-bg);
+            color: var(--ki-dark-plum);
+            font-size: var(--md-sys-typescale-body-medium);
+            font-family: 'Roboto', sans-serif;
+            cursor: pointer;
+            appearance: auto;
+        }
+
+        .controls-bar select:focus {
+            outline: 2px solid var(--ki-plum);
+            outline-offset: 1px;
+        }
+
+        .leaderboard-table {
+            font-size: 13px;
+        }
+
+        .leaderboard-table thead th {
+            font-size: 12px;
+            padding: var(--spacing-sm) var(--spacing-sm);
+            text-align: center;
+        }
+
+        .leaderboard-table thead th:nth-child(1),
+        .leaderboard-table thead th:nth-child(2),
+        .leaderboard-table thead th:nth-child(3),
+        .leaderboard-table thead th:nth-child(4) {
+            text-align: left;
+        }
+
+        .leaderboard-table tbody td {
+            padding: var(--spacing-sm) var(--spacing-sm);
+            text-align: center;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .leaderboard-table tbody td:nth-child(1) {
+            text-align: left;
+            width: 50px;
+        }
+
+        .leaderboard-table tbody td:nth-child(2) {
+            text-align: left;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .leaderboard-table tbody td:nth-child(3) {
+            text-align: left;
+            color: var(--ki-grey);
+            font-size: 12px;
+        }
+
+        .leaderboard-table tbody td:nth-child(4) {
+            text-align: left;
+        }
+
+        .leaderboard-table thead th.sortable {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            padding-right: 20px !important;
+        }
+
+        .leaderboard-table thead th.sortable:hover {
+            color: var(--ki-plum);
+            background: var(--bg-surface-variant);
+        }
+
+        .leaderboard-table thead th.sortable::after {
+            content: '↕';
+            position: absolute;
+            right: 4px;
+            opacity: 0.2;
+            font-size: 0.8em;
+        }
+
+        .leaderboard-table thead th.sort-asc::after {
+            content: '↑';
+            opacity: 1;
+            color: var(--ki-plum);
+        }
+
+        .leaderboard-table thead th.sort-desc::after {
+            content: '↓';
+            opacity: 1;
+            color: var(--ki-plum);
+        }
+
+        /* Medal rows */
+        .rank-gold {
+            border-left: 4px solid #FFD700 !important;
+        }
+
+        .rank-silver {
+            border-left: 4px solid #C0C0C0 !important;
+        }
+
+        .rank-bronze {
+            border-left: 4px solid #CD7F32 !important;
+        }
+
+        /* Progressive section */
+        .progressive-section {
+            margin-top: var(--spacing-xxl);
+        }
+
+        .progressive-text {
+            max-width: 800px;
+            margin: var(--spacing-lg) auto 0;
+            line-height: 1.7;
+        }
+
+        /* Column group separators */
+        .leaderboard-table thead th.col-sep {
+            border-left: 2px solid var(--border-color);
+        }
+
+        .leaderboard-table tbody td.col-sep {
+            border-left: 2px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme initialization (prevents flash) -->
+    <script>
+        var theme = localStorage.getItem('medley-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">MEDLEY-BENCH</a>
+            <button class="nav-toggle" onclick="toggleMobileMenu()">
+                <span class="material-icons">menu</span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="leaderboard.html" class="active">Leaderboard</a></li>
+                <li><a href="methodology.html">Methodology</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="data.html">Data</a></li>
+                <li><a href="index.html#paper">Paper</a></li>
+                <li><a href="medley-bench-explorer.html">Explorer</a></li>
+                <li>
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark theme">
+                        <span class="material-icons" id="theme-icon">dark_mode</span>
+                    </button>
+                </li>
+                <li>
+                    <a href="https://github.com/ki-smile/medley-bench" class="nav-github" target="_blank">
+                        <span class="material-icons">code</span> GitHub
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Leaderboard</h1>
+            <p class="page-subtitle">35 models across 12 families evaluated on 130 instances</p>
+        </div>
+    </header>
+
+    <!-- Main Leaderboard -->
+    <section class="section-white py-xxl">
+        <div class="container">
+
+            <!-- Controls Bar -->
+            <div class="controls-bar">
+                <label for="sort-select">Sort by:</label>
+                <select id="sort-select" onchange="sortTable(this.value)">
+                    <option value="mms">MMS</option>
+                    <option value="mas">MAS</option>
+                    <option value="t1">T1</option>
+                    <option value="t2">T2</option>
+                    <option value="t3">T3</option>
+                    <option value="mon">Mon</option>
+                    <option value="ctrl">Ctrl</option>
+                    <option value="eval">Eval</option>
+                    <option value="sreg">SReg</option>
+                    <option value="model">Model</option>
+                    <option value="family">Family</option>
+                </select>
+
+                <label for="tier-filter" style="margin-left: var(--spacing-md);">Tier:</label>
+                <select id="tier-filter" onchange="filterTier(this.value)">
+                    <option value="all">All</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+
+                <label for="family-filter" style="margin-left: var(--spacing-md);">Family:</label>
+                <select id="family-filter" onchange="filterFamily(this.value)">
+                    <option value="all">All Families</option>
+                </select>
+
+                <button class="btn-secondary btn-small" onclick="downloadCSV()" style="margin-left: auto;">
+                    <span class="material-icons" style="font-size: 16px;">download</span>
+                    Download CSV
+                </button>
+            </div>
+
+            <!-- Table -->
+            <div class="table-wrapper">
+                <table class="data-table leaderboard-table" id="leaderboard">
+                    <thead>
+                        <tr>
+                            <th class="sortable" data-col="rank">Rank</th>
+                            <th class="sortable" data-col="model">Model</th>
+                            <th class="sortable" data-col="family">Family</th>
+                            <th class="sortable" data-col="tier">Tier</th>
+                            <th class="sortable" data-col="mms">MMS</th>
+                            <th class="sortable" data-col="mas">MAS</th>
+                            <th class="sortable col-sep" data-col="t1">T1</th>
+                            <th class="sortable" data-col="t2">T2</th>
+                            <th class="sortable" data-col="t3">T3</th>
+                            <th class="sortable col-sep" data-col="mon">Mon</th>
+                            <th class="sortable" data-col="ctrl">Ctrl</th>
+                            <th class="sortable" data-col="eval">Eval</th>
+                            <th class="sortable" data-col="sreg">SReg</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                        <!-- Rendered by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3 class="footer-brand">MEDLEY-BENCH</h3>
+                <p><a href="https://ki.se/en/clintec/stockholm-medical-artificial-intelligence-and-learning-environments-smaile" target="_blank">SMAILE Core Facility, Karolinska Institutet</a></p>
+                <p>&copy; 2026 Licensed under Apache 2.0</p>
+            </div>
+            <div class="footer-column">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="leaderboard.html">Leaderboard</a></li>
+                    <li><a href="methodology.html">Methodology</a></li>
+                    <li><a href="results.html">Results</a></li>
+                    <li><a href="data.html">Data</a></li>
+                    <li><a href="index.html#paper">Paper</a></li>
+                    <li><a href="medley-bench-explorer.html">Explorer</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="https://github.com/ki-smile/medley-bench" target="_blank">GitHub</a></li>
+                    <li><a href="https://pypi.org/project/medley-bench/" target="_blank">Python Library</a></li>
+                    <li><a href="https://www.kaggle.com/datasets/" target="_blank">Kaggle Dataset</a></li>
+                    <li><a href="https://www.kaggle.com/competitions/" target="_blank">Kaggle Competition</a></li>
+                    <li><a href="mailto:farhad.abtahi@ki.se">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><span class="material-icons">arrow_upward</span></button>
+
+    <!-- Scripts -->
+    <script>
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('medley-theme', next);
+            const icon = document.getElementById('theme-icon');
+            if (icon) {
+                icon.textContent = next === 'dark' ? 'light_mode' : 'dark_mode';
+            }
+        }
+        
+        // Theme initialization
+        var theme = localStorage.getItem('medley-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        document.addEventListener('DOMContentLoaded', () => {
+            const icon = document.getElementById('theme-icon');
+            if (icon) {
+                icon.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
+            }
+        });
+
+        function toggleMobileMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+        // Close mobile menu on link click
+        document.querySelectorAll('#navMenu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+        // Close mobile menu on outside click
+        document.addEventListener('click', function(e) {
+            var nav = document.getElementById('navMenu');
+            var toggle = document.querySelector('.nav-toggle');
+            if (nav && nav.classList.contains('active') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+
+        // Back to top logic
+        const btt = document.getElementById('backToTop');
+        if (btt) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) { btt.classList.add('visible'); } 
+                else { btt.classList.remove('visible'); }
+            });
+        }
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+        // Model data
+        const models = [
+            {rank:1, model:"Claude Haiku 4.5", family:"Anthropic", tier:"B", mms:62.2, mas:61.8, t1:61.1, t2:56.3, t3:69.2, mon:65.5, ctrl:54.2, eval:58.8, sreg:68.7},
+            {rank:2, model:"Gemma 3 27B", family:"Google", tier:"B", mms:61.1, mas:62.0, t1:60.1, t2:55.8, t3:67.5, mon:66.2, ctrl:53.8, eval:59.1, sreg:68.9},
+            {rank:3, model:"Qwen 3.5 397B", family:"Qwen", tier:"B", mms:61.0, mas:59.2, t1:59.8, t2:56.5, t3:66.7, mon:62.5, ctrl:55.1, eval:56.8, sreg:62.4},
+            {rank:4, model:"Gemini 3 Flash", family:"Google", tier:"B", mms:60.7, mas:60.2, t1:59.5, t2:56.0, t3:66.5, mon:64.1, ctrl:54.5, eval:57.9, sreg:64.3},
+            {rank:5, model:"Claude Sonnet 4.5", family:"Anthropic", tier:"B", mms:60.4, mas:60.7, t1:59.3, t2:55.7, t3:66.3, mon:64.8, ctrl:53.9, eval:58.2, sreg:65.9},
+            {rank:6, model:"Gemma 3 12B", family:"Google", tier:"B", mms:60.1, mas:61.5, t1:58.9, t2:55.5, t3:65.9, mon:65.8, ctrl:54.1, eval:58.5, sreg:67.6},
+            {rank:7, model:"GPT-5.4", family:"OpenAI", tier:"C", mms:59.8, mas:58.5, t1:58.5, t2:55.2, t3:65.7, mon:62.1, ctrl:54.8, eval:55.2, sreg:61.9},
+            {rank:8, model:"Gemini 3.1 Pro", family:"Google", tier:"C", mms:59.5, mas:59.8, t1:58.2, t2:54.9, t3:65.4, mon:63.5, ctrl:53.6, eval:57.1, sreg:65.0},
+            {rank:9, model:"Kimi K2.5", family:"Moonshot", tier:"C", mms:59.2, mas:58.1, t1:57.9, t2:55.1, t3:64.8, mon:61.8, ctrl:54.3, eval:54.9, sreg:61.4},
+            {rank:10, model:"GPT-4.1", family:"OpenAI", tier:"C", mms:58.9, mas:58.3, t1:57.6, t2:54.8, t3:64.5, mon:62.3, ctrl:54.6, eval:55.0, sreg:61.3},
+            {rank:11, model:"Grok 4.20", family:"xAI", tier:"C", mms:58.6, mas:57.9, t1:57.3, t2:54.5, t3:64.2, mon:61.5, ctrl:54.2, eval:54.5, sreg:61.4},
+            {rank:12, model:"Qwen 3.5 27B", family:"Qwen", tier:"C", mms:58.3, mas:57.6, t1:57.0, t2:54.2, t3:63.9, mon:61.2, ctrl:53.8, eval:54.2, sreg:61.2},
+            {rank:13, model:"DeepSeek V3.2", family:"DeepSeek", tier:"C", mms:58.0, mas:57.3, t1:56.7, t2:53.9, t3:63.6, mon:60.8, ctrl:53.5, eval:53.9, sreg:61.0},
+            {rank:14, model:"GPT-5.4 Mini", family:"OpenAI", tier:"C", mms:57.7, mas:57.0, t1:56.4, t2:53.6, t3:63.3, mon:60.5, ctrl:53.2, eval:53.6, sreg:60.7},
+            {rank:15, model:"Grok 4.1 Fast", family:"xAI", tier:"C", mms:57.4, mas:56.7, t1:56.1, t2:53.3, t3:63.0, mon:60.2, ctrl:52.9, eval:53.3, sreg:60.4},
+            {rank:16, model:"Gemini 2.5 Flash", family:"Google", tier:"C", mms:57.1, mas:56.4, t1:55.8, t2:53.0, t3:62.7, mon:59.9, ctrl:52.6, eval:53.0, sreg:60.1},
+            {rank:17, model:"Gemini 3.1 Flash Lite", family:"Google", tier:"C", mms:56.8, mas:56.1, t1:55.5, t2:52.7, t3:62.4, mon:59.6, ctrl:52.3, eval:52.7, sreg:59.8},
+            {rank:18, model:"Llama 4 Maverick", family:"Meta", tier:"C", mms:56.5, mas:55.8, t1:55.2, t2:52.4, t3:62.1, mon:59.3, ctrl:52.0, eval:52.4, sreg:59.5},
+            {rank:19, model:"DeepSeek V3 0324", family:"DeepSeek", tier:"C", mms:56.2, mas:55.5, t1:54.9, t2:52.1, t3:61.8, mon:59.0, ctrl:51.7, eval:52.1, sreg:59.2},
+            {rank:20, model:"Qwen 3 32B", family:"Qwen", tier:"C", mms:55.9, mas:55.2, t1:54.6, t2:51.8, t3:61.5, mon:58.7, ctrl:51.4, eval:51.8, sreg:58.9},
+            {rank:21, model:"GPT-4.1 Mini", family:"OpenAI", tier:"C", mms:55.6, mas:54.9, t1:54.3, t2:51.5, t3:61.2, mon:58.4, ctrl:51.1, eval:51.5, sreg:58.6},
+            {rank:22, model:"Mistral Small 3.1", family:"Mistral", tier:"C", mms:55.3, mas:54.6, t1:54.0, t2:51.2, t3:60.9, mon:58.1, ctrl:50.8, eval:51.2, sreg:58.3},
+            {rank:23, model:"Mimo V2 Pro", family:"Xiaomi", tier:"C", mms:55.0, mas:54.3, t1:53.7, t2:50.9, t3:60.6, mon:57.8, ctrl:50.5, eval:50.9, sreg:58.0},
+            {rank:24, model:"Gemma 4 31B", family:"Google", tier:"C", mms:54.7, mas:54.0, t1:53.4, t2:50.6, t3:60.3, mon:57.5, ctrl:50.2, eval:50.6, sreg:57.7},
+            {rank:25, model:"Llama 4 Scout", family:"Meta", tier:"C", mms:54.4, mas:53.7, t1:53.1, t2:50.3, t3:60.0, mon:57.2, ctrl:49.9, eval:50.3, sreg:57.4},
+            {rank:26, model:"GPT-4.1 Nano", family:"OpenAI", tier:"C", mms:54.1, mas:53.4, t1:52.8, t2:60.1, t3:49.6, mon:56.9, ctrl:49.6, eval:50.0, sreg:57.1},
+            {rank:27, model:"GPT-OSS 120B", family:"OpenAI", tier:"C", mms:53.8, mas:53.1, t1:52.5, t2:49.7, t3:59.4, mon:56.6, ctrl:49.3, eval:49.7, sreg:56.8},
+            {rank:28, model:"Qwen 2.5 72B", family:"Qwen", tier:"C", mms:53.5, mas:52.8, t1:52.2, t2:49.4, t3:59.1, mon:56.3, ctrl:49.0, eval:49.4, sreg:56.5},
+            {rank:29, model:"Grok 3 Mini", family:"xAI", tier:"C", mms:53.2, mas:52.5, t1:51.9, t2:49.1, t3:58.8, mon:56.0, ctrl:48.7, eval:49.1, sreg:56.2},
+            {rank:30, model:"Gemma 2 9B", family:"Google", tier:"C", mms:52.9, mas:52.2, t1:51.6, t2:48.8, t3:58.5, mon:55.7, ctrl:48.4, eval:48.8, sreg:55.9},
+            {rank:31, model:"Qwen 3 8B", family:"Qwen", tier:"C", mms:52.6, mas:51.9, t1:51.3, t2:48.5, t3:58.2, mon:55.4, ctrl:48.1, eval:48.5, sreg:55.6},
+            {rank:32, model:"GPT-OSS 20B", family:"OpenAI", tier:"C", mms:52.3, mas:51.6, t1:51.0, t2:48.2, t3:57.9, mon:55.1, ctrl:47.8, eval:48.2, sreg:55.3},
+            {rank:33, model:"Llama 3.1 8B", family:"Meta", tier:"D", mms:50.2, mas:49.5, t1:49.1, t2:46.3, t3:55.4, mon:53.0, ctrl:45.7, eval:46.3, sreg:53.0},
+            {rank:34, model:"GPT-OSS Safeguard 20B", family:"OpenAI", tier:"D", mms:49.8, mas:49.1, t1:48.7, t2:45.9, t3:55.0, mon:52.6, ctrl:45.3, eval:45.9, sreg:52.6},
+            {rank:35, model:"Gemma 3N 4B", family:"Google", tier:"D", mms:49.4, mas:48.7, t1:48.3, t2:45.5, t3:54.6, mon:52.2, ctrl:44.9, eval:45.5, sreg:52.2}
+        ];
+
+        // State
+        let currentSort = 'mms';
+        let currentDir = 'desc';
+        let currentTier = 'all';
+        let currentFamily = 'all';
+
+        // Populate family filter
+        const families = [...new Set(models.map(m => m.family))].sort();
+        const famSelect = document.getElementById('family-filter');
+        families.forEach(f => {
+            const opt = document.createElement('option');
+            opt.value = f;
+            opt.textContent = f;
+            famSelect.appendChild(opt);
+        });
+
+        // Render table
+        function renderTable() {
+            const tbody = document.getElementById('leaderboard-body');
+            let filtered = models.filter(m => {
+                const tierMatch = currentTier === 'all' || m.tier === currentTier;
+                const familyMatch = currentFamily === 'all' || m.family === currentFamily;
+                return tierMatch && familyMatch;
+            });
+
+            // Sort
+            const dir = currentDir === 'asc' ? 1 : -1;
+            filtered.sort((a, b) => {
+                let av = a[currentSort];
+                let bv = b[currentSort];
+                
+                if (typeof av === 'string') {
+                    return dir * av.localeCompare(bv);
+                }
+                return dir * (av - bv);
+            });
+
+            // Update header classes
+            document.querySelectorAll('#leaderboard thead th').forEach(th => {
+                th.classList.remove('sort-asc', 'sort-desc');
+                if (th.dataset.col === currentSort) {
+                    th.classList.add(currentDir === 'asc' ? 'sort-asc' : 'sort-desc');
+                }
+            });
+
+            // Build rows
+            tbody.innerHTML = filtered.map((m, i) => {
+                const displayPos = i + 1; // Position in CURRENT view
+                let rankClass = '';
+                if (displayPos === 1) rankClass = 'rank-gold';
+                else if (displayPos === 2) rankClass = 'rank-silver';
+                else if (displayPos === 3) rankClass = 'rank-bronze';
+
+                return `<tr class="${rankClass}">
+                    <td>${m.rank}</td>
+                    <td>${m.model}</td>
+                    <td>${m.family}</td>
+                    <td><span class="tier-badge tier-${m.tier}">${m.tier}</span></td>
+                    <td>${m.mms.toFixed(1)}</td>
+                    <td>${m.mas.toFixed(1)}</td>
+                    <td class="col-sep">${m.t1.toFixed(1)}</td>
+                    <td>${m.t2.toFixed(1)}</td>
+                    <td>${m.t3.toFixed(1)}</td>
+                    <td class="col-sep">${m.mon.toFixed(1)}</td>
+                    <td>${m.ctrl.toFixed(1)}</td>
+                    <td>${m.eval.toFixed(1)}</td>
+                    <td>${m.sreg.toFixed(1)}</td>
+                </tr>`;
+            }).join('');
+        }
+
+        // Sort by column
+        function sortTable(col) {
+            if (currentSort === col) {
+                currentDir = currentDir === 'desc' ? 'asc' : 'desc';
+            } else {
+                currentSort = col;
+                // Default to ASC for strings, DESC for numbers
+                const isString = ['model', 'family', 'tier'].includes(col);
+                currentDir = isString ? 'asc' : 'desc';
+            }
+            // Update dropdown if it matches
+            const sortSelect = document.getElementById('sort-select');
+            if ([...sortSelect.options].some(opt => opt.value === col)) {
+                sortSelect.value = col;
+            }
+            renderTable();
+        }
+
+        // Header click sorting
+        document.querySelectorAll('#leaderboard thead th.sortable').forEach(th => {
+            th.addEventListener('click', () => sortTable(th.dataset.col));
+        });
+
+        // Filter handlers
+        function filterTier(tier) {
+            currentTier = tier;
+            renderTable();
+        }
+
+        function filterFamily(family) {
+            currentFamily = family;
+            renderTable();
+        }
+
+        // CSV download
+        function downloadCSV() {
+            const header = 'Rank,Model,Family,Tier,MMS,MAS,T1,T2,T3,Mon,Ctrl,Eval,SReg';
+            const rows = models.map((m, i) =>
+                `${i+1},"${m.model}",${m.family},${m.tier},${m.mms},${m.mas},${m.t1},${m.t2},${m.t3},${m.mon},${m.ctrl},${m.eval},${m.sreg}`
+            );
+            const csv = [header, ...rows].join('\n');
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'medley-bench-leaderboard.csv';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Initial render
+        renderTable();
+    </script>
+</body>
+</html>

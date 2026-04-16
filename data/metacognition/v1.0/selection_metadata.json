@@ -1,0 +1,7215 @@
+{
+  "KA_MED_001": {
+    "domain": "medical",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "gemini-3.1-pro-analyst",
+      "claude-opus-4.6-analyst",
+      "ollama/minimax-m2.7:cloud",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/devstral-small-2:24b-cloud",
+      "ollama/deepseek-r1:14b",
+      "ollama/nemotron-3-super:cloud"
+    ],
+    "score": 0.7652,
+    "diversity_score": 0.7577,
+    "coverage_score": 0.7,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "gemini": 1,
+      "claude": 1,
+      "minimax": 1,
+      "qwen": 1,
+      "mistral": 1,
+      "deepseek": 1,
+      "nemotron": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 5,
+        "oppose": 3,
+        "uncertain": 0
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "KA_MED_002": {
+    "domain": "medical",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/devstral-small-2:24b-cloud",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/glm-4.7-flash:q8_0",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/gemma3:27b",
+      "ollama/alibayram/medgemma:4b"
+    ],
+    "score": 0.7582,
+    "diversity_score": 0.809,
+    "coverage_score": 0.6,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 1,
+      "mistral": 1,
+      "qwen": 1,
+      "glm": 1,
+      "nemotron": 1,
+      "gemma": 1,
+      "medgemma": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 1,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "KA_MED_003": {
+    "domain": "medical",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "gemini-2.5-pro-analyst",
+      "gemini-3.1-pro-analyst",
+      "ollama/deepseek-r1:14b",
+      "ollama/qwen3.5:397b-cloud",
+      "claude-opus-4.6-analyst",
+      "ollama/mistral-small:latest",
+      "ollama/nemotron-3-super:cloud"
+    ],
+    "score": 0.7786,
+    "diversity_score": 0.8138,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "gemini": 2,
+      "deepseek": 1,
+      "qwen": 1,
+      "claude": 1,
+      "mistral": 1,
+      "nemotron": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "KA_MED_004": {
+    "domain": "medical",
+    "selected_models": [
+      "ollama/minimax-m2.7:cloud",
+      "gemini-2.5-pro-analyst",
+      "gemini-3.1-pro-analyst",
+      "ollama/qwen3.5:397b-cloud",
+      "claude-opus-4.6-analyst",
+      "ollama/gemma3:12b",
+      "ollama/devstral-small-2:24b-cloud",
+      "ollama/llama4:scout"
+    ],
+    "score": 0.7623,
+    "diversity_score": 0.8388,
+    "coverage_score": 0.7,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "minimax": 1,
+      "gemini": 2,
+      "qwen": 1,
+      "claude": 1,
+      "gemma": 1,
+      "mistral": 1,
+      "llama": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "KA_MED_005": {
+    "domain": "medical",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/gemma3:12b",
+      "ollama/minimax-m2.7:cloud",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/gpt-oss:120b-cloud"
+    ],
+    "score": 0.8993,
+    "diversity_score": 0.9266,
+    "coverage_score": 1.0,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 1,
+      "mistral": 1,
+      "qwen": 1,
+      "gemma": 1,
+      "minimax": 1,
+      "nemotron": 1,
+      "gpt_oss": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "KA_ERR_MED_001": {
+    "domain": "medical",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-3.1-pro-analyst",
+      "ollama/gpt-oss:120b-cloud",
+      "gemini-2.5-pro-analyst",
+      "ollama/devstral-small-2:24b-cloud",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/deepseek-r1:14b",
+      "ollama/gemma3:27b"
+    ],
+    "score": 0.7701,
+    "diversity_score": 0.8609,
+    "coverage_score": 0.7,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 2,
+      "gpt_oss": 1,
+      "mistral": 1,
+      "qwen": 1,
+      "deepseek": 1,
+      "gemma": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 1,
+        "uncertain": 1
+      }
+    }
+  },
+  "KA_ERR_MED_002": {
+    "domain": "medical",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/mistral-small:latest",
+      "gemini-2.5-pro-analyst",
+      "ollama/qwen3:14b",
+      "ollama/gemma3:12b",
+      "ollama/llama4:scout",
+      "ollama/deepseek-r1:14b",
+      "ollama/nemotron-3-super:cloud"
+    ],
+    "score": 0.8432,
+    "diversity_score": 0.9091,
+    "coverage_score": 0.8,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "mistral": 1,
+      "gemini": 1,
+      "qwen": 1,
+      "gemma": 1,
+      "llama": 1,
+      "deepseek": 1,
+      "nemotron": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 4,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 1,
+        "uncertain": 1
+      }
+    }
+  },
+  "MED_001": {
+    "domain": "medical",
+    "selected_models": [
+      "ollama/devstral-small-2:24b-cloud",
+      "gemini-2.5-pro-analyst",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/qwen3-next:80b-cloud",
+      "claude-opus-4.6-analyst",
+      "ollama/gemma3:27b",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/glm-4.7-flash:q8_0"
+    ],
+    "score": 0.8221,
+    "diversity_score": 0.8489,
+    "coverage_score": 0.8,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "mistral": 1,
+      "gemini": 1,
+      "medgemma": 1,
+      "qwen": 1,
+      "claude": 1,
+      "gemma": 1,
+      "nemotron": 1,
+      "glm": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      }
+    }
+  },
+  "MED_002": {
+    "domain": "medical",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gemma3:12b",
+      "ollama/gpt-oss-safeguard:20b",
+      "ollama/deepseek-r1:14b",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/qwen3:14b"
+    ],
+    "score": 0.911,
+    "diversity_score": 0.9601,
+    "coverage_score": 1.0,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemma": 1,
+      "gpt_oss": 1,
+      "deepseek": 1,
+      "gemini": 1,
+      "mistral": 1,
+      "nemotron": 1,
+      "qwen": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "MED_003": {
+    "domain": "medical",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/deepseek-r1:14b",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/gpt-oss:20b",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/kavai/qwen3.5-Gemini-Design:9b"
+    ],
+    "score": 0.8081,
+    "diversity_score": 0.8803,
+    "coverage_score": 0.7,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "deepseek": 1,
+      "mistral": 1,
+      "nemotron": 1,
+      "qwen": 1,
+      "gpt_oss": 1,
+      "gemini": 1,
+      "design": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 4
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "MED_004": {
+    "domain": "medical",
+    "selected_models": [
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/llama4:scout",
+      "ollama/glm-4.7-flash:q8_0",
+      "claude-opus-4.6-analyst",
+      "gemini-3.1-pro-analyst",
+      "ollama/kavai/qwen3.5-Gemini-Design:9b"
+    ],
+    "score": 0.8257,
+    "diversity_score": 0.859,
+    "coverage_score": 0.8,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "mistral": 1,
+      "qwen": 1,
+      "nemotron": 1,
+      "llama": 1,
+      "glm": 1,
+      "claude": 1,
+      "gemini": 1,
+      "design": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "MED_005": {
+    "domain": "medical",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/kavai/qwen3.5-Gemini-Design:9b",
+      "ollama/ministral-3:14b-cloud",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/gemma3:12b",
+      "ollama/deepseek-r1:14b"
+    ],
+    "score": 0.868,
+    "diversity_score": 0.9087,
+    "coverage_score": 0.9,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 1,
+      "design": 1,
+      "mistral": 1,
+      "qwen": 1,
+      "medgemma": 1,
+      "gemma": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "MED_006": {
+    "domain": "medical",
+    "selected_models": [
+      "ollama/ministral-3:14b-cloud",
+      "gemini-2.5-pro-analyst",
+      "claude-opus-4.6-analyst",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/gemma3:27b",
+      "ollama/devstral-small-2:24b-cloud",
+      "ollama/minimax-m2.5:cloud"
+    ],
+    "score": 0.6984,
+    "diversity_score": 0.7991,
+    "coverage_score": 0.5,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "mistral": 2,
+      "gemini": 1,
+      "claude": 1,
+      "qwen": 1,
+      "deepseek": 1,
+      "gemma": 1,
+      "minimax": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "MED_007": {
+    "domain": "medical",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/gpt-oss:20b",
+      "ollama/gemma3:27b"
+    ],
+    "score": 0.7612,
+    "diversity_score": 0.8178,
+    "coverage_score": 0.6,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 1,
+      "deepseek": 1,
+      "mistral": 1,
+      "qwen": 1,
+      "nemotron": 1,
+      "gpt_oss": 1,
+      "gemma": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "MED_008": {
+    "domain": "medical",
+    "selected_models": [
+      "ollama/minimax-m2.5:cloud",
+      "gemini-2.5-pro-analyst",
+      "ollama/qwen3.5:397b-cloud",
+      "claude-opus-4.6-analyst",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/devstral-small-2:24b-cloud",
+      "ollama/gpt-oss-safeguard:20b"
+    ],
+    "score": 0.7314,
+    "diversity_score": 0.8218,
+    "coverage_score": 0.6,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "minimax": 1,
+      "gemini": 2,
+      "qwen": 1,
+      "claude": 1,
+      "nemotron": 1,
+      "mistral": 1,
+      "gpt_oss": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "MED_009": {
+    "domain": "medical",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/mistral-small:latest",
+      "ollama/gemma3:27b",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/deepseek-r1:14b"
+    ],
+    "score": 0.8232,
+    "diversity_score": 0.8519,
+    "coverage_score": 0.8,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 1,
+      "mistral": 1,
+      "gemma": 1,
+      "nemotron": 1,
+      "qwen": 1,
+      "medgemma": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "MED_010": {
+    "domain": "medical",
+    "selected_models": [
+      "ollama/kavai/qwen3.5-Gemini-Design:9b",
+      "gemini-2.5-pro-analyst",
+      "ollama/deepseek-v3.2:cloud",
+      "claude-opus-4.6-analyst",
+      "ollama/gemma3:27b",
+      "ollama/mistral-large-3:675b-cloud",
+      "gemini-3.1-pro-analyst",
+      "ollama/qwen3.5:35b"
+    ],
+    "score": 0.7795,
+    "diversity_score": 0.8879,
+    "coverage_score": 0.7,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "design": 1,
+      "gemini": 2,
+      "deepseek": 1,
+      "claude": 1,
+      "gemma": 1,
+      "mistral": 1,
+      "qwen": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 4
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "MED_011": {
+    "domain": "medical",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/gemma3:12b",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/qwen3:14b",
+      "ollama/gpt-oss:20b"
+    ],
+    "score": 0.8248,
+    "diversity_score": 0.8567,
+    "coverage_score": 0.8,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 1,
+      "minimax": 1,
+      "gemma": 1,
+      "mistral": 1,
+      "medgemma": 1,
+      "qwen": 1,
+      "gpt_oss": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 3
+      }
+    }
+  },
+  "MED_012": {
+    "domain": "medical",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "gemini-2.5-pro-analyst",
+      "gemini-3.1-pro-analyst",
+      "ollama/mistral-small:latest",
+      "ollama/deepseek-r1:14b",
+      "ollama/qwen3-next:80b-cloud",
+      "claude-opus-4.6-analyst",
+      "ollama/gpt-oss:20b"
+    ],
+    "score": 0.7944,
+    "diversity_score": 0.859,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "gemini": 2,
+      "mistral": 1,
+      "deepseek": 1,
+      "qwen": 1,
+      "claude": 1,
+      "gpt_oss": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "MED_013": {
+    "domain": "medical",
+    "selected_models": [
+      "ollama/minimax-m2.7:cloud",
+      "gemini-2.5-pro-analyst",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/gemma3:12b",
+      "ollama/magistral:latest",
+      "ollama/llama4:scout",
+      "claude-opus-4.6-analyst",
+      "ollama/gpt-oss:20b"
+    ],
+    "score": 0.7205,
+    "diversity_score": 0.773,
+    "coverage_score": 0.5,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "minimax": 1,
+      "gemini": 1,
+      "qwen": 1,
+      "gemma": 1,
+      "mistral": 1,
+      "llama": 1,
+      "claude": 1,
+      "gpt_oss": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 0,
+        "uncertain": 2
+      }
+    }
+  },
+  "MED_014": {
+    "domain": "medical",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/gpt-oss:120b-cloud",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/devstral-small-2:24b-cloud",
+      "ollama/minimax-m2.5:cloud"
+    ],
+    "score": 0.885,
+    "diversity_score": 0.9571,
+    "coverage_score": 0.9,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "deepseek": 1,
+      "gemini": 1,
+      "gpt_oss": 1,
+      "nemotron": 1,
+      "medgemma": 1,
+      "mistral": 1,
+      "minimax": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 3
+      }
+    }
+  },
+  "MED_015": {
+    "domain": "medical",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/gemma3:12b",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/deepseek-r1:14b",
+      "ollama/glm-4.7-flash:q8_0",
+      "ollama/magistral:latest"
+    ],
+    "score": 0.793,
+    "diversity_score": 0.8371,
+    "coverage_score": 0.7,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 1,
+      "gemma": 1,
+      "qwen": 1,
+      "nemotron": 1,
+      "deepseek": 1,
+      "glm": 1,
+      "mistral": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 6,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "MED_016": {
+    "domain": "medical",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/gemma3:12b",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/qwen3:14b",
+      "ollama/devstral-small-2:24b-cloud"
+    ],
+    "score": 0.844,
+    "diversity_score": 0.9115,
+    "coverage_score": 0.8,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 1,
+      "gemma": 1,
+      "deepseek": 1,
+      "minimax": 1,
+      "nemotron": 1,
+      "qwen": 1,
+      "mistral": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "MED_017": {
+    "domain": "medical",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/gemma3:12b",
+      "ollama/minimax-m2.7:cloud",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/qwen3.5:35b"
+    ],
+    "score": 0.9151,
+    "diversity_score": 0.9716,
+    "coverage_score": 1.0,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "nemotron": 1,
+      "mistral": 1,
+      "deepseek": 1,
+      "gemma": 1,
+      "minimax": 1,
+      "medgemma": 1,
+      "qwen": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 1
+      }
+    }
+  },
+  "MED_018": {
+    "domain": "medical",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "gemini-2.5-pro-analyst",
+      "ollama/magistral:latest",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/llama4:scout",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/kavai/qwen3.5-Gemini-Design:9b",
+      "claude-opus-4.6-analyst"
+    ],
+    "score": 0.7645,
+    "diversity_score": 0.8271,
+    "coverage_score": 0.6,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "gemini": 1,
+      "mistral": 1,
+      "qwen": 1,
+      "llama": 1,
+      "nemotron": 1,
+      "design": 1,
+      "claude": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "MED_019": {
+    "domain": "medical",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "gemini-2.5-pro-analyst",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/mistral-small:latest",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/nemotron-3-super:cloud",
+      "claude-opus-4.6-analyst",
+      "ollama/deepseek-r1:14b"
+    ],
+    "score": 0.692,
+    "diversity_score": 0.7808,
+    "coverage_score": 0.5,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "gemini": 2,
+      "mistral": 1,
+      "qwen": 1,
+      "nemotron": 1,
+      "claude": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 1,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 0,
+        "uncertain": 2
+      }
+    }
+  },
+  "MED_020": {
+    "domain": "medical",
+    "selected_models": [
+      "ollama/minimax-m2.5:cloud",
+      "gemini-2.5-pro-analyst",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/glm-4.7-flash:q8_0",
+      "ollama/mistral-large-3:675b-cloud",
+      "claude-opus-4.6-analyst",
+      "ollama/qwen3:14b",
+      "ollama/deepseek-v3.2:cloud"
+    ],
+    "score": 0.7498,
+    "diversity_score": 0.7852,
+    "coverage_score": 0.6,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "minimax": 1,
+      "gemini": 1,
+      "nemotron": 1,
+      "glm": 1,
+      "mistral": 1,
+      "claude": 1,
+      "qwen": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 0,
+        "uncertain": 2
+      }
+    }
+  },
+  "KA_TR_001": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gpt-oss-safeguard:20b",
+      "gemini-3.1-pro-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/mistral-small:latest",
+      "ollama/qwen3.5:397b-cloud"
+    ],
+    "score": 0.8782,
+    "diversity_score": 0.9557,
+    "coverage_score": 1.0,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gpt_oss": 1,
+      "gemini": 2,
+      "nemotron": 1,
+      "deepseek": 1,
+      "mistral": 1,
+      "qwen": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 4,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "KA_TR_002": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/gemma3:12b",
+      "ollama/deepseek-r1:14b",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/llama4:scout",
+      "ollama/gpt-oss:20b",
+      "ollama/mistral-large-3:675b-cloud"
+    ],
+    "score": 0.8728,
+    "diversity_score": 0.9224,
+    "coverage_score": 0.9,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 1,
+      "gemma": 1,
+      "deepseek": 1,
+      "qwen": 1,
+      "llama": 1,
+      "gpt_oss": 1,
+      "mistral": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "KA_TR_003": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/gemma3:12b",
+      "gemini-3.1-pro-analyst",
+      "ollama/minimax-m2.7:cloud",
+      "ollama/gpt-oss:20b",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/qwen3:14b"
+    ],
+    "score": 0.7912,
+    "diversity_score": 0.85,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 2,
+      "gemma": 1,
+      "minimax": 1,
+      "gpt_oss": 1,
+      "deepseek": 1,
+      "qwen": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "KA_TR_004": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gpt-oss:120b",
+      "ollama/minimax-m2.7:cloud",
+      "gemini-3.1-pro-analyst",
+      "ollama/gpt-oss-safeguard:20b",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/qwen3.5:397b-cloud"
+    ],
+    "score": 0.8066,
+    "diversity_score": 0.9117,
+    "coverage_score": 0.9,
+    "family_score": 0.75,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gpt_oss": 2,
+      "minimax": 1,
+      "gemini": 2,
+      "deepseek": 1,
+      "qwen": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 2,
+        "oppose": 4,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "KA_TR_005": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/minimax-m2.7:cloud",
+      "gemini-2.5-pro-analyst",
+      "gemini-3.1-pro-analyst",
+      "ollama/gemma3:12b",
+      "ollama/gpt-oss:20b",
+      "ollama/mistral-small:latest",
+      "ollama/deepseek-r1:14b"
+    ],
+    "score": 0.8069,
+    "diversity_score": 0.8948,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "minimax": 1,
+      "gemini": 2,
+      "gemma": 1,
+      "gpt_oss": 1,
+      "mistral": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "KA_ERR_TR_001": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/gpt-oss:20b",
+      "ollama/qwen3.5:35b",
+      "ollama/mistral-small:latest",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/gemma3:27b",
+      "ollama/alibayram/medgemma:4b"
+    ],
+    "score": 0.7973,
+    "diversity_score": 0.8674,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 1,
+      "gpt_oss": 1,
+      "qwen": 2,
+      "mistral": 1,
+      "gemma": 1,
+      "medgemma": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 1,
+        "uncertain": 1
+      }
+    }
+  },
+  "TROUBLE_001": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "gemini-2.5-pro-analyst",
+      "gemini-3.1-pro-analyst",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/mistral-small:latest",
+      "ollama/llama4:scout",
+      "ollama/nemotron-3-super:cloud",
+      "claude-opus-4.6-analyst"
+    ],
+    "score": 0.7611,
+    "diversity_score": 0.8352,
+    "coverage_score": 0.7,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "gemini": 2,
+      "qwen": 1,
+      "mistral": 1,
+      "llama": 1,
+      "nemotron": 1,
+      "claude": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 4
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "TROUBLE_002": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "ollama/minimax-m2.5:cloud",
+      "gemini-2.5-pro-analyst",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/llama4:scout",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/magistral:latest",
+      "ollama/gpt-oss:120b-cloud",
+      "claude-opus-4.6-analyst"
+    ],
+    "score": 0.8378,
+    "diversity_score": 0.8936,
+    "coverage_score": 0.8,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "minimax": 1,
+      "gemini": 1,
+      "qwen": 1,
+      "llama": 1,
+      "nemotron": 1,
+      "mistral": 1,
+      "gpt_oss": 1,
+      "claude": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 4
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "TROUBLE_003": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "ollama/gemma3:27b",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/llama4:scout",
+      "ollama/magistral:latest",
+      "claude-opus-4.6-analyst",
+      "ollama/gpt-oss:20b",
+      "ollama/alibayram/medgemma:4b"
+    ],
+    "score": 0.6547,
+    "diversity_score": 0.6563,
+    "coverage_score": 0.4,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "qwen": 1,
+      "gemini": 1,
+      "llama": 1,
+      "mistral": 1,
+      "claude": 1,
+      "gpt_oss": 1,
+      "medgemma": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 6,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "TROUBLE_004": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "ollama/gemma3:27b",
+      "gemini-2.5-pro-analyst",
+      "claude-opus-4.6-analyst",
+      "ollama/deepseek-r1:14b",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/magistral:latest",
+      "ollama/minimax-m2.5:cloud",
+      "gemini-3.1-pro-analyst"
+    ],
+    "score": 0.7181,
+    "diversity_score": 0.7838,
+    "coverage_score": 0.6,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": false,
+    "family_counts": {
+      "gemma": 1,
+      "gemini": 2,
+      "claude": 1,
+      "deepseek": 1,
+      "qwen": 1,
+      "mistral": 1,
+      "minimax": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 0,
+        "uncertain": 4
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "TROUBLE_005": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/mistral-large-3:675b-cloud",
+      "gemini-3.1-pro-analyst",
+      "ollama/gpt-oss-safeguard:20b",
+      "ollama/llama4:scout",
+      "ollama/glm-4.7-flash:q8_0",
+      "ollama/deepseek-r1:14b"
+    ],
+    "score": 0.7974,
+    "diversity_score": 0.8676,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 2,
+      "mistral": 1,
+      "gpt_oss": 1,
+      "llama": 1,
+      "glm": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 1
+      }
+    }
+  },
+  "TROUBLE_006": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "ollama/devstral-small-2:24b-cloud",
+      "gemini-2.5-pro-analyst",
+      "claude-opus-4.6-analyst",
+      "ollama/gpt-oss:20b",
+      "ollama/gemma3:12b",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/glm-4.7-flash:q8_0"
+    ],
+    "score": 0.6649,
+    "diversity_score": 0.6854,
+    "coverage_score": 0.4,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "mistral": 1,
+      "gemini": 1,
+      "claude": 1,
+      "gpt_oss": 1,
+      "gemma": 1,
+      "qwen": 1,
+      "minimax": 1,
+      "glm": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 0,
+        "uncertain": 5
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      }
+    }
+  },
+  "TROUBLE_007": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/nemotron-cascade-2:latest",
+      "gemini-2.5-pro-analyst",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/deepseek-r1:14b",
+      "gemini-3.1-pro-analyst",
+      "ollama/llama4:scout"
+    ],
+    "score": 0.8824,
+    "diversity_score": 0.9676,
+    "coverage_score": 1.0,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "nemotron": 1,
+      "gemini": 2,
+      "qwen": 1,
+      "mistral": 1,
+      "deepseek": 1,
+      "llama": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "TROUBLE_008": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/qwen3-next:80b-cloud",
+      "gemini-2.5-pro-analyst",
+      "ollama/deepseek-r1:14b",
+      "ollama/gpt-oss-safeguard:20b",
+      "ollama/devstral-small-2:24b-cloud",
+      "ollama/gemma3:12b",
+      "ollama/nemotron-3-super:cloud"
+    ],
+    "score": 0.9092,
+    "diversity_score": 0.9549,
+    "coverage_score": 1.0,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "qwen": 1,
+      "gemini": 1,
+      "deepseek": 1,
+      "gpt_oss": 1,
+      "mistral": 1,
+      "gemma": 1,
+      "nemotron": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "TROUBLE_009": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "ollama/gpt-oss:20b",
+      "ollama/mistral-large-3:675b-cloud",
+      "gemini-3.1-pro-analyst",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/gemma3:12b",
+      "ollama/qwen3:14b",
+      "claude-opus-4.6-analyst",
+      "ollama/kavai/qwen3.5-Gemini-Design:9b"
+    ],
+    "score": 0.8375,
+    "diversity_score": 0.8928,
+    "coverage_score": 0.8,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gpt_oss": 1,
+      "mistral": 1,
+      "gemini": 1,
+      "deepseek": 1,
+      "gemma": 1,
+      "qwen": 1,
+      "claude": 1,
+      "design": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "TROUBLE_010": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "ollama/alibayram/medgemma:4b",
+      "gemini-2.5-pro-analyst",
+      "ollama/llama4:scout",
+      "ollama/gpt-oss-safeguard:20b",
+      "ollama/mistral-small:latest",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/gemini-3-flash-preview:latest"
+    ],
+    "score": 0.8519,
+    "diversity_score": 0.9519,
+    "coverage_score": 0.9,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "medgemma": 1,
+      "gemini": 2,
+      "llama": 1,
+      "gpt_oss": 1,
+      "mistral": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "TROUBLE_011": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gpt-oss-safeguard:20b",
+      "ollama/mistral-large-3:675b-cloud",
+      "gemini-2.5-pro-analyst",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/deepseek-r1:14b",
+      "ollama/llama4:scout",
+      "ollama/nemotron-3-super:cloud"
+    ],
+    "score": 0.7787,
+    "diversity_score": 0.8855,
+    "coverage_score": 0.7,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gpt_oss": 1,
+      "mistral": 1,
+      "gemini": 1,
+      "nemotron": 2,
+      "deepseek": 1,
+      "llama": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "TROUBLE_012": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/gpt-oss:20b",
+      "ollama/mistral-small:latest",
+      "ollama/qwen3-next:80b-cloud",
+      "gemini-3.1-pro-analyst",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/gemma3:12b"
+    ],
+    "score": 0.8233,
+    "diversity_score": 0.8702,
+    "coverage_score": 0.9,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 2,
+      "gpt_oss": 1,
+      "mistral": 1,
+      "qwen": 1,
+      "deepseek": 1,
+      "gemma": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 2,
+        "uncertain": 0
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 4,
+        "uncertain": 1
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "TROUBLE_013": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "gemini-2.5-pro-analyst",
+      "ollama/deepseek-v3.2:cloud",
+      "gemini-3.1-pro-analyst",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/minimax-m2.7:cloud",
+      "claude-opus-4.6-analyst",
+      "ollama/qwen3:14b"
+    ],
+    "score": 0.8067,
+    "diversity_score": 0.894,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "gemini": 2,
+      "deepseek": 1,
+      "mistral": 1,
+      "minimax": 1,
+      "claude": 1,
+      "qwen": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 4
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "TROUBLE_014": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "gemini-2.5-pro-analyst",
+      "ollama/magistral:latest",
+      "ollama/deepseek-v3.2:cloud",
+      "claude-opus-4.6-analyst",
+      "ollama/llama4:scout",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/qwen3.5:397b-cloud"
+    ],
+    "score": 0.7005,
+    "diversity_score": 0.7871,
+    "coverage_score": 0.4,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "gemini": 1,
+      "mistral": 1,
+      "deepseek": 1,
+      "claude": 1,
+      "llama": 1,
+      "nemotron": 1,
+      "qwen": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 0,
+        "uncertain": 2
+      }
+    }
+  },
+  "TROUBLE_015": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/llama4:scout",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/deepseek-r1:14b",
+      "ollama/qwen3.5:397b-cloud",
+      "gemini-2.5-pro-analyst",
+      "ollama/mistral-large-3:675b-cloud"
+    ],
+    "score": 0.8582,
+    "diversity_score": 0.9521,
+    "coverage_score": 0.8,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "nemotron": 1,
+      "llama": 1,
+      "minimax": 1,
+      "deepseek": 1,
+      "qwen": 1,
+      "gemini": 1,
+      "mistral": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "TROUBLE_016": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "ollama/minimax-m2.7:cloud",
+      "ollama/gpt-oss-safeguard:20b",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/kavai/qwen3.5-Gemini-Design:9b",
+      "ollama/gemma3:27b",
+      "ollama/gemini-3-flash-preview:latest",
+      "claude-opus-4.6-analyst",
+      "ollama/alibayram/medgemma:4b"
+    ],
+    "score": 0.794,
+    "diversity_score": 0.84,
+    "coverage_score": 0.7,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "minimax": 1,
+      "gpt_oss": 1,
+      "qwen": 1,
+      "design": 1,
+      "gemma": 1,
+      "gemini": 1,
+      "claude": 1,
+      "medgemma": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C5": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "TROUBLE_017": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "ollama/gpt-oss:20b",
+      "gemini-3.1-pro-analyst",
+      "ollama/glm-4.7-flash:q8_0",
+      "ollama/magistral:latest",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/llama4:scout",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/qwen3:14b"
+    ],
+    "score": 0.7279,
+    "diversity_score": 0.794,
+    "coverage_score": 0.5,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": false,
+    "family_counts": {
+      "gpt_oss": 1,
+      "gemini": 1,
+      "glm": 1,
+      "mistral": 1,
+      "deepseek": 1,
+      "llama": 1,
+      "nemotron": 1,
+      "qwen": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 6,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 1,
+        "oppose": 1,
+        "uncertain": 1
+      }
+    }
+  },
+  "TROUBLE_018": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/gemma3:27b",
+      "ollama/gpt-oss-safeguard:20b",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/llama4:scout",
+      "ollama/mistral-small:latest",
+      "ollama/kavai/qwen3.5-Gemini-Design:9b"
+    ],
+    "score": 0.7919,
+    "diversity_score": 0.852,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 2,
+      "gemma": 1,
+      "gpt_oss": 1,
+      "llama": 1,
+      "mistral": 1,
+      "design": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 6,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "TROUBLE_019": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "ollama/mistral-small:latest",
+      "gemini-2.5-pro-analyst",
+      "ollama/gpt-oss:20b",
+      "claude-opus-4.6-analyst",
+      "ollama/gemma3:27b",
+      "ollama/kavai/qwen3.5-Gemini-Design:9b",
+      "ollama/llama4:scout",
+      "ollama/qwen3:14b"
+    ],
+    "score": 0.7682,
+    "diversity_score": 0.8377,
+    "coverage_score": 0.6,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": false,
+    "family_counts": {
+      "mistral": 1,
+      "gemini": 1,
+      "gpt_oss": 1,
+      "claude": 1,
+      "gemma": 1,
+      "design": 1,
+      "llama": 1,
+      "qwen": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 4
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "TROUBLE_020": {
+    "domain": "troubleshooting",
+    "selected_models": [
+      "ollama/minimax-m2.5:cloud",
+      "gemini-2.5-pro-analyst",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/qwen3:14b",
+      "claude-opus-4.6-analyst",
+      "ollama/llama4:scout",
+      "ollama/nemotron-3-super:cloud"
+    ],
+    "score": 0.8004,
+    "diversity_score": 0.8761,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "minimax": 1,
+      "gemini": 2,
+      "medgemma": 1,
+      "qwen": 1,
+      "claude": 1,
+      "llama": 1,
+      "nemotron": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "KA_CR_001": {
+    "domain": "code_review",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "gemini-2.5-pro-analyst",
+      "claude-opus-4.6-analyst",
+      "gemini-3.1-pro-analyst",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/gpt-oss:20b",
+      "ollama/llama4:scout",
+      "ollama/deepseek-r1:14b"
+    ],
+    "score": 0.7586,
+    "diversity_score": 0.8282,
+    "coverage_score": 0.7,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "gemini": 2,
+      "claude": 1,
+      "qwen": 1,
+      "gpt_oss": 1,
+      "llama": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "KA_CR_002": {
+    "domain": "code_review",
+    "selected_models": [
+      "ollama/minimax-m2.7:cloud",
+      "gemini-2.5-pro-analyst",
+      "claude-opus-4.6-analyst",
+      "gemini-3.1-pro-analyst",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/glm-4.7-flash:q8_0",
+      "ollama/gemma3:12b",
+      "ollama/devstral-small-2:24b-cloud"
+    ],
+    "score": 0.7155,
+    "diversity_score": 0.7763,
+    "coverage_score": 0.6,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "minimax": 1,
+      "gemini": 2,
+      "claude": 1,
+      "deepseek": 1,
+      "glm": 1,
+      "gemma": 1,
+      "mistral": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 6,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "KA_CR_003": {
+    "domain": "code_review",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/qwen3:14b",
+      "gemini-3.1-pro-analyst",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/gpt-oss:120b-cloud",
+      "ollama/devstral-small-2:24b-cloud",
+      "ollama/deepseek-v3.2:cloud"
+    ],
+    "score": 0.6889,
+    "diversity_score": 0.7719,
+    "coverage_score": 0.5,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 2,
+      "qwen": 1,
+      "minimax": 1,
+      "gpt_oss": 1,
+      "mistral": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 4
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "KA_CR_004": {
+    "domain": "code_review",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/mistral-small:latest",
+      "gemini-2.5-pro-analyst",
+      "ollama/qwen3.5:35b",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/llama4:scout"
+    ],
+    "score": 0.8901,
+    "diversity_score": 0.9718,
+    "coverage_score": 0.9,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "mistral": 1,
+      "gemini": 1,
+      "qwen": 1,
+      "nemotron": 1,
+      "deepseek": 1,
+      "medgemma": 1,
+      "llama": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 4
+      },
+      "C3": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "KA_CR_005": {
+    "domain": "code_review",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/gemma3:27b",
+      "ollama/devstral-small-2:24b-cloud",
+      "gemini-3.1-pro-analyst",
+      "ollama/deepseek-r1:14b",
+      "ollama/gpt-oss:120b-cloud",
+      "ollama/minimax-m2.5:cloud"
+    ],
+    "score": 0.7514,
+    "diversity_score": 0.8075,
+    "coverage_score": 0.7,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 2,
+      "gemma": 1,
+      "mistral": 1,
+      "deepseek": 1,
+      "gpt_oss": 1,
+      "minimax": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "KA_ERR_CR_001": {
+    "domain": "code_review",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/gemma3:12b",
+      "gemini-3.1-pro-analyst",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/qwen3:14b",
+      "ollama/nemotron-3-super:cloud"
+    ],
+    "score": 0.7926,
+    "diversity_score": 0.8539,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 2,
+      "mistral": 1,
+      "gemma": 1,
+      "medgemma": 1,
+      "qwen": 1,
+      "nemotron": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C5": {
+        "support": 1,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "KA_ERR_CR_002": {
+    "domain": "code_review",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-3.1-pro-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/gemma3:27b",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/qwen3:14b",
+      "ollama/kavai/qwen3.5-Gemini-Design:9b",
+      "ollama/gpt-oss-safeguard:20b"
+    ],
+    "score": 0.8153,
+    "diversity_score": 0.9186,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 2,
+      "gemma": 1,
+      "mistral": 1,
+      "qwen": 1,
+      "design": 1,
+      "gpt_oss": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 4,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C4": {
+        "support": 1,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C5": {
+        "support": 1,
+        "oppose": 1,
+        "uncertain": 1
+      }
+    }
+  },
+  "CR_001": {
+    "domain": "code_review",
+    "selected_models": [
+      "ollama/qwen3:14b",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/nemotron-cascade-2:latest",
+      "gemini-2.5-pro-analyst",
+      "claude-opus-4.6-analyst",
+      "ollama/gemma3:27b",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/alibayram/medgemma:4b"
+    ],
+    "score": 0.8126,
+    "diversity_score": 0.9109,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "qwen": 2,
+      "mistral": 1,
+      "nemotron": 1,
+      "gemini": 1,
+      "claude": 1,
+      "gemma": 1,
+      "medgemma": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 1,
+        "oppose": 1,
+        "uncertain": 4
+      }
+    }
+  },
+  "CR_002": {
+    "domain": "code_review",
+    "selected_models": [
+      "ollama/minimax-m2.5:cloud",
+      "gemini-2.5-pro-analyst",
+      "ollama/gpt-oss:120b-cloud",
+      "ollama/mistral-small:latest",
+      "ollama/gemma3:12b",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/llama4:scout",
+      "gemini-3.1-pro-analyst"
+    ],
+    "score": 0.8156,
+    "diversity_score": 0.9196,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "minimax": 1,
+      "gemini": 2,
+      "gpt_oss": 1,
+      "mistral": 1,
+      "gemma": 1,
+      "medgemma": 1,
+      "llama": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 1,
+        "oppose": 1,
+        "uncertain": 3
+      }
+    }
+  },
+  "CR_003": {
+    "domain": "code_review",
+    "selected_models": [
+      "ollama/gpt-oss:20b",
+      "gemini-2.5-pro-analyst",
+      "ollama/gemma3:12b",
+      "ollama/deepseek-r1:14b",
+      "ollama/qwen3:14b",
+      "ollama/magistral:latest",
+      "ollama/llama4:scout",
+      "claude-opus-4.6-analyst"
+    ],
+    "score": 0.6701,
+    "diversity_score": 0.7003,
+    "coverage_score": 0.4,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gpt_oss": 1,
+      "gemini": 1,
+      "gemma": 1,
+      "deepseek": 1,
+      "qwen": 1,
+      "mistral": 1,
+      "llama": 1,
+      "claude": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 1,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "CR_004": {
+    "domain": "code_review",
+    "selected_models": [
+      "ollama/mistral-small:latest",
+      "gemini-2.5-pro-analyst",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/qwen3:14b",
+      "ollama/mistral-large-3:675b-cloud",
+      "claude-opus-4.6-analyst",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/llama4:scout"
+    ],
+    "score": 0.6821,
+    "diversity_score": 0.7703,
+    "coverage_score": 0.6,
+    "family_score": 0.75,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "mistral": 2,
+      "gemini": 2,
+      "qwen": 1,
+      "claude": 1,
+      "deepseek": 1,
+      "llama": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 0,
+        "uncertain": 3
+      }
+    }
+  },
+  "CR_005": {
+    "domain": "code_review",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "ollama/qwen3-next:80b-cloud",
+      "gemini-2.5-pro-analyst",
+      "ollama/nemotron-cascade-2:latest",
+      "claude-opus-4.6-analyst",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/llama4:scout",
+      "ollama/gpt-oss:20b"
+    ],
+    "score": 0.81,
+    "diversity_score": 0.8857,
+    "coverage_score": 0.7,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "qwen": 1,
+      "gemini": 1,
+      "nemotron": 1,
+      "claude": 1,
+      "mistral": 1,
+      "llama": 1,
+      "gpt_oss": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 0,
+        "uncertain": 4
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 2
+      }
+    }
+  },
+  "CR_006": {
+    "domain": "code_review",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/mistral-large-3:675b-cloud",
+      "gemini-3.1-pro-analyst",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/gemma3:12b",
+      "ollama/nemotron-3-super:cloud"
+    ],
+    "score": 0.6084,
+    "diversity_score": 0.6846,
+    "coverage_score": 0.3,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": false,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 2,
+      "mistral": 1,
+      "qwen": 1,
+      "deepseek": 1,
+      "gemma": 1,
+      "nemotron": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "CR_007": {
+    "domain": "code_review",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/gpt-oss-safeguard:20b",
+      "ollama/deepseek-v3.2:cloud"
+    ],
+    "score": 0.8128,
+    "diversity_score": 0.9117,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 2,
+      "mistral": 1,
+      "minimax": 1,
+      "medgemma": 1,
+      "gpt_oss": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 1,
+        "oppose": 3,
+        "uncertain": 2
+      }
+    }
+  },
+  "CR_008": {
+    "domain": "code_review",
+    "selected_models": [
+      "ollama/minimax-m2.7:cloud",
+      "gemini-2.5-pro-analyst",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/gpt-oss:20b",
+      "ollama/glm-4.7-flash:q8_0"
+    ],
+    "score": 0.759,
+    "diversity_score": 0.8293,
+    "coverage_score": 0.7,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "minimax": 1,
+      "gemini": 2,
+      "mistral": 1,
+      "qwen": 1,
+      "nemotron": 1,
+      "gpt_oss": 1,
+      "glm": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 4
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      }
+    }
+  },
+  "CR_009": {
+    "domain": "code_review",
+    "selected_models": [
+      "ollama/gemini-3-flash-preview:latest",
+      "gemini-2.5-pro-analyst",
+      "ollama/alibayram/medgemma:4b",
+      "gemini-3.1-pro-analyst",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/gpt-oss:20b",
+      "claude-opus-4.6-analyst",
+      "ollama/deepseek-v3.2:cloud"
+    ],
+    "score": 0.6978,
+    "diversity_score": 0.8153,
+    "coverage_score": 0.6,
+    "family_score": 0.75,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemini": 3,
+      "medgemma": 1,
+      "nemotron": 1,
+      "gpt_oss": 1,
+      "claude": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 2
+      }
+    }
+  },
+  "CR_010": {
+    "domain": "code_review",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/minimax-m2.7:cloud",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/mistral-small:latest",
+      "ollama/deepseek-r1:14b",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/gpt-oss:20b"
+    ],
+    "score": 0.8864,
+    "diversity_score": 0.9613,
+    "coverage_score": 0.9,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "minimax": 1,
+      "qwen": 1,
+      "mistral": 1,
+      "deepseek": 1,
+      "nemotron": 1,
+      "gemini": 1,
+      "gpt_oss": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 4
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 1,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "CR_011": {
+    "domain": "code_review",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/gpt-oss:120b-cloud",
+      "ollama/gemma3:27b",
+      "gemini-3.1-pro-analyst",
+      "ollama/qwen3:14b"
+    ],
+    "score": 0.5881,
+    "diversity_score": 0.6445,
+    "coverage_score": 0.4,
+    "family_score": 0.75,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 3,
+      "nemotron": 1,
+      "gpt_oss": 1,
+      "gemma": 1,
+      "qwen": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "CR_012": {
+    "domain": "code_review",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/gemma3:27b",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/gpt-oss-safeguard:20b",
+      "ollama/deepseek-r1:14b"
+    ],
+    "score": 0.8362,
+    "diversity_score": 0.889,
+    "coverage_score": 0.8,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 1,
+      "qwen": 1,
+      "mistral": 1,
+      "gemma": 1,
+      "minimax": 1,
+      "gpt_oss": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 4
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "CR_013": {
+    "domain": "code_review",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gemma3:12b",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/minimax-m2.7:cloud",
+      "ollama/gemma3:27b",
+      "ollama/alibayram/medgemma:4b",
+      "gemini-2.5-pro-analyst",
+      "ollama/qwen3:14b"
+    ],
+    "score": 0.8881,
+    "diversity_score": 0.9839,
+    "coverage_score": 1.0,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemma": 2,
+      "deepseek": 1,
+      "minimax": 1,
+      "medgemma": 1,
+      "gemini": 1,
+      "qwen": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "CR_014": {
+    "domain": "code_review",
+    "selected_models": [
+      "ollama/nemotron-cascade-2:latest",
+      "gemini-2.5-pro-analyst",
+      "ollama/qwen3.5:35b",
+      "ollama/gemma3:12b",
+      "ollama/minimax-m2.7:cloud",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/magistral:latest",
+      "ollama/kavai/qwen3.5-Gemini-Design:9b"
+    ],
+    "score": 0.8182,
+    "diversity_score": 0.9093,
+    "coverage_score": 0.7,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "nemotron": 1,
+      "gemini": 1,
+      "qwen": 1,
+      "gemma": 1,
+      "minimax": 1,
+      "medgemma": 1,
+      "mistral": 1,
+      "design": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 1,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 1,
+        "oppose": 0,
+        "uncertain": 1
+      }
+    }
+  },
+  "CR_015": {
+    "domain": "code_review",
+    "selected_models": [
+      "ollama/gpt-oss:20b",
+      "gemini-2.5-pro-analyst",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/gemma3:12b",
+      "claude-opus-4.6-analyst",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/mistral-small:latest",
+      "ollama/qwen3:14b"
+    ],
+    "score": 0.5877,
+    "diversity_score": 0.6256,
+    "coverage_score": 0.3,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gpt_oss": 1,
+      "gemini": 2,
+      "gemma": 1,
+      "claude": 1,
+      "minimax": 1,
+      "mistral": 1,
+      "qwen": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 6,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 4,
+        "oppose": 0,
+        "uncertain": 3
+      }
+    }
+  },
+  "CR_016": {
+    "domain": "code_review",
+    "selected_models": [
+      "ollama/gemma3:27b",
+      "gemini-2.5-pro-analyst",
+      "ollama/gemini-3-flash-preview:latest",
+      "claude-opus-4.6-analyst",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/deepseek-r1:14b",
+      "ollama/gpt-oss:20b",
+      "ollama/kavai/qwen3.5-Gemini-Design:9b"
+    ],
+    "score": 0.7467,
+    "diversity_score": 0.7942,
+    "coverage_score": 0.7,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "gemini": 2,
+      "claude": 1,
+      "qwen": 1,
+      "deepseek": 1,
+      "gpt_oss": 1,
+      "design": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "CR_017": {
+    "domain": "code_review",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "ollama/mistral-small:latest",
+      "gemini-2.5-pro-analyst",
+      "ollama/qwen3:14b",
+      "ollama/gpt-oss:20b",
+      "ollama/magistral:latest",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/deepseek-r1:14b"
+    ],
+    "score": 0.7843,
+    "diversity_score": 0.9015,
+    "coverage_score": 0.7,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "mistral": 2,
+      "gemini": 1,
+      "qwen": 1,
+      "gpt_oss": 1,
+      "nemotron": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 0,
+        "uncertain": 2
+      }
+    }
+  },
+  "CR_018": {
+    "domain": "code_review",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/llama4:scout",
+      "ollama/qwen3.5:397b-cloud",
+      "claude-opus-4.6-analyst",
+      "ollama/nemotron-3-super:cloud"
+    ],
+    "score": 0.8125,
+    "diversity_score": 0.8215,
+    "coverage_score": 0.8,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "gemini": 1,
+      "deepseek": 1,
+      "minimax": 1,
+      "llama": 1,
+      "qwen": 1,
+      "claude": 1,
+      "nemotron": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 1,
+        "uncertain": 0
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "CR_019": {
+    "domain": "code_review",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/deepseek-r1:14b",
+      "gemini-2.5-pro-analyst",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/magistral:latest",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/glm-4.7-flash:q8_0",
+      "ollama/gemini-3-flash-preview:latest"
+    ],
+    "score": 0.874,
+    "diversity_score": 0.9436,
+    "coverage_score": 1.0,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "deepseek": 1,
+      "gemini": 2,
+      "qwen": 1,
+      "mistral": 1,
+      "nemotron": 1,
+      "glm": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 2
+      }
+    }
+  },
+  "CR_020": {
+    "domain": "code_review",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gemma3:27b",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/gpt-oss:120b-cloud",
+      "ollama/deepseek-r1:14b",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/alibayram/medgemma:4b"
+    ],
+    "score": 0.903,
+    "diversity_score": 0.9373,
+    "coverage_score": 1.0,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemma": 1,
+      "qwen": 1,
+      "gpt_oss": 1,
+      "deepseek": 1,
+      "gemini": 1,
+      "minimax": 1,
+      "medgemma": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 4,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "KA_AR_001": {
+    "domain": "architecture",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gpt-oss:20b",
+      "ollama/qwen3.5:35b",
+      "ollama/minimax-m2.7:cloud",
+      "ollama/gpt-oss:120b",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/kavai/qwen3.5-Gemini-Design:9b",
+      "gemini-3.1-pro-analyst"
+    ],
+    "score": 0.8727,
+    "diversity_score": 0.9398,
+    "coverage_score": 1.0,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gpt_oss": 2,
+      "qwen": 1,
+      "minimax": 1,
+      "deepseek": 1,
+      "design": 1,
+      "gemini": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 4,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 2,
+        "oppose": 4,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "KA_AR_002": {
+    "domain": "architecture",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/mistral-small:latest",
+      "gemini-2.5-pro-analyst",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/gpt-oss:120b-cloud",
+      "ollama/kavai/qwen3.5-Gemini-Design:9b",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/deepseek-r1:14b"
+    ],
+    "score": 0.9058,
+    "diversity_score": 0.9452,
+    "coverage_score": 1.0,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "mistral": 1,
+      "gemini": 1,
+      "qwen": 1,
+      "gpt_oss": 1,
+      "design": 1,
+      "medgemma": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 4
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "KA_AR_003": {
+    "domain": "architecture",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gpt-oss:20b",
+      "ollama/glm-4.7-flash:q8_0",
+      "ollama/mistral-small:latest",
+      "gemini-3.1-pro-analyst",
+      "ollama/kavai/qwen3.5-Gemini-Design:9b",
+      "ollama/gemma3:12b",
+      "ollama/deepseek-v3.2:cloud"
+    ],
+    "score": 0.9163,
+    "diversity_score": 0.9751,
+    "coverage_score": 1.0,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gpt_oss": 1,
+      "glm": 1,
+      "mistral": 1,
+      "gemini": 1,
+      "design": 1,
+      "gemma": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "KA_AR_004": {
+    "domain": "architecture",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/minimax-m2.7:cloud",
+      "ollama/qwen3:14b",
+      "gemini-2.5-pro-analyst",
+      "ollama/devstral-small-2:24b-cloud",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/gpt-oss:20b",
+      "ollama/qwen3-next:80b-cloud"
+    ],
+    "score": 0.8406,
+    "diversity_score": 0.991,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "minimax": 1,
+      "qwen": 2,
+      "gemini": 1,
+      "mistral": 1,
+      "deepseek": 1,
+      "gpt_oss": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 1,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C5": {
+        "support": 1,
+        "oppose": 1,
+        "uncertain": 1
+      }
+    }
+  },
+  "KA_AR_005": {
+    "domain": "architecture",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/gpt-oss:20b",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/llama4:scout",
+      "ollama/gemma3:27b",
+      "ollama/devstral-small-2:24b-cloud",
+      "ollama/nemotron-3-super:cloud"
+    ],
+    "score": 0.8374,
+    "diversity_score": 0.8926,
+    "coverage_score": 0.8,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 1,
+      "gpt_oss": 1,
+      "qwen": 1,
+      "llama": 1,
+      "gemma": 1,
+      "mistral": 1,
+      "nemotron": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C5": {
+        "support": 1,
+        "oppose": 1,
+        "uncertain": 1
+      }
+    }
+  },
+  "ARCH_001": {
+    "domain": "architecture",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "ollama/gpt-oss:20b",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/glm-4.7-flash:q8_0",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/llama4:scout",
+      "ollama/qwen3.5:397b-cloud"
+    ],
+    "score": 0.8719,
+    "diversity_score": 0.9198,
+    "coverage_score": 0.9,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "gpt_oss": 1,
+      "gemini": 1,
+      "glm": 1,
+      "nemotron": 1,
+      "mistral": 1,
+      "llama": 1,
+      "qwen": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 2,
+        "oppose": 4,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 1,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "ARCH_002": {
+    "domain": "architecture",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/llama4:scout",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/qwen3.5:397b-cloud",
+      "gemini-3.1-pro-analyst",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/minimax-m2.7:cloud",
+      "ollama/nemotron-3-super:cloud"
+    ],
+    "score": 0.7337,
+    "diversity_score": 0.8283,
+    "coverage_score": 0.6,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": false,
+    "family_counts": {
+      "claude": 1,
+      "llama": 1,
+      "deepseek": 1,
+      "qwen": 2,
+      "gemini": 1,
+      "minimax": 1,
+      "nemotron": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      }
+    }
+  },
+  "ARCH_003": {
+    "domain": "architecture",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/minimax-m2.7:cloud",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/gemma3:27b",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/glm-4.7-flash:q8_0",
+      "gemini-3.1-pro-analyst",
+      "ollama/alibayram/medgemma:4b"
+    ],
+    "score": 0.9181,
+    "diversity_score": 0.9803,
+    "coverage_score": 1.0,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "minimax": 1,
+      "qwen": 1,
+      "gemma": 1,
+      "nemotron": 1,
+      "glm": 1,
+      "gemini": 1,
+      "medgemma": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "ARCH_004": {
+    "domain": "architecture",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/llama4:scout",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/qwen3.5:35b",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/gpt-oss:120b-cloud"
+    ],
+    "score": 0.7779,
+    "diversity_score": 0.8653,
+    "coverage_score": 0.6,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "mistral": 1,
+      "gemini": 1,
+      "llama": 1,
+      "nemotron": 1,
+      "qwen": 1,
+      "minimax": 1,
+      "gpt_oss": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 4
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 3
+      }
+    }
+  },
+  "ARCH_005": {
+    "domain": "architecture",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/qwen3:14b",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/gemma3:27b",
+      "ollama/gpt-oss-safeguard:20b",
+      "ollama/qwen3.5:397b-cloud"
+    ],
+    "score": 0.7009,
+    "diversity_score": 0.8061,
+    "coverage_score": 0.5,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "nemotron": 1,
+      "deepseek": 1,
+      "qwen": 2,
+      "gemini": 1,
+      "gemma": 1,
+      "gpt_oss": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 4,
+        "oppose": 0,
+        "uncertain": 3
+      }
+    }
+  },
+  "ARCH_006": {
+    "domain": "architecture",
+    "selected_models": [
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/gpt-oss:20b",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/qwen3:14b",
+      "gemini-3.1-pro-analyst",
+      "ollama/kavai/qwen3.5-Gemini-Design:9b",
+      "ollama/deepseek-r1:14b",
+      "ollama/mistral-small:latest"
+    ],
+    "score": 0.749,
+    "diversity_score": 0.8722,
+    "coverage_score": 0.6,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemini": 2,
+      "gpt_oss": 1,
+      "medgemma": 1,
+      "qwen": 1,
+      "design": 1,
+      "deepseek": 1,
+      "mistral": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "ARCH_007": {
+    "domain": "architecture",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "ollama/qwen3:14b",
+      "claude-opus-4.6-analyst",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/deepseek-v3.2:cloud",
+      "gemini-3.1-pro-analyst",
+      "ollama/gpt-oss:120b-cloud",
+      "ollama/qwen3.5:35b"
+    ],
+    "score": 0.7697,
+    "diversity_score": 0.8599,
+    "coverage_score": 0.7,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": false,
+    "family_counts": {
+      "gemma": 1,
+      "qwen": 2,
+      "claude": 1,
+      "nemotron": 1,
+      "deepseek": 1,
+      "gemini": 1,
+      "gpt_oss": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "ARCH_008": {
+    "domain": "architecture",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/kavai/qwen3.5-Gemini-Design:9b",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/qwen3.5:35b",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/qwen3:14b"
+    ],
+    "score": 0.7829,
+    "diversity_score": 0.8976,
+    "coverage_score": 0.7,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "design": 1,
+      "minimax": 1,
+      "qwen": 2,
+      "deepseek": 1,
+      "nemotron": 1,
+      "medgemma": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 0,
+        "uncertain": 4
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 4
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "ARCH_009": {
+    "domain": "architecture",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "gemini-2.5-pro-analyst",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/gpt-oss:120b-cloud",
+      "ollama/magistral:latest",
+      "ollama/alibayram/medgemma:4b",
+      "claude-opus-4.6-analyst"
+    ],
+    "score": 0.8082,
+    "diversity_score": 0.8805,
+    "coverage_score": 0.7,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "gemini": 1,
+      "qwen": 1,
+      "nemotron": 1,
+      "gpt_oss": 1,
+      "mistral": 1,
+      "medgemma": 1,
+      "claude": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 3
+      }
+    }
+  },
+  "ARCH_010": {
+    "domain": "architecture",
+    "selected_models": [
+      "ollama/mistral-small:latest",
+      "ollama/gpt-oss:20b",
+      "ollama/qwen3.5:397b-cloud",
+      "gemini-3.1-pro-analyst",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/llama4:scout",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/alibayram/medgemma:4b"
+    ],
+    "score": 0.8072,
+    "diversity_score": 0.8777,
+    "coverage_score": 0.7,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "mistral": 1,
+      "gpt_oss": 1,
+      "qwen": 1,
+      "gemini": 1,
+      "minimax": 1,
+      "llama": 1,
+      "deepseek": 1,
+      "medgemma": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "ARCH_011": {
+    "domain": "architecture",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/minimax-m2.7:cloud",
+      "ollama/qwen3.5:35b",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/glm-4.7-flash:q8_0",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/llama4:scout",
+      "ollama/gemma3:12b"
+    ],
+    "score": 0.8869,
+    "diversity_score": 0.9626,
+    "coverage_score": 0.9,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "minimax": 1,
+      "qwen": 1,
+      "deepseek": 1,
+      "glm": 1,
+      "gemini": 1,
+      "llama": 1,
+      "gemma": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 3
+      }
+    }
+  },
+  "ARCH_012": {
+    "domain": "architecture",
+    "selected_models": [
+      "ollama/mistral-small:latest",
+      "gemini-2.5-pro-analyst",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/qwen3:14b",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/gemma3:12b"
+    ],
+    "score": 0.8204,
+    "diversity_score": 0.9333,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "mistral": 1,
+      "gemini": 1,
+      "nemotron": 1,
+      "qwen": 2,
+      "minimax": 1,
+      "deepseek": 1,
+      "gemma": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 4
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "ARCH_013": {
+    "domain": "architecture",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/mistral-small:latest",
+      "ollama/qwen3.5:35b",
+      "ollama/gemma3:12b",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/gpt-oss:20b",
+      "ollama/glm-4.7-flash:q8_0"
+    ],
+    "score": 0.8776,
+    "diversity_score": 0.9359,
+    "coverage_score": 0.9,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": false,
+    "family_counts": {
+      "claude": 1,
+      "deepseek": 1,
+      "mistral": 1,
+      "qwen": 1,
+      "gemma": 1,
+      "gemini": 1,
+      "gpt_oss": 1,
+      "glm": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 4
+      },
+      "C3": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 4
+      },
+      "C4": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "ARCH_014": {
+    "domain": "architecture",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/qwen3-next:80b-cloud",
+      "gemini-2.5-pro-analyst",
+      "ollama/gpt-oss:20b",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/gemma3:27b"
+    ],
+    "score": 0.849,
+    "diversity_score": 0.9435,
+    "coverage_score": 0.9,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "mistral": 1,
+      "nemotron": 1,
+      "qwen": 1,
+      "gemini": 2,
+      "gpt_oss": 1,
+      "gemma": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 1
+      }
+    }
+  },
+  "ARCH_015": {
+    "domain": "architecture",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/qwen3.5:35b",
+      "ollama/gemma3:12b",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/gpt-oss:120b-cloud",
+      "ollama/llama4:scout"
+    ],
+    "score": 0.8823,
+    "diversity_score": 0.9494,
+    "coverage_score": 0.9,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "qwen": 1,
+      "gemma": 1,
+      "mistral": 1,
+      "gemini": 1,
+      "medgemma": 1,
+      "gpt_oss": 1,
+      "llama": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 4
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "ARCH_016": {
+    "domain": "architecture",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/gemma3:12b",
+      "ollama/devstral-small-2:24b-cloud"
+    ],
+    "score": 0.8117,
+    "diversity_score": 0.9085,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 2,
+      "nemotron": 1,
+      "qwen": 1,
+      "medgemma": 1,
+      "gemma": 1,
+      "mistral": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      }
+    }
+  },
+  "ARCH_017": {
+    "domain": "architecture",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/qwen3:14b",
+      "ollama/gemma3:12b",
+      "ollama/alibayram/medgemma:4b",
+      "gemini-2.5-pro-analyst",
+      "ollama/devstral-small-2:24b-cloud",
+      "ollama/llama4:scout"
+    ],
+    "score": 0.6927,
+    "diversity_score": 0.7648,
+    "coverage_score": 0.4,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": false,
+    "family_counts": {
+      "claude": 1,
+      "deepseek": 1,
+      "qwen": 1,
+      "gemma": 1,
+      "medgemma": 1,
+      "gemini": 1,
+      "mistral": 1,
+      "llama": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 0,
+        "uncertain": 4
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 0,
+        "uncertain": 4
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 0,
+        "uncertain": 3
+      }
+    }
+  },
+  "ARCH_018": {
+    "domain": "architecture",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/glm-4.7-flash:q8_0",
+      "ollama/gemma3:27b"
+    ],
+    "score": 0.6851,
+    "diversity_score": 0.743,
+    "coverage_score": 0.4,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": false,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 1,
+      "minimax": 1,
+      "deepseek": 1,
+      "nemotron": 1,
+      "mistral": 1,
+      "glm": 1,
+      "gemma": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 4,
+        "oppose": 0,
+        "uncertain": 4
+      }
+    }
+  },
+  "ARCH_019": {
+    "domain": "architecture",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gpt-oss:20b",
+      "ollama/gemma3:12b",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/qwen3.5:35b",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/gpt-oss:120b-cloud"
+    ],
+    "score": 0.703,
+    "diversity_score": 0.8123,
+    "coverage_score": 0.5,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gpt_oss": 2,
+      "gemma": 1,
+      "gemini": 1,
+      "qwen": 1,
+      "nemotron": 1,
+      "minimax": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 4
+      }
+    }
+  },
+  "ARCH_020": {
+    "domain": "architecture",
+    "selected_models": [
+      "ollama/mistral-small:latest",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/minimax-m2.7:cloud",
+      "ollama/qwen3.5:397b-cloud",
+      "gemini-3.1-pro-analyst",
+      "ollama/gpt-oss:20b",
+      "ollama/nemotron-3-super:cloud",
+      "claude-opus-4.6-analyst"
+    ],
+    "score": 0.7506,
+    "diversity_score": 0.8767,
+    "coverage_score": 0.6,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "mistral": 1,
+      "nemotron": 2,
+      "minimax": 1,
+      "qwen": 1,
+      "gemini": 1,
+      "gpt_oss": 1,
+      "claude": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 4
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "KA_STAT_001": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/qwen3.5:397b-cloud",
+      "gemini-2.5-pro-analyst",
+      "ollama/gemma3:27b",
+      "ollama/gpt-oss:120b-cloud"
+    ],
+    "score": 0.828,
+    "diversity_score": 0.9371,
+    "coverage_score": 0.7,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "mistral": 1,
+      "deepseek": 1,
+      "minimax": 1,
+      "qwen": 1,
+      "gemini": 1,
+      "gemma": 1,
+      "gpt_oss": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 1,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "KA_STAT_002": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "ollama/gemma3:27b",
+      "gemini-2.5-pro-analyst",
+      "gemini-3.1-pro-analyst",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/llama4:scout",
+      "claude-opus-4.6-analyst",
+      "ollama/minimax-m2.7:cloud"
+    ],
+    "score": 0.6445,
+    "diversity_score": 0.7165,
+    "coverage_score": 0.4,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "gemini": 2,
+      "qwen": 1,
+      "deepseek": 1,
+      "llama": 1,
+      "claude": 1,
+      "minimax": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 7,
+        "oppose": 0,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 0,
+        "uncertain": 2
+      }
+    }
+  },
+  "KA_STAT_003": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "ollama/minimax-m2.7:cloud",
+      "gemini-3.1-pro-analyst",
+      "ollama/gpt-oss:20b",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/gemma3:12b",
+      "gemini-2.5-pro-analyst",
+      "claude-opus-4.6-analyst",
+      "ollama/deepseek-v3.2:cloud"
+    ],
+    "score": 0.8399,
+    "diversity_score": 0.9176,
+    "coverage_score": 0.9,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "minimax": 1,
+      "gemini": 2,
+      "gpt_oss": 1,
+      "medgemma": 1,
+      "gemma": 1,
+      "claude": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 2,
+        "oppose": 4,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C5": {
+        "support": 1,
+        "oppose": 1,
+        "uncertain": 4
+      }
+    }
+  },
+  "KA_STAT_004": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/qwen3:14b",
+      "ollama/llama4:scout",
+      "ollama/gpt-oss:20b",
+      "gemini-2.5-pro-analyst",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/gemma3:12b"
+    ],
+    "score": 0.8443,
+    "diversity_score": 0.9123,
+    "coverage_score": 0.8,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "qwen": 1,
+      "llama": 1,
+      "gpt_oss": 1,
+      "gemini": 1,
+      "mistral": 1,
+      "medgemma": 1,
+      "gemma": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 4,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 4
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "KA_STAT_005": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gpt-oss:20b",
+      "gemini-2.5-pro-analyst",
+      "ollama/qwen3:14b",
+      "ollama/gemma3:27b",
+      "ollama/devstral-small-2:24b-cloud",
+      "ollama/llama4:scout",
+      "ollama/deepseek-v3.2:cloud"
+    ],
+    "score": 0.8171,
+    "diversity_score": 0.9061,
+    "coverage_score": 0.7,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gpt_oss": 1,
+      "gemini": 1,
+      "qwen": 1,
+      "gemma": 1,
+      "mistral": 1,
+      "llama": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 3,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 1,
+        "oppose": 1,
+        "uncertain": 1
+      }
+    }
+  },
+  "STAT_001": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gemma3:27b",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/gpt-oss:20b",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/magistral:latest",
+      "ollama/deepseek-v3.2:cloud"
+    ],
+    "score": 0.9154,
+    "diversity_score": 0.9726,
+    "coverage_score": 1.0,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemma": 1,
+      "nemotron": 1,
+      "qwen": 1,
+      "gpt_oss": 1,
+      "medgemma": 1,
+      "mistral": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 4
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 4,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "STAT_002": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "ollama/mistral-small:latest",
+      "gemini-2.5-pro-analyst",
+      "ollama/qwen3:14b",
+      "ollama/gemma3:12b",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/glm-4.7-flash:q8_0",
+      "ollama/qwen3.5:35b"
+    ],
+    "score": 0.7435,
+    "diversity_score": 0.8565,
+    "coverage_score": 0.6,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "mistral": 1,
+      "gemini": 1,
+      "qwen": 2,
+      "gemma": 1,
+      "nemotron": 1,
+      "minimax": 1,
+      "glm": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 4
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "STAT_003": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "gemini-2.5-pro-analyst",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/gemma3:27b",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/gpt-oss:120b-cloud",
+      "ollama/magistral:latest",
+      "ollama/deepseek-r1:14b"
+    ],
+    "score": 0.7388,
+    "diversity_score": 0.8609,
+    "coverage_score": 0.7,
+    "family_score": 0.75,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 2,
+      "gemini": 1,
+      "qwen": 1,
+      "deepseek": 2,
+      "gpt_oss": 1,
+      "mistral": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "STAT_004": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "gemini-2.5-pro-analyst",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/mistral-small:latest",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/minimax-m2.7:cloud",
+      "ollama/gpt-oss:20b"
+    ],
+    "score": 0.8788,
+    "diversity_score": 0.9395,
+    "coverage_score": 0.9,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "gemini": 1,
+      "qwen": 1,
+      "medgemma": 1,
+      "mistral": 1,
+      "nemotron": 1,
+      "minimax": 1,
+      "gpt_oss": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "STAT_005": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gemma3:12b",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/deepseek-v3.2:cloud",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/qwen3.5:35b",
+      "ollama/gpt-oss:20b"
+    ],
+    "score": 0.8858,
+    "diversity_score": 0.9773,
+    "coverage_score": 1.0,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemma": 1,
+      "nemotron": 1,
+      "qwen": 2,
+      "deepseek": 1,
+      "mistral": 1,
+      "gpt_oss": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      }
+    }
+  },
+  "STAT_006": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "gemini-2.5-pro-analyst",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/qwen3:14b",
+      "ollama/gemma3:27b",
+      "ollama/devstral-small-2:24b-cloud",
+      "ollama/nemotron-3-super:cloud",
+      "claude-opus-4.6-analyst"
+    ],
+    "score": 0.8037,
+    "diversity_score": 0.8857,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 2,
+      "gemini": 1,
+      "minimax": 1,
+      "qwen": 1,
+      "mistral": 1,
+      "nemotron": 1,
+      "claude": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "STAT_007": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gemma3:27b",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/minimax-m2.7:cloud",
+      "ollama/mistral-small:latest",
+      "ollama/qwen3-next:80b-cloud",
+      "ollama/gpt-oss-safeguard:20b",
+      "ollama/kavai/qwen3.5-Gemini-Design:9b"
+    ],
+    "score": 0.9171,
+    "diversity_score": 0.9773,
+    "coverage_score": 1.0,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemma": 1,
+      "medgemma": 1,
+      "minimax": 1,
+      "mistral": 1,
+      "qwen": 1,
+      "gpt_oss": 1,
+      "design": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 3
+      }
+    }
+  },
+  "STAT_008": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/deepseek-r1:14b",
+      "gemini-3.1-pro-analyst",
+      "ollama/gpt-oss:20b",
+      "ollama/gemma3:12b"
+    ],
+    "score": 0.9169,
+    "diversity_score": 0.9767,
+    "coverage_score": 1.0,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "mistral": 1,
+      "medgemma": 1,
+      "nemotron": 1,
+      "deepseek": 1,
+      "gemini": 1,
+      "gpt_oss": 1,
+      "gemma": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 4
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 2
+      }
+    }
+  },
+  "STAT_009": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/qwen3:14b",
+      "ollama/gemma3:27b",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/gpt-oss:20b",
+      "ollama/deepseek-r1:14b"
+    ],
+    "score": 0.8039,
+    "diversity_score": 0.8684,
+    "coverage_score": 0.7,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 1,
+      "nemotron": 1,
+      "qwen": 1,
+      "gemma": 1,
+      "mistral": 1,
+      "gpt_oss": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 0,
+        "uncertain": 4
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "STAT_010": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/gpt-oss:120b-cloud",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/gemma3:27b",
+      "ollama/glm-4.7-flash:q8_0"
+    ],
+    "score": 0.8275,
+    "diversity_score": 0.8642,
+    "coverage_score": 0.8,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 1,
+      "minimax": 1,
+      "gpt_oss": 1,
+      "qwen": 1,
+      "nemotron": 1,
+      "gemma": 1,
+      "glm": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 4,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 1,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "STAT_011": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/qwen3:14b",
+      "ollama/gpt-oss:120b-cloud",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/llama4:scout",
+      "gemini-3.1-pro-analyst",
+      "ollama/magistral:latest"
+    ],
+    "score": 0.9181,
+    "diversity_score": 0.9803,
+    "coverage_score": 1.0,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "medgemma": 1,
+      "qwen": 1,
+      "gpt_oss": 1,
+      "minimax": 1,
+      "llama": 1,
+      "gemini": 1,
+      "mistral": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "STAT_012": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gpt-oss:20b",
+      "ollama/gemma3:12b",
+      "ollama/mistral-small:latest",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/kavai/qwen3.5-Gemini-Design:9b",
+      "ollama/qwen3:14b"
+    ],
+    "score": 0.8746,
+    "diversity_score": 0.9276,
+    "coverage_score": 0.9,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gpt_oss": 1,
+      "gemma": 1,
+      "mistral": 1,
+      "gemini": 1,
+      "minimax": 1,
+      "design": 1,
+      "qwen": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 1,
+        "oppose": 5,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 4,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "STAT_013": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gemma3:12b",
+      "ollama/mistral-large-3:675b-cloud",
+      "ollama/llama4:scout",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/glm-4.7-flash:q8_0",
+      "ollama/qwen3.5:397b-cloud",
+      "gemini-2.5-pro-analyst"
+    ],
+    "score": 0.8138,
+    "diversity_score": 0.8966,
+    "coverage_score": 0.7,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemma": 1,
+      "mistral": 1,
+      "llama": 1,
+      "medgemma": 1,
+      "glm": 1,
+      "qwen": 1,
+      "gemini": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 4,
+        "oppose": 0,
+        "uncertain": 4
+      },
+      "C3": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 4
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "STAT_014": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "ollama/gemini-3-flash-preview:latest",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/qwen3:14b",
+      "ollama/nemotron-cascade-2:latest",
+      "ollama/gpt-oss-safeguard:20b",
+      "ollama/llama4:scout",
+      "ollama/magistral:latest"
+    ],
+    "score": 0.8163,
+    "diversity_score": 0.8323,
+    "coverage_score": 0.8,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "gemini": 1,
+      "minimax": 1,
+      "qwen": 1,
+      "nemotron": 1,
+      "gpt_oss": 1,
+      "llama": 1,
+      "mistral": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 7,
+        "oppose": 1,
+        "uncertain": 0
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "STAT_015": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "ollama/mistral-small:latest",
+      "gemini-2.5-pro-analyst",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/llama4:scout",
+      "ollama/gemma3:27b",
+      "ollama/devstral-small-2:24b-cloud",
+      "ollama/gpt-oss:120b-cloud",
+      "ollama/qwen3.5:35b"
+    ],
+    "score": 0.7435,
+    "diversity_score": 0.8563,
+    "coverage_score": 0.6,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "mistral": 2,
+      "gemini": 1,
+      "nemotron": 1,
+      "llama": 1,
+      "gemma": 1,
+      "gpt_oss": 1,
+      "qwen": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 6,
+        "oppose": 1,
+        "uncertain": 1
+      },
+      "C3": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 1,
+        "uncertain": 2
+      }
+    }
+  },
+  "STAT_016": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gemma3:12b",
+      "ollama/qwen3:14b",
+      "gemini-2.5-pro-analyst",
+      "ollama/minimax-m2.7:cloud",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/magistral:latest",
+      "ollama/deepseek-v3.2:cloud"
+    ],
+    "score": 0.886,
+    "diversity_score": 0.9599,
+    "coverage_score": 0.9,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemma": 1,
+      "qwen": 1,
+      "gemini": 1,
+      "minimax": 1,
+      "nemotron": 1,
+      "mistral": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 1
+      }
+    }
+  },
+  "STAT_017": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "gemini-2.5-pro-analyst",
+      "ollama/magistral:latest",
+      "ollama/qwen3.5:35b",
+      "ollama/llama4:scout",
+      "ollama/gpt-oss:120b-cloud",
+      "ollama/glm-4.7-flash:q8_0",
+      "gemini-3.1-pro-analyst"
+    ],
+    "score": 0.8012,
+    "diversity_score": 0.8783,
+    "coverage_score": 0.8,
+    "family_score": 0.875,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "gemini": 2,
+      "mistral": 1,
+      "qwen": 1,
+      "llama": 1,
+      "gpt_oss": 1,
+      "glm": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 5,
+        "oppose": 2,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 0,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "STAT_018": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "gemini-2.5-pro-analyst",
+      "ollama/deepseek-r1:14b",
+      "ollama/mistral-small:latest",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/nemotron-3-super:cloud",
+      "ollama/gpt-oss:120b-cloud",
+      "ollama/llama4:scout"
+    ],
+    "score": 0.9112,
+    "diversity_score": 0.9607,
+    "coverage_score": 1.0,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemini": 1,
+      "deepseek": 1,
+      "mistral": 1,
+      "medgemma": 1,
+      "nemotron": 1,
+      "gpt_oss": 1,
+      "llama": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 3,
+        "oppose": 4,
+        "uncertain": 1
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 3,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 4,
+        "oppose": 2,
+        "uncertain": 2
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 2,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "STAT_019": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "claude-opus-4.6-analyst",
+      "ollama/gemma3:27b",
+      "ollama/qwen3.5:397b-cloud",
+      "ollama/mistral-small:latest",
+      "gemini-2.5-pro-analyst",
+      "ollama/minimax-m2.5:cloud",
+      "ollama/gpt-oss:20b",
+      "ollama/deepseek-r1:14b"
+    ],
+    "score": 0.7998,
+    "diversity_score": 0.8567,
+    "coverage_score": 0.7,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "claude": 1,
+      "gemma": 1,
+      "qwen": 1,
+      "mistral": 1,
+      "gemini": 1,
+      "minimax": 1,
+      "gpt_oss": 1,
+      "deepseek": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 6,
+        "oppose": 0,
+        "uncertain": 2
+      },
+      "C2": {
+        "support": 5,
+        "oppose": 1,
+        "uncertain": 2
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 2
+      }
+    }
+  },
+  "STAT_020": {
+    "domain": "statistical_reasoning",
+    "selected_models": [
+      "ollama/gemma3:12b",
+      "ollama/gpt-oss:20b",
+      "ollama/minimax-m2.7:cloud",
+      "ollama/alibayram/medgemma:4b",
+      "ollama/mistral-small:latest",
+      "ollama/qwen3:14b",
+      "gemini-2.5-pro-analyst",
+      "ollama/nemotron-3-super:cloud"
+    ],
+    "score": 0.856,
+    "diversity_score": 0.9458,
+    "coverage_score": 0.8,
+    "family_score": 1.0,
+    "quality_score": 0.5,
+    "strong_wrong_included": true,
+    "family_counts": {
+      "gemma": 1,
+      "gpt_oss": 1,
+      "minimax": 1,
+      "medgemma": 1,
+      "mistral": 1,
+      "qwen": 1,
+      "gemini": 1,
+      "nemotron": 1
+    },
+    "position_summary": {
+      "C1": {
+        "support": 2,
+        "oppose": 3,
+        "uncertain": 3
+      },
+      "C2": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C3": {
+        "support": 3,
+        "oppose": 2,
+        "uncertain": 3
+      },
+      "C4": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      },
+      "C5": {
+        "support": 4,
+        "oppose": 1,
+        "uncertain": 3
+      }
+    }
+  }
+}
