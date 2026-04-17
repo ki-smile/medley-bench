@@ -199,12 +199,12 @@ The Kaggle competition framework (`kbench`) imposes limitations on judge scoring
 
 | Rank | Model | MMS | MAS | T1 | T2 | T3 |
 |------|-------|-----|-----|----|----|-----|
-| 1 | Claude Haiku 4.5 | 62.2 | 61.8 | 61.1 | 56.3 | 69.2 |
-| 2 | Gemma 3 27B | 61.1 | 62.0 | 60.1 | 55.8 | 67.5 |
-| 3 | Qwen 3.5 397B | 61.0 | 59.2 | 59.8 | 56.5 | 66.7 |
-| 4 | Gemini 3 Flash | 60.7 | 60.2 | 59.5 | 56.0 | 66.5 |
-| 5 | Claude Sonnet 4.5 | 60.4 | 60.7 | 59.3 | 55.7 | 66.3 |
-| 6 | Gemma 3 12B | 60.1 | 61.5 | 58.9 | 55.5 | 65.9 |
+| 1 | Claude Haiku 4.5 | 62.2 | 80.5 | 57.9 | 56.8 | 78.9 |
+| 2 | Gemma 3 27B | 61.1 | 78.9 | 57.7 | 58.1 | 71.5 |
+| 3 | Qwen 3.5 397B | 61.0 | 74.4 | 56.5 | 58.3 | 72.4 |
+| 4 | Gemini 3 Flash | 60.7 | 78.6 | 55.4 | 60.0 | 70.2 |
+| 5 | Claude Sonnet 4.5 | 60.4 | 73.2 | 57.0 | 56.0 | 73.5 |
+| 6 | Gemma 3 12B | 60.1 | 75.3 | 58.5 | 56.2 | 69.8 |
 
 Full results for all 35 models are available in the [GitHub repository](https://github.com/ki-smile/medley-bench/tree/main/results/metacognition/v1.0/normal/).
 
